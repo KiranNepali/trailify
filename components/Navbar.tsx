@@ -24,7 +24,7 @@ function Navbar({}: Props) {
           <Link href="certificates">Certificates</Link>
         </div>
         {/* LOGO  */}
-        <h1 className="font-bold title tracking-wide absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2">
+        <h1 className="font-bold text-2xl title tracking-wide absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2">
           TRAILIFY
         </h1>
         <div className="flex gap-5  text-[16px]">

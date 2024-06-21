@@ -38,7 +38,7 @@ function AboutUs({}: Props) {
       {/* middle  */}
       <div className="w-full flex-col gap-2 pb-[5rem]">
         <h1 className="text-8xl w-[50%] tracking-wide title font-bold text-secondary-500">
-          LET'S GET TO <br /> KNOW EACH OTHER
+          LET&apos;S GET TO <br /> KNOW EACH OTHER
         </h1>
         <div className="w-full flex justify-end">
           <p className="w-[60%] text-secondary-400">

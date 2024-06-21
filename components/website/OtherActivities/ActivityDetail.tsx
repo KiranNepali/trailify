@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 type Props = {};
@@ -7,20 +8,20 @@ function AcitvityDetail({}: Props) {
     <div className="w-10/12 mx-auto py-[5rem] text-zinc-50">
       {/* title  */}
       <div className="w-full flex flex-col gap-2">
-         {/* TITLE  */}
-      <h1 className="text-2xl relative tracking-wide title font-semibold italic text-secondary-500">
-        HELI TOUR
-      </h1>
+        {/* TITLE  */}
+        <h1 className="text-2xl relative tracking-wide title font-semibold italic text-secondary-500">
+          HELI TOUR
+        </h1>
 
         {/* DESC  */}
         <p className="text-lg  text-secondary-400">
-          Embark on an unforgettable helicopter adventure across Nepal's
-          stunning landscapes. Soar high above the clouds for a bird's-eye view
-          of the Himalayas, including the iconic Mount Everest. Our helicopter
-          tours provide a luxurious and effortless way to explore remote
-          regions, sacred sites, and picturesque valleys in just a few hours.
-          Perfect for those who want to experience mountain beauty without the
-          physical challenges of trekking.
+          Embark on an unforgettable helicopter adventure across Nepal&apos;s
+          stunning landscapes. Soar high above the clouds for a bird&apos;s-eye
+          view of the Himalayas, including the iconic Mount Everest. Our
+          helicopter tours provide a luxurious and effortless way to explore
+          remote regions, sacred sites, and picturesque valleys in just a few
+          hours. Perfect for those who want to experience mountain beauty
+          without the physical challenges of trekking.
         </p>
       </div>
 
@@ -37,7 +38,9 @@ function AcitvityDetail({}: Props) {
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.3] group-hover:opacity-[0] duration-300"></div>
               {/* img  */}
               <div className="w-full h-full  overflow-hidden flex justify-center items-center">
-                <img
+                <Image
+                  width={1000}
+                  height={1000}
                   className="object-cover object-top md:object-center hover:scale-[10rem] w-full h-full"
                   src={item.img}
                   alt="project"

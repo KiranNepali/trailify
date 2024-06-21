@@ -16,7 +16,7 @@ function AllExp({}: Props) {
         Nepal, a land teeming with majestic mountains, boasts around 1,500 peaks
         soaring above 8,000 meters. Among these giants, the renowned
         Kanchenjunga stands tall at 8,586 meters, proudly holding its title as
-        the world's third highest mountain.
+        the world&apos;s third highest mountain.
       </p>
 
       {/* available treKs  */}
