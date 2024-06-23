@@ -1,6 +1,12 @@
 import Image from "next/image";
 import React from "react";
 
+import Service1 from "@/public/ServiceImage/service1.png";
+import Service2 from "@/public/ServiceImage/service2.png";
+import Service3 from "@/public/ServiceImage/service3.png";
+import Service4 from "@/public/ServiceImage/service4.png";
+import Service5 from "@/public/ServiceImage/service5.png";
+import Service6 from "@/public/ServiceImage/service6.png";
 type Props = {};
 
 function Services({}: Props) {
@@ -32,8 +38,12 @@ function Services({}: Props) {
             <div className="w-full flex px-3 flex-col relative gap-1">
               {/* ICON  */}
               <div className="w-full absolute top-[-5%]  left-0 translate-y-[-50%] flex justify-center items-center">
-                <div className="w-[5rem] h-[5rem] bg-secondary-100   rounded-full flex justify-center items-center">
-                  icon
+                <div className="w-[4rem] h-[4rem] p-3 bg-secondary-100   rounded-full flex justify-center items-center">
+                  <Image
+                    src={item.icon}
+                    alt="service-icon"
+                    className="w-full h-full object-center object-center"
+                  ></Image>
                 </div>
               </div>
               {/* NAME */}
@@ -55,37 +65,49 @@ export default Services;
 const ServicesData = [
   {
     id: 1,
-    name: "Mountain Exploration",
-    desc: "Experience breathtaking mountain ranges and challenging climbs.",
     img: "https://example.com/images/mountain-exploration.jpg",
-    icon: "",
+
+    icon: Service1,
+    name: "Mountain Trekking",
+    desc: "Experience the thrill of mountain trekking with our expert guides and customized routes.",
   },
   {
     id: 2,
-    name: "Forest Trekking",
-    desc: "Discover the beauty and mystery of lush forests on guided treks.",
-    img: "https://example.com/images/forest-trekking.jpg",
-    icon: "",
+    icon: Service2,
+    img: "https://example.com/images/mountain-exploration.jpg",
+
+    name: "Camping",
+    desc: "Enjoy an unforgettable camping experience under the stars with all amenities provided.",
   },
   {
     id: 3,
-    name: "City Tours",
-    desc: "Explore the cultural and historical landmarks of bustling cities.",
-    img: "https://example.com/images/city-tours.jpg",
-    icon: "",
+    icon: Service3,
+    img: "https://example.com/images/mountain-exploration.jpg",
+
+    name: "Guided Tours",
+    desc: "Join our guided tours to explore the most breathtaking locations with local experts.",
   },
   {
     id: 4,
-    name: "Glacier Hiking",
-    desc: "Embark on an adventurous hike across stunning glaciers.",
-    img: "https://example.com/images/glacier-hiking.jpg",
-    icon: "",
+    icon: Service4,
+    img: "https://example.com/images/mountain-exploration.jpg",
+
+    name: "Wildlife Safaris",
+    desc: "Witness the beauty of wildlife in their natural habitat with our thrilling safari adventures.",
   },
   {
     id: 5,
-    name: "Cave Expeditions",
-    desc: "Venture into the depths of fascinating cave systems.",
-    img: "https://example.com/images/cave-expeditions.jpg",
-    icon: "",
+    icon: Service5,
+    img: "https://example.com/images/mountain-exploration.jpg",
+
+    name: "Cultural Tours",
+    desc: "Immerse yourself in the local culture and traditions with our curated cultural tours.",
+  },
+  {
+    id: 6,
+    icon: Service6,
+    img: "https://example.com/images/mountain-exploration.jpg",
+    name: "Adventure Sports",
+    desc: "Get your adrenaline pumping with our range of adventure sports activities.",
   },
 ];

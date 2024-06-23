@@ -38,29 +38,29 @@ function Navbar({}: Props) {
             </div>
             <ul className="absolute hidden group-hover:block duration-300 top-[100%] left-[50%] translate-x-[-50%] whitespace-nowrap  bg-white shadow p-5">
               <li className="py-1">
-                <a className="text-secondary-400 border-b border-primary-100 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
+                <div className="text-secondary-400 border-b border-primary-100 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
                   Everest Base Camp Trek
-                </a>
+                </div>
               </li>
               <li className="py-1">
-                <a className="text-secondary-400 border-b border-primary-100 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
+                <div className="text-secondary-400 border-b border-primary-100 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
                   Annapurna Circuit Trek
-                </a>
+                </div>
               </li>
               <li className="py-1">
-                <a className="text-secondary-400 border-b border-primary-100 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
+                <div className="text-secondary-400 border-b border-primary-100 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
                   Langtang Valley Trek
-                </a>
+                </div>
               </li>
               <li className="py-1">
-                <a className="text-secondary-400 border-b border-primary-100 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
+                <div className="text-secondary-400 border-b border-primary-100 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
                   Manaslu Circuit Trek
-                </a>
+                </div>
               </li>
               <li className="py-1">
-                <a className="text-secondary-400 border-b border-primary-100 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
+                <div className="text-secondary-400 border-b border-primary-100 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
                   Upper Mustang Trek
-                </a>
+                </div>
               </li>
             </ul>
           </Link>
@@ -76,29 +76,29 @@ function Navbar({}: Props) {
             </div>
             <ul className="absolute hidden group-hover:block duration-300 top-[100%] left-[50%] translate-x-[-50%] whitespace-nowrap  bg-white shadow p-5">
               <li className="py-1">
-                <a className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold  hover:text-secondary-500 cursor-pointer">
+                <div className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold  hover:text-secondary-500 cursor-pointer">
                   5364m
-                </a>
+                </div>
               </li>
               <li className="py-1">
-                <a className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold  hover:text-secondary-500 cursor-pointer">
+                <div className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold  hover:text-secondary-500 cursor-pointer">
                   5416m
-                </a>
+                </div>
               </li>
               <li className="py-1">
-                <a className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold  hover:text-secondary-500 cursor-pointer">
+                <div className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold  hover:text-secondary-500 cursor-pointer">
                   4984m
-                </a>
+                </div>
               </li>
               <li className="py-1">
-                <a className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold  hover:text-secondary-500 cursor-pointer">
+                <div className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold  hover:text-secondary-500 cursor-pointer">
                   5160m
-                </a>
+                </div>
               </li>
               <li className="py-1">
-                <a className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold  hover:text-secondary-500 cursor-pointer">
+                <div className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold  hover:text-secondary-500 cursor-pointer">
                   3840m
-                </a>
+                </div>
               </li>
             </ul>
           </Link>
@@ -114,29 +114,29 @@ function Navbar({}: Props) {
             </div>
             <ul className="absolute hidden group-hover:block duration-300 top-[100%] left-[50%] translate-x-[-50%] whitespace-nowrap  bg-white shadow p-5">
               <li className="py-1">
-                <a className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
+                <div className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
                   Heli Tour
-                </a>
+                </div>
               </li>
               <li className="py-1">
-                <a className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
+                <div className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
                   Paragliding
-                </a>
+                </div>
               </li>
               <li className="py-1">
-                <a className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
+                <div className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
                   Bungee Jumping
-                </a>
+                </div>
               </li>
               <li className="py-1">
-                <a className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
+                <div className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
                   Mountain Biking
-                </a>
+                </div>
               </li>
               <li className="py-1">
-                <a className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
+                <div className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
                   Rock Climbing
-                </a>
+                </div>
               </li>
             </ul>
           </Link>

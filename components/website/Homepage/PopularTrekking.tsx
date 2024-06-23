@@ -30,13 +30,13 @@ function PopularTrekking({}: Props) {
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.5]"></div>
 
-        <h1 className="text-6xl relative tracking-wide title font-bold text-secondary-50">
+        <h1 className="text-3xl md:text-6xl relative tracking-wide title font-bold text-secondary-50">
           TRENDING TREKKING
         </h1>
       </div>
 
       {/* CARDS  */}
-      <div className="w-9/12 mx-auto h-[60vh] mt-[10%] flex gap-2 justify-center relative items-center">
+      <div className="w-11/12 md:w-9/12 mx-auto h-[60vh] mt-[10%] flex gap-2 justify-center relative items-center">
         <div
           onClick={() => {
             if (swiperRef.current) {
@@ -55,7 +55,22 @@ function PopularTrekking({}: Props) {
             swiperRef.current = swiper;
           }}
           loop={true}
-          slidesPerView={3}
+          speed={500}
+          breakpoints={{
+            924: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+
+            1256: {
+              slidesPerView: 4,
+              spaceBetween: 10,
+            },
+            1576: {
+              slidesPerView: 5,
+              spaceBetween: 10,
+            },
+          }}
           spaceBetween={30}
           freeMode={true}
           pagination={{

@@ -33,7 +33,7 @@ function Reviews({}: Props) {
             className="w-full h-full object-cover object-center"
           />
         </div>
-        <h1 className="text-6xl relative tracking-wide title font-bold text-secondary-500">
+        <h1 className="text-3xl md:text-6xl relative tracking-wide title font-bold text-secondary-500">
           TOP-RATED REVIEWS
         </h1>
         <div
@@ -51,13 +51,28 @@ function Reviews({}: Props) {
         </div>
       </div>
       {/* CARDS  */}
-      <div className="w-10/12 mx-auto h-[50vh]    flex  justify-center relative items-center">
+      <div className="w-11/12 md:w-10/12 mx-auto h-[50vh] flex  justify-center relative items-center">
         <Swiper
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
           loop={true}
-          slidesPerView={3}
+          breakpoints={{
+            924: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+
+            1256: {
+              slidesPerView: 4,
+              spaceBetween: 10,
+            },
+            1576: {
+              slidesPerView: 5,
+              spaceBetween: 10,
+            },
+          }}
+          speed={500}
           spaceBetween={30}
           freeMode={true}
           pagination={{
@@ -104,7 +119,9 @@ function Reviews({}: Props) {
                     JOHN CHAMLING
                   </span>
                   <div className="w-full flex  items-center justify-between">
-                    <span className="text-[14px] font-medium text-secondary-400">Web Designer</span>
+                    <span className="text-[14px] font-medium text-secondary-400">
+                      Web Designer
+                    </span>
                     <span className="flex justify-center items-center  text-primary-500">
                       <Icon icon="material-symbols:star" />
                       <Icon icon="material-symbols:star" />
