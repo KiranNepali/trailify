@@ -6,7 +6,7 @@ type Props = {};
 
 function AllTrek({}: Props) {
   return (
-    <div className="w-full py-[5rem]">
+    <div className="w-full overflow-hidden py-[5rem]">
       {/* TITLE  */}
       <h2 className="text-2xl relative tracking-wide title font-semibold italic text-secondary-500">
         Everest TREKKING
@@ -27,14 +27,14 @@ function AllTrek({}: Props) {
       {/* available treKs  */}
       <div className="w-full pb-[5rem] flex flex-col gap-3">
         {/* title  */}
-        <h1 className="text-6xl  w-full text-center relative tracking-wide title font-semibold  text-secondary-500">
+        <h1 className="text-3xl md:text-6xl  w-full text-center relative tracking-wide title font-semibold  text-secondary-500">
           Available treks
         </h1>
-        <div className="w-full grid grid-cols-2 gap-5">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5">
           {trekData.map((item, index) => (
             <div
               key={index}
-              className="w-full p-2  flex gap-3 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]   "
+              className="w-full p-2 flex gap-3 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]   "
             >
               {/* img  */}
               <Image

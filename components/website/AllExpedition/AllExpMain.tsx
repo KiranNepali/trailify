@@ -20,7 +20,7 @@ function AllExpMain({}: Props) {
       />
       <div>
         <AllExpHero />
-        <div className="w-10/12 mx-auto">
+        <div className="w-11/12 md:w-10/12 mx-auto">
           <AllExp />
         </div>
       </div>

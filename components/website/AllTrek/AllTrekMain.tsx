@@ -8,7 +8,7 @@ function AllTrekMain({}: Props) {
   return (
     <div>
       <AllTrekHero />
-      <div className="w-10/12 mx-auto">
+      <div className="w-11/12 md:w-10/12 mx-auto">
         <AllTrek />
       </div>
     </div>

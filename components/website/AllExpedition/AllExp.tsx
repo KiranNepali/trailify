@@ -25,11 +25,11 @@ function AllExp({}: Props) {
         {/* <h1 className="text-6xl  w-full text-center relative tracking-wide title font-semibold  text-secondary-500">
           Available treks
         </h1> */}
-        <div className="w-full grid grid-cols-4  gap-5">
+        <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2  md:gap-5">
           {trekData.map((item, index) => (
             <div
               key={index}
-              className="w-full p-2  flex flex-col justify-start items-start gap-3 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]   "
+              className="w-full p-2 flex flex-col justify-start items-start gap-3  shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]   "
             >
               {/* img  */}
               <Image
@@ -47,10 +47,18 @@ function AllExp({}: Props) {
                   EVERSET TREKKING
                 </span>
                 {/* short intro  */}
-                <p className="text-sm font-medium text-secondary-400">
+                <p className="text-sm hidden md:block font-medium text-secondary-400">
                   {"Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,commodi ad. Perferendis commodi corporis corrupti iusto. Et cumomnis assumenda excepturi eius quae non inventore rem, autofficiis neque sapiente.".slice(
                     0,
                     100
+                  )}
+                  ...
+                </p>
+                 {/* short intro  */}
+                 <p className="text-sm md:hidden block font-medium text-secondary-400">
+                  {"Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,commodi ad. Perferendis commodi corporis corrupti iusto. Et cumomnis assumenda excepturi eius quae non inventore rem, autofficiis neque sapiente.".slice(
+                    0,
+                    50
                   )}
                   ...
                 </p>

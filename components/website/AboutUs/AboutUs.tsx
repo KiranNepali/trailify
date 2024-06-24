@@ -6,9 +6,9 @@ type Props = {};
 function AboutUs({}: Props) {
   return (
     <>
-      <div className="w-full py-[5rem]  flex justify-center items-center gap-10">
+      <div className="w-full py-[5rem]  flex flex-col md:flex-row justify-center items-center gap-10">
         {/* about us  */}
-        <div className="w-[40%] flex flex-col gap-2 items-start justify-center h-[70%]">
+        <div className="w-full md:w-[40%] flex flex-col gap-2 items-start justify-center h-[70%]">
           <span className="text-secondary-500 text-lg font-medium">
             Our Story
           </span>
@@ -27,7 +27,7 @@ function AboutUs({}: Props) {
 
         {/* image  */}
         <Image
-          className="w-[40%] object-cover object-center h-[70vh]"
+          className="w-full md:w-[40%] object-cover object-center h-[70vh]"
           width={1000}
           height={1000}
           alt="about-us-img"
@@ -36,12 +36,12 @@ function AboutUs({}: Props) {
       </div>
 
       {/* middle  */}
-      <div className="w-full flex-col gap-2 pb-[5rem]">
-        <h1 className="text-8xl w-[50%] tracking-wide title font-bold text-secondary-500">
+      <div className="w-full flex flex-col gap-2 pb-[5rem]">
+        <h1 className="text-4xl md:text-8xl w-full md:w-[50%] tracking-wide title font-bold text-secondary-500">
           LET&apos;S GET TO <br /> KNOW EACH OTHER
         </h1>
         <div className="w-full flex justify-end">
-          <p className="w-[60%] text-secondary-400">
+          <p className="w-full md:w-[60%] text-secondary-400">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa
             deleniti aperiam dolorem voluptate perferendis quibusdam laudantium
             nisi voluptatem aut, nostrum, consectetur soluta est iusto saepe
@@ -53,7 +53,7 @@ function AboutUs({}: Props) {
         </div>
       </div>
 
-      <div className="w-[70%] mx-auto grid grid-cols-3  gap-10 pb-[5rem]">
+      <div className="w-full md:w-[70%] mx-auto grid grid-cols-3 gap-2  md:gap-10 pb-[5rem]">
         <div className="flex flex-col gap-3">
           {/* image  */}
           <div className="w-full h-[70vh] p-3 bg-zinc-200 relative  flex justify-center items-center">

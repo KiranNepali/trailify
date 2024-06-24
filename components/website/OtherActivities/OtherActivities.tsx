@@ -6,18 +6,18 @@ type Props = {};
 function OtherActivities({}: Props) {
   return (
     <>
-      <div className="w-10/12 pb-[5rem] mx-auto">
+      <div className="w-11/12 md:w-10/12 pb-[5rem] mx-auto">
         {/* TITLE  */}
         <h1 className="text-2xl relative tracking-wide title font-semibold italic text-secondary-500">
           RELATED
         </h1>
         {/* NAVIGATION  activities */}
         <div className="w-full">
-          <div className="w-full grid gap-3 grid-cols-4 place-content-center place-items-center">
+          <div className="w-full overflow-x-scroll flex md:grid gap-3 grid-cols-4 md:place-content-center place-items-center">
             {OtherActivitiesData.map((item) => (
               <div
                 key={item.id}
-                className="w-full cursor-pointer group relative overflow-hidden flex justify-center items-center h-[30vh] bg-slate-300"
+                className="min-w-[80%] md:w-full cursor-pointer group relative overflow-hidden flex justify-center items-center h-[30vh] bg-slate-300"
               >
                 <div className="absolute top-0 left-0 w-full h-full group-hover:opacity-[0.7] bg-zinc-950 opacity-[0.2] z-10 duration-300"></div>
                 <div className="absolute top-0 left-0 w-full h-full">

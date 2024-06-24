@@ -5,7 +5,7 @@ type Props = {};
 
 function AcitvityDetail({}: Props) {
   return (
-    <div className="w-10/12 mx-auto py-[5rem] text-zinc-50">
+    <div className="w-11/12 md:w-10/12 mx-auto py-[5rem] text-zinc-50">
       {/* title  */}
       <div className="w-full flex flex-col gap-2">
         {/* TITLE  */}

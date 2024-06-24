@@ -53,15 +53,15 @@ function PackageDetailMain({}: Props) {
             className="absolute top-0 left-0 w-full h-[50vh] object-cover object-top"
           />
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.5]"></div>
-          <h1 className="text-6xl relative tracking-wide mt-10 title font-bold text-secondary-50">
+          <h1 className="text-3xl md:text-6xl relative tracking-wide mt-10 title font-bold text-secondary-50">
             Everest Trekking
           </h1>
         </div>
 
-        <div className="py-[5rem] w-10/12 flex justify-center relative items-start gap-3 mx-auto">
+        <div className="py-[5rem] w-11/12 md:w-10/12 flex flex-col md:flex-row justify-center relative items-start gap-3 mx-auto">
           {/* tab  link  */}
-          <div className="mx-auto w-[15%] flex-col gap-8 backdrop-blur-sm sticky top-[6rem] left-0  flex  font-medium items-center">
-            <div className="w-full overflow-x-scroll md:overflow-visible flex flex-col gap-5 font-medium items-center">
+          <div className="mx-auto w-full md:w-[15%] flex-col gap-8 backdrop-blur-sm sticky top-[5rem] overflow-x-scroll md:top-[6rem] left-0  flex  font-medium items-center">
+            <div className="w-full overflow-x-scroll md:overflow-visible flex md:flex-col gap-5 font-medium items-center">
               {buttonLabels.map((item) => (
                 <a
                   href={`#${item.label.replace(/\s+/g, "-").toLowerCase()}`}
@@ -74,14 +74,14 @@ function PackageDetailMain({}: Props) {
             </div>
 
             <a
-              className={`cursor-pointer text-nowrap w-full text-secondary-100 bg-gradient-to-tr from-primary-600 to-primary-400   duration-200 flex justify-center items-center  px-5  h-[2.5rem] text-sm`}
+              className={`cursor-pointer hidden  text-nowrap w-full text-secondary-100 bg-gradient-to-tr from-primary-600 to-primary-400   duration-200 md:flex justify-center items-center  px-5  h-[2.5rem] text-sm`}
             >
               Book now
             </a>
           </div>
           {/* detail  */}
 
-          <div className="w-[85%] flex flex-col gap-2">
+          <div className="w-full md:w-[85%] flex flex-col gap-2">
             <div
               id="overview"
               className="w-full mx-auto p-3 md:p-10   bg-primary-50 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "

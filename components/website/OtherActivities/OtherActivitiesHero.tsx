@@ -15,7 +15,7 @@ export default function OtherActivitiesHero({}: Props) {
           className="absolute top-0 left-0 w-full h-[50vh] object-cover object-center"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.5]"></div>
-        <h1 className="text-6xl relative tracking-wide mt-10 title font-bold text-secondary-50">
+        <h1 className="text-3xl md:text-6xl relative tracking-wide mt-10 title font-bold text-secondary-50">
           heli tour
         </h1>
       </div>

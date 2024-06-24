@@ -8,7 +8,7 @@ function AboutUsMain({}: Props) {
   return (
     <div>
       <AboutUsHero />
-      <div className="w-10/12 mx-auto">
+      <div className="w-11/12 md:w-10/12 mx-auto">
         <AboutUs />
       </div>
     </div>
