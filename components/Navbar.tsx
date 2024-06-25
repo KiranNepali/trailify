@@ -108,7 +108,6 @@ function Navbar({}: Props) {
           )}
         </div>
       </div>
-
       <div className="w-10/12  text-secondary-400    tracking-wide  mx-auto h-full hidden md:flex justify-between items-center gap-5">
         {/*  nav links  */}
         <div className="flex gap-5 text-[16px] title">
@@ -128,7 +127,7 @@ function Navbar({}: Props) {
         </div>
         {/* LOGO  */}
         <Link
-          href="/"
+          href="/home"
           className="font-bold text-2xl title tracking-wide absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2"
         >
           <Image

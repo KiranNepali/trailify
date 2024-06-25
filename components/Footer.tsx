@@ -35,19 +35,13 @@ function Footer({}: Props) {
                 </a>
                 <a href="" target="_blank">
                   <Icon
-                    icon="ic:baseline-instagram"
+                    icon="mdi:twitter"
                     className="w-[2rem] h-[3rem] object-cover object-center text-white"
                   />
                 </a>
                 <a href="" target="_blank">
                   <Icon
-                    icon="ic:baseline-twitter"
-                    className="w-[2rem] h-[3rem] object-cover object-center text-white"
-                  />
-                </a>
-                <a href="" target="_blank">
-                  <Icon
-                    icon="ic:baseline-facebook"
+                    icon="mdi:instagram"
                     className="w-[2rem] h-[3rem] object-cover object-center text-white"
                   />
                 </a>

@@ -40,8 +40,8 @@ function Hero({}: Props) {
         </h1>
       </div>
 
-      <div className="cursor-pointer scroll-down absolute  bottom-10 w-[6rem] whitespace-nowrap h-[6rem] p-1 border border-primary-100 rounded-full flex justify-center items-center text-wrap text-center  z-20 left-[50%] -translate-x-[50%] text-sm">
-        <span>SCROLL DOWN</span>
+      <div className="cursor-pointer hover:w-[8rem] hover:h-[8rem] duration-200 scroll-down absolute  bottom-10 w-[6rem] whitespace-nowrap h-[6rem] p-1 border border-primary-100 rounded-full flex justify-center items-center text-wrap text-center  z-20 left-[50%] -translate-x-[50%] text-sm">
+        <span>SCROLL <br /> DOWN</span>
       </div>
     </div>
   );

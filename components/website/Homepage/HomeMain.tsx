@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import Hero from "./Hero";
 import HomeAbout from "./HomeAbout";
@@ -10,24 +11,6 @@ import Preloader from "../Preloader";
 type Props = {};
 
 function HomeMain({}: any) {
-  const [locoforbuild, setlocoforbuild] = useState<any>(null);
-  useEffect(() => {
-    let locomotiveScroll;
-
-    (async () => {
-      const LocomotiveScroll = (await import("locomotive-scroll")).default;
-
-      locomotiveScroll = new LocomotiveScroll({
-        el: document.querySelector("#ScrollElementId"),
-        smooth: true,
-      });
-
-      setlocoforbuild(locomotiveScroll);
-      if (locoforbuild) {
-        console.log("for build");
-      }
-    })();
-  }, []);
   return (
     <>
       <Preloader />

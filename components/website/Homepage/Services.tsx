@@ -11,6 +11,9 @@ import Service6 from "@/public/ServiceImage/service6.png";
 import Adventure from "@/public/ServiceImage/ImageMain/adventure.avif";
 import Camp from "@/public/ServiceImage/ImageMain/camp.avif";
 import Guide from "@/public/ServiceImage/ImageMain/guide.avif";
+import Culture from "@/public/ServiceImage/ImageMain/culture.avif";
+import Trek from "@/public/ServiceImage/ImageMain/trek.avif";
+import Wildlife from "@/public/ServiceImage/ImageMain/wildlife.avif";
 
 type Props = {};
 
@@ -70,7 +73,7 @@ export default Services;
 const ServicesData = [
   {
     id: 1,
-    img: "https://images.unsplash.com/photo-1504061770815-81c22ffcbaa7?q=80&w=2008&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: Trek,
     icon: Service1,
     name: "Mountain Trekking",
     desc: "Experience the thrill of mountain trekking with our expert guides and customized routes.",
@@ -79,7 +82,6 @@ const ServicesData = [
     id: 2,
     icon: Service2,
     img: Camp,
-
     name: "Camping",
     desc: "Enjoy an unforgettable camping experience under the stars with all amenities provided.",
   },
@@ -93,7 +95,7 @@ const ServicesData = [
   {
     id: 4,
     icon: Service4,
-    img: "https://images.unsplash.com/photo-1504061770815-81c22ffcbaa7?q=80&w=2008&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    img: Wildlife,
 
     name: "Wildlife Safaris",
     desc: "Witness the beauty of wildlife in their natural habitat with our thrilling safari adventures.",
@@ -101,8 +103,7 @@ const ServicesData = [
   {
     id: 5,
     icon: Service5,
-    img: "https://images.unsplash.com/photo-1504061770815-81c22ffcbaa7?q=80&w=2008&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-
+    img: Culture,
     name: "Cultural Tours",
     desc: "Immerse yourself in the local culture and traditions with our curated cultural tours.",
   },

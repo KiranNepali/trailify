@@ -27,6 +27,9 @@ function Preloader({}: Props) {
       display: "none",
       duration: 0.1,
       ease: "power4.inOut",
+    //   onComplete: () => {
+    //     window.location.href = "/home";
+    //   },
     });
   });
 
