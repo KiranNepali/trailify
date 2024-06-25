@@ -62,13 +62,12 @@ function Reviews({}: Props) {
               slidesPerView: 2,
               spaceBetween: 10,
             },
-
             1256: {
-              slidesPerView: 4,
+              slidesPerView: 3,
               spaceBetween: 10,
             },
             1576: {
-              slidesPerView: 5,
+              slidesPerView: 4,
               spaceBetween: 10,
             },
           }}
@@ -81,7 +80,7 @@ function Reviews({}: Props) {
           modules={[FreeMode]}
           className="mySwiper"
         >
-          {slides.map((slide, index) => (
+          {ReviewsData.map((itemn, index) => (
             <SwiperSlide key={index}>
               <div className="shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] flex flex-col gap-3 h-auto p-3">
                 <div className="flex justify-between">
@@ -108,15 +107,12 @@ function Reviews({}: Props) {
                   </div>
                 </div>
                 {/* review  */}
-                <p className="text-secondary-400">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Dignissimos et animi, tenetur sed in ex?
-                </p>
+                <p className="text-secondary-400">{itemn.review}</p>
 
                 <div className="w-full flex flex-col">
                   {/* name  */}
                   <span className="title italic  tracking-wide">
-                    JOHN CHAMLING
+                    {itemn.name}
                   </span>
                   <div className="w-full flex  items-center justify-between">
                     <span className="text-[14px] font-medium text-secondary-400">
@@ -142,11 +138,37 @@ function Reviews({}: Props) {
 
 export default Reviews;
 
-const slides = [
-  "Slide 1",
-  "Slide 2",
-  "Slide 3",
-  "Slide 4",
-  "Slide 5",
-  "Slide 6",
+const ReviewsData = [
+  {
+    id: 1,
+    name: "Alice Johnson",
+    role: "Avid Hiker",
+    img: "/path/to/alice.jpg",
+    review:
+      "Trailify has been my go-to platform for planning hiking trips. The detailed trail descriptions and user reviews helped me find the perfect trails for both solo hikes and group adventures.",
+  },
+  {
+    id: 2,
+    name: "Bob Smith",
+    role: "Beginner Hiker",
+    img: "/path/to/bob.jpg",
+    review:
+      "As someone new to hiking, Trailify has been invaluable. The easy-to-use interface and comprehensive trail database allowed me to discover scenic routes near my area.",
+  },
+  {
+    id: 3,
+    name: "Charlie Davis",
+    role: "Trek Leader",
+    img: "/path/to/charlie.jpg",
+    review:
+      "I recently used Trailify to plan a trekking expedition with friends to a remote location. The platform's extensive trail information and downloadable maps were essential for our journey.",
+  },
+  {
+    id: 4,
+    name: "Dana Lee",
+    role: "Outdoor Enthusiast",
+    img: "/path/to/dana.jpg",
+    review:
+      "Trailify made it easy to find family-friendly hiking trails for our weekend trips. The user reviews and ratings helped us choose the best trails for our kids.",
+  },
 ];

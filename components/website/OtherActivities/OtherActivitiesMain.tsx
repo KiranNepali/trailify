@@ -1,16 +1,17 @@
+"use client";
 import React from "react";
 import AcitvityDetail from "./ActivityDetail";
-import OtherActivities from "./OtherActivities";
 import OtherActivitiesHero from "./OtherActivitiesHero";
+import RelatedActivities from "./RelatedActivities";
 
 type Props = {};
 
-function OtherActivitiesMain({}: Props) {
+function OtherActivitiesMain({ activity }: any) {
   return (
     <div>
-      <OtherActivitiesHero />
-      <AcitvityDetail />
-      <OtherActivities />
+      <OtherActivitiesHero activity={activity} />
+      <AcitvityDetail activity={activity} />
+      <RelatedActivities />
     </div>
   );
 }

@@ -1,22 +1,30 @@
+import ExpData from "@/data/ExpeditionData";
 import Image from "next/image";
 import React from "react";
-
+import HeroBg from "@/public/mountain.png";
 type Props = {};
 
-export default function AllExpHero({}: Props) {
+export default function AllExpHero({ distance }: any) {
+  if (!distance) {
+    // Handle case where activity data is not found
+    return <div>Activity not found</div>;
+  }
+  const data: any = ExpData.find((obj) => obj.route == distance);
+  console.log(data);
+  const { name, route } = data;
   return (
     <>
-      <div className="w-full h-[50vh] bg-zinc-200 relative  flex justify-center items-center">
+      <div className="w-full h-[50vh] bg-zinc-200 relative  flex justify-center items-end">
         <Image
           width={1000}
           height={1000}
-          src="https://images.unsplash.com/photo-1526963057617-9bc28fd645e5?q=80&w=2089&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src={HeroBg}  
           alt="expedition-image"
-          className="absolute top-0 left-0 w-full h-[50vh] object-cover object-bottom"
+          className="absolute top-0 left-0 w-full  bg-secondary-50  h-[50vh] object-cover object-top pt-[2rem]"
         />
-        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.5]"></div>
-        <h1 className="text-3xl md:text-6xl relative tracking-wide mt-10 title font-bold text-secondary-50">
-          Expedition
+        <div className="mask1 absolute bottom-0 left-0 w-full h-[50%] bg-gradient-to-t from-secondary-50  to-transparent z-10"></div>
+        <h1 className="text-3xl md:text-6xl relative tracking-wide mt-10 title font-bold text-secondary-400 z-10">
+          Expedition - {route}
         </h1>
       </div>
     </>

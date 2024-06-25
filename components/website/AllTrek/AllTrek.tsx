@@ -2,97 +2,121 @@ import Image from "next/image";
 import React from "react";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
+import TrekData from "@/data/TrekData";
+
 type Props = {};
 
-function AllTrek({}: Props) {
+function AllTrek({ region }: any) {
+  if (!region) {
+    // Handle case where activity data is not found
+    return <div>Package not found</div>;
+  }
+
+  const data: any = TrekData.find((obj) => obj.route === region);
+
+  if (!data) {
+    return <div>Data not found</div>;
+  }
+
+  const { name,intro, package: packages, route } = data;
+
   return (
     <div className="w-full overflow-hidden py-[5rem]">
+      {/* tab  */}
+      <div className="w-full mb-9 flex justify-start  items-center gap-10">
+        {/* exp tab  */}
+        {TrekData.map((item, index) => (
+          <Link
+            href={`/trek/${item.route}`}
+            key={index}
+            className={`${
+              item.route === region ? "bg-primary-500" : "bg-secondary-50"
+            } px-10 py-2  shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] hover:scale-105 duration-300 cursor-pointer`}
+          >
+            <h1
+              className={`text-lg relative tracking-wide title font-medium    ${
+                item.route === region
+                  ? "text-secondary-50"
+                  : "text-secondary-500"
+              }`}
+            >
+              {item.name}
+            </h1>
+          </Link>
+        ))}
+      </div>
       {/* TITLE  */}
       <h2 className="text-2xl relative tracking-wide title font-semibold italic text-secondary-500">
-        Everest TREKKING
+        {name}
       </h2>
       {/* desc  */}
-      <p className="text-[17px] pb-[5rem] text-secondary-300 font-medium">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae
-        natus omnis, fugit est itaque nisi quisquam consequuntur suscipit maxime
-        ipsam laboriosam ut optio illo iste nihil, nemo officiis deleniti.
-        Soluta. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        Molestias enim adipisci sequi, fugit asperiores, labore doloribus odio
-        nemo mollitia distinctio ipsam numquam repudiandae rem dolore excepturi
-        debitis itaque optio temporibus eius. Nemo, odit, ut minus reiciendis
-        exercitationem labore quam voluptatum tempore hic officiis odio
-        provident eius quidem quos quo dolorum.s
+      <p className="text-[17px] pb-[5rem] text-secondary-400 font-medium">
+        {intro}
       </p>
 
-      {/* available treKs  */}
+      {/* available treks */}
       <div className="w-full pb-[5rem] flex flex-col gap-3">
-        {/* title  */}
-        <h1 className="text-3xl md:text-6xl  w-full text-center relative tracking-wide title font-semibold  text-secondary-500">
-          Available treks
-        </h1>
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5">
-          {trekData.map((item, index) => (
+        <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-5">
+          {packages.map((item: any, index: number) => (
             <div
               key={index}
-              className="w-full p-2 flex gap-3 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]   "
+              className="w-full p-2 flex flex-col justify-start items-start gap-3 shadow-[rgba(50,50,105,0.15)_0px_2px_5px_0px,rgba(0,0,0,0.05)_0px_1px_1px_0px]"
             >
-              {/* img  */}
+              {/* img */}
               <Image
                 width={1000}
                 height={1000}
-                src="https://images.unsplash.com/photo-1545787636-35db70ee2e6a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src={item.packageImg}
                 alt="banner-image"
-                className="w-[40%] h-full object-cover object-bottom"
-              ></Image>
+                className="w-full h-full object-cover object-bottom"
+              />
 
-              {/* desc  */}
-              <div className="flex w-[40%] flex-col gap-2">
-                {/* title   */}
+              {/* desc */}
+              <div className="flex w-full flex-col gap-2">
+                {/* title */}
                 <span className="text-md title font-semibold tracking-wider">
-                  EVERSET TREKKING
+                  {item.packageName}
                 </span>
-                {/* short intro  */}
-                <p className="text-sm font-medium text-secondary-400">
-                  {"Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,commodi ad. Perferendis commodi corporis corrupti iusto. Et cumomnis assumenda excepturi eius quae non inventore rem, autofficiis neque sapiente.".slice(
-                    0,
-                    100
-                  )}
-                  ...
+                {/* short intro */}
+                <p className="text-sm hidden md:block font-medium text-secondary-400">
+                  {item.packageDesc.slice(0, 100)}...
+                </p>
+                {/* short intro */}
+                <p className="text-sm md:hidden block font-medium text-secondary-400">
+                  {item.packageDesc.slice(0, 50)}...
                 </p>
 
-                <div className="flex flex-col gap-1 text-sm font-medium">
-                  <div className="flex gap-1  items-center">
+                <div className="flex gap-1 text-sm font-medium">
+                  <div className="flex gap-1 items-center">
                     <Icon icon="mdi:language" className="text-primary-500" />
-                    <span>Intruction language: English</span>
+                    <span>Expedition</span>
                   </div>
-                  <div className="flex gap-1  items-center">
+                  <div className="flex gap-1 items-center">
                     <Icon
                       icon="material-symbols-light:no-meals-rounded"
                       className="text-primary-500"
                     />
-                    <span>All meal included</span>
+                    <span>{item.packageDay}</span>
                   </div>
                 </div>
               </div>
 
-              {/* price  */}
-
-              <div className="flex flex-col justify-between w-[20%] gap-2">
+              {/* price */}
+              <div className="flex flex-col w-full gap-2">
                 <span className="font-bold text-xl text-secondary-500">
                   $100
                 </span>
 
-                <div className="flex flex-col w-full whitespace-nowrap  text-[12px] font-semibold text-sm gap-1">
+                <div className="flex flex-col w-full whitespace-nowrap text-[12px] font-semibold text-sm gap-1">
                   <span className="font-bold">Price for:</span>
-                  <span className="text-[12px]">1 person</span>
-                  <span className="text-[12px]">8 days</span>
+                  <span>1 person</span>
+                  <span>{item.packageDay}</span>
                 </div>
 
-                <Link
-                  href="package_detail"
-                  className="w-[90%] py-1 bg-gradient-to-tr from-primary-600 to-primary-400 text-sm text-center font-medium text-secondary-100"
-                >
-                  View more
+                <Link href="/package_detail">
+                  <button className="w-full py-3 bg-gradient-to-tr from-primary-600 to-primary-400 text-sm font-medium text-secondary-100">
+                    View more
+                  </button>
                 </Link>
               </div>
             </div>
@@ -104,5 +128,3 @@ function AllTrek({}: Props) {
 }
 
 export default AllTrek;
-
-const trekData = ["Slide 1", "Slide 2", "Slide 3", "Slide 4"];

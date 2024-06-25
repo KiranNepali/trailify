@@ -6,7 +6,7 @@ type Props = {};
 
 export default function BlogMain({}: Props) {
   return (
-    <div>
+    <div className="flex flex-col w-full">
       <BlogHero />
       <Blogs />
     </div>

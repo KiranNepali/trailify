@@ -2,92 +2,112 @@ import Image from "next/image";
 import React from "react";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
+import ExpData from "@/data/ExpeditionData";
+
 type Props = {};
 
-function AllExp({}: Props) {
+function AllExp({ distance }: any) {
+  if (!distance) {
+    // Handle case where activity data is not found
+    return <div>Activity not found</div>;
+  }
+
+  const data: any = ExpData.find((obj) => obj.route === distance);
+
+  if (!data) {
+    return <div>Data not found</div>;
+  }
+
+  const { intro, name, route, package: packages } = data;
+
   return (
     <div className="w-full py-[5rem]">
-      {/* TITLE  */}
-      <h1 className="text-2xl relative tracking-wide title font-semibold italic text-secondary-500">
-        Everest TREKKING
-      </h1>
+      {/* tab  */}
+      <div className="w-full mb-9 flex justify-start  items-center gap-10">
+        {/* exp tab  */}
+        {ExpData.map((item, index) => (
+          <Link
+            href={`/expedition/${item.route}`}
+            key={index}
+            className={`${
+              item.route === route ? "bg-primary-500" : "bg-secondary-50"
+            } px-10 py-2  shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] hover:scale-105 duration-300 cursor-pointer`}
+          >
+            <h1
+              className={`text-lg relative tracking-wide title font-medium    ${
+                item.route === route
+                  ? "text-secondary-50"
+                  : "text-secondary-500"
+              }`}
+            >
+              {item.route}
+            </h1>
+          </Link>
+        ))}
+      </div>
+
       {/* desc  */}
-      <p className="text-[17px] pb-[2rem]  text-secondary-400 font-medium">
-        Nepal, a land teeming with majestic mountains, boasts around 1,500 peaks
-        soaring above 8,000 meters. Among these giants, the renowned
-        Kanchenjunga stands tall at 8,586 meters, proudly holding its title as
-        the world&apos;s third highest mountain.
+      <p className="text-[17px] pb-[2rem] text-secondary-400 font-medium">
+        {intro}
       </p>
 
-      {/* available treKs  */}
+      {/* available treks */}
       <div className="w-full pb-[5rem] flex flex-col gap-3">
-        {/* title  */}
-        {/* <h1 className="text-6xl  w-full text-center relative tracking-wide title font-semibold  text-secondary-500">
-          Available treks
-        </h1> */}
-        <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2  md:gap-5">
-          {trekData.map((item, index) => (
+        <div className="w-full grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-5">
+          {packages.map((item: any, index: number) => (
             <div
               key={index}
-              className="w-full p-2 flex flex-col justify-start items-start gap-3  shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px]   "
+              className="w-full p-2 flex flex-col justify-start items-start gap-3 shadow-[rgba(50,50,105,0.15)_0px_2px_5px_0px,rgba(0,0,0,0.05)_0px_1px_1px_0px]"
             >
-              {/* img  */}
+              {/* img */}
               <Image
                 width={1000}
                 height={1000}
-                src="https://images.unsplash.com/photo-1545787636-35db70ee2e6a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src={item.packageImg}
                 alt="banner-image"
                 className="w-full h-full object-cover object-bottom"
               ></Image>
 
-              {/* desc  */}
+              {/* desc */}
               <div className="flex w-full flex-col gap-2">
-                {/* title   */}
+                {/* title */}
                 <span className="text-md title font-semibold tracking-wider">
-                  EVERSET TREKKING
+                  {item.packageName}
                 </span>
-                {/* short intro  */}
+                {/* short intro */}
                 <p className="text-sm hidden md:block font-medium text-secondary-400">
-                  {"Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,commodi ad. Perferendis commodi corporis corrupti iusto. Et cumomnis assumenda excepturi eius quae non inventore rem, autofficiis neque sapiente.".slice(
-                    0,
-                    100
-                  )}
-                  ...
+                  {item.packageDesc.slice(0, 100)}...
                 </p>
-                 {/* short intro  */}
-                 <p className="text-sm md:hidden block font-medium text-secondary-400">
-                  {"Lorem ipsum dolor sit amet consectetur adipisicing elit. Et,commodi ad. Perferendis commodi corporis corrupti iusto. Et cumomnis assumenda excepturi eius quae non inventore rem, autofficiis neque sapiente.".slice(
-                    0,
-                    50
-                  )}
-                  ...
+                {/* short intro */}
+                <p className="text-sm md:hidden block font-medium text-secondary-400">
+                  {item.packageDesc.slice(0, 50)}...
                 </p>
 
                 <div className="flex gap-1 text-sm font-medium">
-                  <div className="flex gap-1  items-center">
+                  <div className="flex gap-1 items-center">
                     <Icon icon="mdi:language" className="text-primary-500" />
                     <span>Expedition</span>
                   </div>
-                  <div className="flex gap-1  items-center">
+                  <div className="flex gap-1 items-center">
                     <Icon
                       icon="material-symbols-light:no-meals-rounded"
                       className="text-primary-500"
                     />
-                    <span>8 days</span>
+                    <span>{item.packageDay}</span>
                   </div>
                 </div>
               </div>
 
-              {/* price  */}
+              {/* price */}
               <div className="flex flex-col w-full gap-2">
                 <span className="font-bold text-xl text-secondary-500">
                   $100
                 </span>
 
-                <div className="flex flex-col w-full whitespace-nowrap  text-[12px] font-semibold text-sm gap-1">
+                <div className="flex flex-col w-full whitespace-nowrap text-[12px] font-semibold text-sm gap-1">
                   <span className="font-bold">Price for:</span>
                   <span>1 person</span>
-                  <span>8 days</span>
+                  <span>{item.packageDay}</span>
                 </div>
 
                 <Link href="/package_detail">
@@ -105,5 +125,3 @@ function AllExp({}: Props) {
 }
 
 export default AllExp;
-
-const trekData = ["Slide 1", "Slide 2", "Slide 3", "Slide 4"];

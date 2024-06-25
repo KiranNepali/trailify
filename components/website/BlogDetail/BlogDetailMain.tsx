@@ -8,15 +8,15 @@ type Props = {};
 export default function BlogDetailMain({}: Props) {
   return (
     <>
-      <div className="w-10/12 mx-auto py-[5rem]">
+      <div className="w-11/12 md:w-10/12 mx-auto py-[5rem]">
         <div className="w-full flex flex-col gap-5 justify-start items-start">
           {/* title  */}
           <div className="w-full">
-            <h1 className="text-6xl w-full text-center relative tracking-wide mt-10 title font-bold text-secondary-500">
+            <h1 className="text-3xl md:text-6xl w-full text-center relative tracking-wide mt-10 title font-bold text-secondary-500">
               BLOG TITLE
             </h1>
             {/* intro  */}
-            <p className="w-[70%] mx-auto text-secondary-500">
+            <p className="md:w-[70%] w-full mx-auto text-secondary-500">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
               Cupiditate quisquam corrupti dignissimos nisi eveniet fugiat nemo
               dolorem corporis cum. Deserunt rem tempora, doloremque animi
@@ -36,7 +36,7 @@ export default function BlogDetailMain({}: Props) {
           />
 
           {/* author, date  */}
-          <div className="w-[70%] mx-auto flex gap-5 justify-start items-center">
+          <div className="w-full md:w-[70%] mx-auto flex gap-5 justify-start items-center">
             {/* author  */}
             <div className="flex items-center gap-2">
               <Image
@@ -64,7 +64,7 @@ export default function BlogDetailMain({}: Props) {
           {/* CONTENT  */}
           <div className="flex flex-col gap-4">
             {/* topic 1  */}
-            <div className="flex w-[70%] mx-auto flex-col gap-2">
+            <div className="flex w-full md:w-[70%] mx-auto flex-col gap-2">
               <h2 className="title font-medium tracking-wide text-lg italic">
                 1. HERE IS THE TITLE
               </h2>
@@ -83,7 +83,7 @@ export default function BlogDetailMain({}: Props) {
             </div>
 
             {/* topic 2  */}
-            <div className="flex w-[70%] mx-auto flex-col gap-2">
+            <div className="flex w-full md:w-[70%] mx-auto flex-col gap-2">
               <h2 className="title font-medium tracking-wide text-lg italic">
                 2. HERE IS THE TITLE
               </h2>
@@ -102,7 +102,7 @@ export default function BlogDetailMain({}: Props) {
             </div>
 
             {/* banner  */}
-            <div className="w-[70%] relative h-[30vh] mx-auto flex justify-center items-center">
+            <div className="w-full md:w-[70%] relative h-[30vh] mx-auto flex justify-center items-center">
               {/* mask */}
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.3] z-10"></div>
               <Image
@@ -131,7 +131,7 @@ export default function BlogDetailMain({}: Props) {
             </div>
 
             {/* topic 3  */}
-            <div className="flex w-[70%] mx-auto flex-col gap-2">
+            <div className="flex w-full md:w-[70%] mx-auto flex-col gap-2">
               <h2 className="title font-medium tracking-wide text-lg italic">
                 3. HERE IS THE TITLE
               </h2>
@@ -150,7 +150,7 @@ export default function BlogDetailMain({}: Props) {
             </div>
 
             {/* conlcuesion  */}
-            <div className="flex w-[70%] mx-auto flex-col gap-2">
+            <div className="flex w-full md:w-[70%] mx-auto flex-col gap-2">
               <h2 className="title font-medium tracking-wide text-lg italic">
                 Conclusion
               </h2>
@@ -170,7 +170,7 @@ export default function BlogDetailMain({}: Props) {
           </div>
 
           {/* bottom part  */}
-          <div className="flex mx-auto justify-between items-center w-[70%]">
+          <div className="flex mx-auto flex-col md:flex-row gap-5 justify-between md:items-center items-start w-full md:w-[70%]">
             {/* TAGS  */}
             <div className="flex justify-center items-center gap-2">
               <span className="bg-secondary-100 text-[12px] text-secondary-500 px-5 py-1.5 rounded-md">
@@ -211,7 +211,7 @@ export default function BlogDetailMain({}: Props) {
       </div>
 
       {/* Related blogs  */}
-      <div className="w-10/12 mx-auto">
+      <div className="w-11/12 md:w-10/12 mx-auto">
         <RelatedBlogs />
       </div>
     </>

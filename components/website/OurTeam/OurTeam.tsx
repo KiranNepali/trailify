@@ -1,159 +1,133 @@
 import Image from "next/image";
 import React from "react";
+import Team1 from "@/public/Team/team1.avif";
+import Team2 from "@/public/Team/team2.avif";
+import Team3 from "@/public/Team/team3.avif";
+import Team4 from "@/public/Team/team4.avif";
+import Team5 from "@/public/Team/team5.avif";
+import Team6 from "@/public/Team/team6.avif";
 
 type Props = {};
 
 export default function OurTeam({}: Props) {
   return (
-    <div className="py-[5rem] w-full">
-      <div className="grid h-[100vh] grid-cols-3">
-        {/* one col  */}
-        <div className="flex flex-col">
-          {/* team 1 */}
-          <div className="w-full h-[50%] bg-secondary-100 relative">
-            {/* mask black  */}
-            <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.3] z-10"></div>
-            {/* info  */}
-            <div className="absolute w-[80%] text-left bottom-[10%] left-[5%] flex flex-col  justify-start items-start  z-20 text-secondary-50">
-              <span className="font-medium title tracking-wide text-xl">
-                Tenzing Sherpa
-              </span>
-              {/* role  */}
-              <span className="font-medium">Trek Guide</span>
-              {/* desc  */}
-              <p className="text-sm text-secondary-100">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi,
-                unde ullam! Voluptatem saepe nisi sapiente?
-              </p>
-              {/* icons  */}
-              <div></div>
-            </div>
-            <Image
-              width={1000}
-              height={1000}
-              alt="team-img"
-              className="absolute w-full h-full object-cover object-center"
-              src="https://images.unsplash.com/photo-1558724041-f4de24818f17?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            ></Image>
-          </div>
-          {/* team 2 */}
-          <div className="w-full h-[50%] bg-secondary-200 relative">
-            {/* mask black  */}
-            <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.3] z-10"></div>
-            {/* info  */}
-            <div className="absolute w-[80%] text-left bottom-[10%] left-[5%] flex flex-col  justify-start items-start  z-20 text-secondary-50">
-              <span className="font-medium title tracking-wide text-xl">
-                Tenzing Sherpa
-              </span>
-              {/* role  */}
-              <span className="font-medium">Trek Guide</span>
-              {/* desc  */}
-              <p className="text-sm text-secondary-100">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi,
-                unde ullam! Voluptatem saepe nisi sapiente?
-              </p>
-              {/* icons  */}
-              <div></div>
-            </div>
-            <Image
-              width={1000}
-              height={1000}
-              alt="team-img"
-              className="absolute w-full h-full object-cover object-center"
-              src="https://images.unsplash.com/photo-1558724041-f4de24818f17?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            ></Image>
-          </div>
-        </div>
-
-        {/* COL 2 */}
-        <div className="w-full relative h-full flex-col flex">
-          {/* mask black  */}
-          <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.3] z-10"></div>
-          {/* info  */}
-          <div className="absolute w-[80%] text-left bottom-[10%] left-[5%] flex flex-col  justify-start items-start  z-20 text-secondary-50">
-            <span className="font-medium title tracking-wide text-xl">
-              Tenzing Sherpa
+    <div className="pb-[5rem] w-full">
+      <div className="w-full md:w-[70%] pb-[5rem] mx-auto flex flex-col gap-5">
+        <h1 className="text-3xl md:text-6xl text-center relative tracking-wide mt-10 title font-bold text-secondary-500">
+          MADE FOR CLIMBERS
+        </h1>
+        <div className="flex md:flex-row flex-col w-full gap-5">
+          {/* left  */}
+          <div className="w-full md:w-[50%] flex flex-col gap-2">
+            <span className="tex-lg text-secondary-400">Our team</span>
+            <span className="text-4xl font-medium uppercase">
+              Creating the deltaboard has been our team
             </span>
-            {/* role  */}
-            <span className="font-medium">Trek Guide</span>
-            {/* desc  */}
-            <p className="text-sm text-secondary-100">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi,
-              unde ullam! Voluptatem saepe nisi sapiente?
-            </p>
-            {/* icons  */}
-            <div></div>
           </div>
-          <div className="w-full h-[30%] z-20 relative bg-secondary-50 flex justify-center items-center title text-5xl font-semibold tracking-wide">
-            OUR EXPERTISE
+          {/* RIGHT  */}
+          <div className="flex w-full md:w-[70%] flex-col gap-5">
+            <div>
+              <span className="text-sm font-bold">title</span>
+              <p className="text-secondary-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. At modi
+                vitae ad illo dolore ipsum distinctio consequuntur quis natus
+                quidem. Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Quasi dolores exercitationem perferendis magni? Ut quod
+                culpa, saepe magni laborum omnis ratione officia veniam sit
+                labore! Alias incidunt enim aut voluptatum!
+              </p>
+            </div>
+            <div>
+              <span className="text-sm font-bold">title</span>
+              <p className="text-secondary-400">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Explicabo adipisci recusandae reprehenderit at facilis quaerat,
+                necessitatibus facere nobis delectus quas deserunt vel illo
+                doloribus nam consequatur. Vero, voluptatem neque consectetur
+                maiores debitis adipisci minima alias. Saepe, dolor quis. Unde
+                nihil ratione doloribus culpa magni ea sit perspiciatis soluta
+                quisquam. Accusamus! Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. At modi vitae ad illo dolore ipsum distinctio
+                consequuntur quis natus quidem.
+              </p>
+            </div>
           </div>
-          <Image
-            width={1000}
-            height={1000}
-            alt="team-img"
-            className="w-full h-[70%] object-cover object-center"
-            src="https://images.unsplash.com/photo-1558724041-f4de24818f17?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          ></Image>
         </div>
+      </div>
 
-        {/* three col  */}
-        <div className="flex flex-col">
-          {/* team 1 */}
-          <div className="w-full h-[50%] bg-secondary-100 relative">
-            {/* mask black  */}
-            <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.3] z-10"></div>
-            {/* info  */}
-            <div className="absolute w-[80%] text-left bottom-[10%] left-[5%] flex flex-col  justify-start items-start  z-20 text-secondary-50">
-              <span className="font-medium title tracking-wide text-xl">
-                Tenzing Sherpa
-              </span>
-              {/* role  */}
-              <span className="font-medium">Trek Guide</span>
-              {/* desc  */}
-              <p className="text-sm text-secondary-100">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi,
-                unde ullam! Voluptatem saepe nisi sapiente?
-              </p>
-              {/* icons  */}
-              <div></div>
+      <div className="grid w-full md:w-[90%] mx-auto md:gap-3 gap-10 grid-cols-1 md:grid-cols-3">
+        {TeamData.map((teamMember, index) => (
+          <div
+            key={teamMember.id}
+            className={`flex flex-col ${
+              index % 3 === 1 ? "md:mt-[20%]" : ""
+            } gap-1`}
+          >
+            <div className="w-full justify-between flex px-2">
+              <span className="font-sm uppercase tracking-wide title">{teamMember.name}</span>
+              <span className="text-[14px] italic   text-secondary-500">{teamMember.role}</span>
             </div>
-            <Image
-              width={1000}
-              height={1000}
-              alt="team-img"
-              className="absolute w-full h-full object-cover object-center"
-              src="https://images.unsplash.com/photo-1558724041-f4de24818f17?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            ></Image>
-          </div>
-          {/* team 2 */}
-          <div className="w-full h-[50%] bg-secondary-200 relative">
-            {/* mask black  */}
-            <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.3] z-10"></div>
-            {/* info  */}
-            <div className="absolute w-[80%] text-left bottom-[10%] left-[5%] flex flex-col  justify-start items-start  z-20 text-secondary-50">
-              <span className="font-medium title tracking-wide text-xl">
-                Tenzing Sherpa
-              </span>
-              {/* role  */}
-              <span className="font-medium">Trek Guide</span>
-              {/* desc  */}
-              <p className="text-sm text-secondary-100">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi,
-                unde ullam! Voluptatem saepe nisi sapiente?
-              </p>
-              {/* icons  */}
-              <div></div>
+            <div className="relative group h-[50vh] cursor-pointer">
+              <div className="absolute md:group-hover:opacity-[0.5] duration-300  top-0  opacity-0 left-0 w-full h-[50vh] bg-black"></div>
+              <div className="absolute bottom-[5%] opacity-0  duration-300 md:group-hover:opacity-[1] left-0 w-full px-5 text-secondary-50">
+                <p>{teamMember.desc}</p>
+              </div>
+              <Image
+                width={1000}
+                height={1000}
+                src={teamMember.img}
+                alt="banner-image"
+                className="h-full w-full object-cover object-center"
+              />
             </div>
-            <Image
-              width={1000}
-              height={1000}
-              alt="team-img"
-              className="absolute w-full h-full object-cover object-center"
-              src="https://images.unsplash.com/photo-1558724041-f4de24818f17?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            ></Image>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );
 }
+
+const TeamData = [
+  {
+    id: 1,
+    name: "Jane Doe",
+    img:Team1,
+    role: "Founder & CEO",
+    desc: "Visionary leader dedicated to creating unforgettable outdoor adventures and experiences for travelers worldwide.",
+  },
+  {
+    id: 2,
+    name: "John Smith",
+    img:Team2,
+    role: "Chief Operating Officer (COO)",
+    desc: "Oversees day-to-day operations and ensures seamless delivery of travel services and experiences.",
+  },
+  {
+    id: 3,
+    name: "Emily Johnson",
+    img:Team3,
+    role: "Head of Customer Experience",
+    desc: "Ensures exceptional customer satisfaction and personalized service throughout travelers' journeys.",
+  },
+  {
+    id: 4,
+    name: "Michael Brown",
+    img:Team4,
+    role: "Travel Consultant",
+    desc: "Expert in crafting bespoke travel itineraries tailored to each traveler's preferences and interests.",
+  },
+  {
+    id: 5,
+    name: "Sarah Lee",
+    img:Team5,
+    role: "Marketing Manager",
+    desc: "Develops and executes marketing strategies to promote Trailify's unique adventure travel offerings.",
+  },
+  {
+    id: 6,
+    name: "John Doe",
+    img:Team6,
+    role: "Team Member",
+    desc: "Key contributor to various projects, bringing expertise and dedication to the team.",
+  },
+];

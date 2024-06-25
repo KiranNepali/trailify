@@ -56,13 +56,13 @@ function ContactUs({}: Props) {
           {/* RIGHT  */}
           <div className="w-full relative flex justify-center items-center">
             <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.3]"></div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white  mx-auto p-5 flex flex-col gap-3 items-start justify-center">
+            <div className="absolute w-[50%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white  mx-auto p-5 flex flex-col gap-3 items-start justify-center">
               <span className="w-full text-center title font-semibold tracking-wide">TRAILIFY</span>
-              <div className="w-full flex justify-center items-start flex-col gap-2">
+              <div className="w-full flex justify-center items-center flex-col gap-2">
                 <div className="flex justify-center items-center gap-3">
                   <Icon
                     icon="ep:phone"
-                    className="w-[1.5rem] h-[1.5rem] object-cover object-center text-secondary-400"
+                    className="w-[1rem] h-[1rem] object-cover object-center text-secondary-400"
                   />
                   <span className="text-sm text-secondary-400">
                     +977 9844195433
@@ -71,7 +71,7 @@ function ContactUs({}: Props) {
                 <div className="flex justify-center items-center gap-3">
                   <Icon
                     icon="wpf:message-outline"
-                    className="w-[1.5rem] h-[1.5rem] object-cover object-center text-secondary-400"
+                    className="w-[1rem] h-[1rem] object-cover object-center text-secondary-400"
                   />
                   <span className="text-sm text-secondary-400">
                     trekexp@gmail.com
@@ -80,7 +80,7 @@ function ContactUs({}: Props) {
                 <div className="flex justify-center items-center gap-3">
                   <Icon
                     icon="grommet-icons:map-location"
-                    className="w-[1.5rem] h-[1.5rem] object-cover object-center text-secondary-400"
+                    className="w-[1rem] h-[1rem] object-cover object-center text-secondary-400"
                   />
                   <span className="text-sm text-secondary-400">
                     Kapan 3, Kathmandu

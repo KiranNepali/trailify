@@ -1,9 +1,16 @@
 import Image from "next/image";
 import React from "react";
-
+import TrekData from "@/data/TrekData";
 type Props = {};
 
-export default function AllTrekHero({}: Props) {
+export default function AllTrekHero({region}: any) {
+  if (!region) {
+    // Handle case where activity data is not found
+    return <div>Activity not found</div>;
+  }
+  const data: any = TrekData.find((obj) => obj.route == region);
+  console.log(data);
+  const { name } = data;
   return (
     <>
       <div className="w-full h-[50vh] bg-zinc-200 relative  flex justify-center items-center">
@@ -14,9 +21,9 @@ export default function AllTrekHero({}: Props) {
           alt="expedition-image"
           className="absolute top-0 left-0 w-full h-[50vh] object-cover object-center"
         />
-        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.5]"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.3]"></div>
         <h1 className="text-3xl md:text-6xl relative tracking-wide mt-10 title font-bold text-secondary-50">
-          Everest Trekking
+          {name}
         </h1>
       </div>
     </>

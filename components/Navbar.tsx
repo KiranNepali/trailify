@@ -1,149 +1,185 @@
+"use client";
 import Link from "next/link";
-import React from "react";
+import React, { useRef, useState } from "react";
 import { Icon } from "@iconify/react";
 import Ham from "@/public/hamburger.png";
+import Logo from "@/public/trek-nepal.svg";
+
 import Image from "next/image";
+import { useGSAP } from "@gsap/react";
+import {gsap, Expo} from "gsap";
+
+import { usePathname } from 'next/navigation';
+
 type Props = {};
 
+
+const sideNavLinks = [
+  { title: "Home", href: "" },
+  { title: "Trekking", href: "" },
+  { title: "Expedition", href: "" },
+  { title: "Other activities", href: "" },
+  { title: "Expeditions", href: "" },
+  { title: "Blogs", href: "" },
+  { title: "Contact us", href: "" },
+];
+
+
 function Navbar({}: Props) {
+  const currentRoute = usePathname();
+  const sideNavRef = useRef(null);
+  const  [sideNav, setSideNav] =  useState(false);
+  const  [sideLinks, setSideLinks] =  useState(false);
+
+  const { contextSafe } = useGSAP();
+  const handleOpenNav = contextSafe(() => {
+    if (!sideNav) {
+      gsap.to(sideNavRef.current, { right: 0 });
+      gsap.to(".links", { opacity:1, duration:1 });
+      setSideNav(true);
+    }
+    if(sideNav) {
+      gsap.to(sideNavRef.current, { right: "-100%" });
+      gsap.to(".links", { opacity:0, duration:1  });
+      setSideNav(false);
+    }
+  });
+
+  const handleLink =(index: number  )=>{
+    if (!sideLinks) {
+      gsap.to(`openlinks-${index}`, {height : "20vh" });
+      setSideLinks(true);
+    }
+    if(sideLinks) {
+      gsap.to(`openlinks-${index}`, {height : "0vh" });
+      setSideLinks(false);
+    }
+  }
+
   return (
-    <div className="fixed z-50 text-secondary-500 top-0 left-0 w-full h-[5rem] bg-secondary-50">
+    <div className="fixed z-[100] text-secondary-500 top-0 left-0 w-full h-[5rem] bg-secondary-50">
+      {/* mobile nav  */}
+      <div ref={sideNavRef} className="absolute  md:hidden w-[100vw] top-0 right-[-100%]  h-[100vh] mx-auto bg-secondary-50 text-secondary-400 py-2">
+        <div className="w-11/12 mx-auto  grid grid-cols-1  gap-5 place-content-start pt-[5rem] text-start h-full place-items-start  flex-col justify-center items-center">
+        {sideNavLinks.map((link, index) => (
+         <>
+          <Link
+           onClick={()=>handleLink(index)}
+            key={index}
+            className="w-full"
+            href={link.href}
+          >
+            <div className="title  links text-lg border-b mb-1 opacity-0 font-medium tracking-wide w-full flex justify-between items-center">{link.title} <span></span> <span></span></div>
+            <div className={`w-full  openlinks-${index} bg-green-200 h-0`}>
+            </div>
+          </Link>
+        </>
+        ))}
+        </div>
+      </div>
       {/* LOGO  */}
-      <div className="w-11/12 md:hidden  text-secondary-400   tracking-wide  mx-auto h-full flex  justify-between items-center gap-5">
-        <h1 className="font-bold text-secondary-500">LOGO</h1>
-        <Image width={500} height={500} src={Ham} alt="ham" className="w-[2rem] h-[1rem]  object-fit object-center  pr-1"></Image>
+      <div className="w-11/12 md:hidden  text-secondary-400 relative  tracking-wide  mx-auto h-full flex  justify-between items-center gap-5">
+         {/* LOGO  */}
+         <Link href="/" className="cursor-pointer">
+          <Image src={Logo} alt="trek-nepal-logo" className="w-[6rem] h-[3rem] object-fit object-center"></Image>
+        </Link>
+        <div onClick={handleOpenNav} className="">
+        {sideNav === false ? (
+        <Image
+          width={500}
+          height={500}
+          src={Ham}
+          alt="ham"
+          className="w-[2rem]  h-[1rem] object-fit object-center pr-1"
+        />
+      ) : (
+        <Icon icon="material-symbols:close"   className="w-[2rem]  h-[2rem] object-fit object-center pr-1" />
+      )}
+        </div>
       </div>
 
-      <div className="w-10/12  text-secondary-400   tracking-wide  mx-auto h-full hidden md:flex justify-between items-center gap-5">
+      <div className="w-10/12  text-secondary-400    tracking-wide  mx-auto h-full hidden md:flex justify-between items-center gap-5">
         {/*  nav links  */}
         <div className="flex gap-5 text-[16px] title">
-          <Link href="/">Home</Link>
-          <Link href="about_us">About us</Link>
-          <Link href="our_team">Our team</Link>
-          <Link href="blogs">Blogs</Link>
-          <Link href="certificates">Certificates</Link>
+        {companyLinks.map(link => (
+        <Link key={link.href} href={link.href} className={link.href === currentRoute ? "text-primary-500   font-semibold  duration-[0.5]" : "text-secondary-400 hover:text-primary-500"}>
+          {link.name}
+        </Link>
+      ))}
         </div>
         {/* LOGO  */}
-        <h1 className="font-bold text-2xl title tracking-wide absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2">
-          TRAILIFY
-        </h1>
+        <Link href="/" className="font-bold text-2xl title tracking-wide absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2">
+          <Image src={Logo} alt="trek-nepal-logo" className="w-[8rem] h-[3rem] object-fit object-center"></Image>
+        </Link>
         <div className="flex gap-5  text-[16px]">
-          <Link href="trek" className="group relative">
-            <div className="flex justify-center items-center gap-1">
-              <span className="title">Trekking</span>
+          <div  className="group relative">
+            <div className={`title flex gap-1 justify-center items-center cursor-pointer hover:text-primary-500 ${currentRoute.includes('/trek') ? 'text-primary-500 font-semibold  duration-[0.5]' : ''}`}>
+            <span>Trekking</span>
               <Icon
                 icon="gridicons:dropdown"
                 className="w-[1.5rem] pb-1 pr-1 h-[1.5rem] object-cover object-center"
               />
             </div>
-            <ul className="absolute hidden group-hover:block duration-300 top-[100%] left-[50%] translate-x-[-50%] whitespace-nowrap  bg-white shadow p-5">
-              <li className="py-1">
-                <div className="text-secondary-400 border-b border-primary-100 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
-                  Everest Base Camp Trek
-                </div>
-              </li>
-              <li className="py-1">
-                <div className="text-secondary-400 border-b border-primary-100 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
-                  Annapurna Circuit Trek
-                </div>
-              </li>
-              <li className="py-1">
-                <div className="text-secondary-400 border-b border-primary-100 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
-                  Langtang Valley Trek
-                </div>
-              </li>
-              <li className="py-1">
-                <div className="text-secondary-400 border-b border-primary-100 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
-                  Manaslu Circuit Trek
-                </div>
-              </li>
-              <li className="py-1">
-                <div className="text-secondary-400 border-b border-primary-100 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
-                  Upper Mustang Trek
-                </div>
-              </li>
-            </ul>
+            <ul className="absolute hidden group-hover:block duration-[0.5] top-[100%] left-[50%] translate-x-[-50%] whitespace-nowrap  bg-white shadow p-5">
+            {treksLink.map(trek => (
+        <li key={trek.href} className="py-1">
+          <Link href={trek.href}>
+            <div className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold hover:text-secondary-500 cursor-pointer">
+              {trek.name}
+            </div>
           </Link>
+        </li>
+      ))}
+             
+            </ul>
+          </div>
 
           {/* expedition  */}
-          <Link href="expedition" className="group relative">
-            <div className="flex justify-center items-center gap-1">
-              <span className="title">Expedition</span>
-              <Icon
-                icon="gridicons:dropdown"
-                className="w-[1.5rem] pb-1 pr-1 h-[1.5rem] object-cover object-center"
-              />
+          <div className="group relative">
+          <div className={`title flex gap-1 justify-center items-center cursor-pointer hover:text-primary-500 ${currentRoute.includes('/expedition') ? 'text-primary-500 font-semibold  duration-[0.5]' : ''}`}>
+          <span>Expedition</span>
+        <Icon
+          icon="gridicons:dropdown"
+          className="w-[1.5rem] pb-1 pr-1 h-[1.5rem] object-cover object-center"
+        />
+      </div>
+      <ul className="absolute hidden group-hover:block duration-[0.5] top-[100%] left-[50%] translate-x-[-50%] whitespace-nowrap bg-white shadow p-5">
+      {expeditionsLink.map(expedition => (
+        <li key={expedition.href} className="py-1">
+          <Link href={expedition.href} >
+            <div className="border-b border-primary-100 text-secondary-400 hover:text-primary-500 text-[13px] font-semibold  cursor-pointer">
+              {expedition.name}
             </div>
-            <ul className="absolute hidden group-hover:block duration-300 top-[100%] left-[50%] translate-x-[-50%] whitespace-nowrap  bg-white shadow p-5">
-              <li className="py-1">
-                <div className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold  hover:text-secondary-500 cursor-pointer">
-                  5364m
-                </div>
-              </li>
-              <li className="py-1">
-                <div className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold  hover:text-secondary-500 cursor-pointer">
-                  5416m
-                </div>
-              </li>
-              <li className="py-1">
-                <div className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold  hover:text-secondary-500 cursor-pointer">
-                  4984m
-                </div>
-              </li>
-              <li className="py-1">
-                <div className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold  hover:text-secondary-500 cursor-pointer">
-                  5160m
-                </div>
-              </li>
-              <li className="py-1">
-                <div className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold  hover:text-secondary-500 cursor-pointer">
-                  3840m
-                </div>
-              </li>
-            </ul>
           </Link>
-
+        </li>
+      ))}
+      </ul>
+    </div>
           {/* other activities  */}
-          <Link href="other_activities" className="group relative">
-            <div className="flex justify-center items-center gap-1">
-              <span className="title">Other Activities</span>
-              <Icon
-                icon="gridicons:dropdown"
-                className="w-[1.5rem] pb-1 pr-1 h-[1.5rem] object-cover object-center"
-              />
+          <div className="group relative">
+          <div className={`title flex gap-1 justify-center items-center cursor-pointer hover:text-primary-500 ${currentRoute.includes('/other_activities') ? 'text-primary-500 font-semibold  duration-[0.5]' : ''}`}>
+          <span>Other Activities</span>
+        <Icon
+          icon="gridicons:dropdown"
+          className="w-[1.5rem] pb-1 pr-1 h-[1.5rem] object-cover object-center"
+        />
+      </div>
+      <ul className="absolute hidden group-hover:block duration-[0.5] top-[100%] left-[50%] translate-x-[-50%] whitespace-nowrap bg-white shadow p-5">
+      {activitiesLink.map(activity => (
+        <li key={activity.href} className="py-1">
+          <Link href={activity.href}>
+            <div className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
+              {activity.name}
             </div>
-            <ul className="absolute hidden group-hover:block duration-300 top-[100%] left-[50%] translate-x-[-50%] whitespace-nowrap  bg-white shadow p-5">
-              <li className="py-1">
-                <div className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
-                  Heli Tour
-                </div>
-              </li>
-              <li className="py-1">
-                <div className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
-                  Paragliding
-                </div>
-              </li>
-              <li className="py-1">
-                <div className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
-                  Bungee Jumping
-                </div>
-              </li>
-              <li className="py-1">
-                <div className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
-                  Mountain Biking
-                </div>
-              </li>
-              <li className="py-1">
-                <div className="border-b border-primary-100 text-secondary-400 text-[13px] font-semibold uppercase hover:text-secondary-500 cursor-pointer">
-                  Rock Climbing
-                </div>
-              </li>
-            </ul>
           </Link>
+        </li>
+      ))}
+      </ul>
+    </div>
 
           {/* CONTACT US  */}
-          <Link href="contact_us" className="group relative">
-            <span className="title">Contact us</span>
+          <Link href="/contact_us" className="group relative">
+          <span className={`title hover:text-primary-500 ${currentRoute.includes('/contact_us') ? 'text-primary-500 font-semibold scale-110 duration-[0.5]' : ''}`}>Contact us</span>
           </Link>
         </div>
       </div>
@@ -152,3 +188,31 @@ function Navbar({}: Props) {
 }
 
 export default Navbar;
+
+const companyLinks = [
+  { name: "Home", href: "/" },
+  { name: "About us", href: "/about_us" },
+  { name: "Our team", href: "/our_team" },
+  { name: "Blogs", href: "/blogs" },
+  { name: "Certificates", href: "/certificates" },
+];
+
+const activitiesLink = [
+  { name: "Rafting", href: "/other_activities/rafting" },
+  { name: "Heli Tour", href: "/other_activities/heli_tour" },
+  { name: "Paragliding", href: "/other_activities/paragliding" },
+  { name: "Mountain Biking", href: "/other_activities/mountain_biking" },
+  { name: "Rock Climbing", href: "/other_activities/rock_climbing" },
+];
+
+const expeditionsLink = [
+  { name: "8000 meters", href: "/expedition/8000m" },
+  { name: "7000 meters", href: "/expedition/7000m" },
+  { name: "6000 meters", href: "/expedition/6000m" },
+  { name: "5000 meters", href: "/expedition/5000m" },
+];
+
+const treksLink = [
+  { name: "Everest Region Trekking", href: "/trek/everest_region_trekking" },
+  { name: "Annapurna Region Trekking", href: "/trek/annapurna_region_trekking" },
+];

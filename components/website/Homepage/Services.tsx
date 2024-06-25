@@ -7,6 +7,11 @@ import Service3 from "@/public/ServiceImage/service3.png";
 import Service4 from "@/public/ServiceImage/service4.png";
 import Service5 from "@/public/ServiceImage/service5.png";
 import Service6 from "@/public/ServiceImage/service6.png";
+
+import Adventure from "@/public/ServiceImage/ImageMain/adventure.avif";
+import Camp from "@/public/ServiceImage/ImageMain/camp.avif";
+import Guide from "@/public/ServiceImage/ImageMain/guide.avif";
+
 type Props = {};
 
 function Services({}: Props) {
@@ -24,11 +29,11 @@ function Services({}: Props) {
             className="w-full flex justify-start cursor-pointer items-start p-2 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] flex-col gap-3   text-start"
           >
             {/* IMG */}
-            <div className="relative w-full">
+            <div className="relative w-full h-[25vh]">
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.2] z-10"></div>
               <Image
-                className="w-full object-cover"
-                src="https://images.unsplash.com/photo-1504061770815-81c22ffcbaa7?q=80&w=2008&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                className="w-full h-full object-cover"
+                src={item.img}
                 alt={item.name}
                 width={500}
                 height={300}
@@ -42,7 +47,7 @@ function Services({}: Props) {
                   <Image
                     src={item.icon}
                     alt="service-icon"
-                    className="w-full h-full object-center object-center"
+                    className="w-full h-full object-center object-cover"
                   ></Image>
                 </div>
               </div>
@@ -65,8 +70,7 @@ export default Services;
 const ServicesData = [
   {
     id: 1,
-    img: "https://example.com/images/mountain-exploration.jpg",
-
+    img: "https://images.unsplash.com/photo-1504061770815-81c22ffcbaa7?q=80&w=2008&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     icon: Service1,
     name: "Mountain Trekking",
     desc: "Experience the thrill of mountain trekking with our expert guides and customized routes.",
@@ -74,7 +78,7 @@ const ServicesData = [
   {
     id: 2,
     icon: Service2,
-    img: "https://example.com/images/mountain-exploration.jpg",
+    img: Camp,
 
     name: "Camping",
     desc: "Enjoy an unforgettable camping experience under the stars with all amenities provided.",
@@ -82,15 +86,14 @@ const ServicesData = [
   {
     id: 3,
     icon: Service3,
-    img: "https://example.com/images/mountain-exploration.jpg",
-
+    img: Guide,
     name: "Guided Tours",
     desc: "Join our guided tours to explore the most breathtaking locations with local experts.",
   },
   {
     id: 4,
     icon: Service4,
-    img: "https://example.com/images/mountain-exploration.jpg",
+    img: "https://images.unsplash.com/photo-1504061770815-81c22ffcbaa7?q=80&w=2008&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 
     name: "Wildlife Safaris",
     desc: "Witness the beauty of wildlife in their natural habitat with our thrilling safari adventures.",
@@ -98,7 +101,7 @@ const ServicesData = [
   {
     id: 5,
     icon: Service5,
-    img: "https://example.com/images/mountain-exploration.jpg",
+    img: "https://images.unsplash.com/photo-1504061770815-81c22ffcbaa7?q=80&w=2008&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 
     name: "Cultural Tours",
     desc: "Immerse yourself in the local culture and traditions with our curated cultural tours.",
@@ -106,7 +109,7 @@ const ServicesData = [
   {
     id: 6,
     icon: Service6,
-    img: "https://example.com/images/mountain-exploration.jpg",
+    img: Adventure,
     name: "Adventure Sports",
     desc: "Get your adrenaline pumping with our range of adventure sports activities.",
   },

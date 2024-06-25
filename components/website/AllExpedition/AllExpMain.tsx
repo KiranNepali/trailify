@@ -3,13 +3,14 @@ import React from "react";
 import AllExpHero from "./AllExpHero";
 import AllExp from "./AllExp";
 import Snowfall from "react-snowfall";
-
 type Props = {};
 
-function AllExpMain({}: Props) {
+function AllExpMain({ distance }: any) {
   return (
     <>
       <Snowfall
+        snowflakeCount={100}
+        color="#FFFFFF" // Set the color of the snowflakes to white
         style={{
           position: "fixed",
           width: "100vw",
@@ -18,10 +19,10 @@ function AllExpMain({}: Props) {
           pointerEvents: "none",
         }}
       />
-      <div>
-        <AllExpHero />
+      <div className="">
+        <AllExpHero distance={distance} />
         <div className="w-11/12 md:w-10/12 mx-auto">
-          <AllExp />
+          <AllExp distance={distance} />
         </div>
       </div>
     </>

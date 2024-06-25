@@ -1,6 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import { Icon } from "@iconify/react";
+import OurVisionImg from "@/public/AboutUs/OurVision.png";
+import Link from "next/link";
 type Props = {};
 
 function AboutUs({}: Props) {
@@ -13,16 +15,18 @@ function AboutUs({}: Props) {
             Our Story
           </span>
           <p className="text-secondary-400">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas
-            eum doloremque fugiat esse ullam vero perferendis accusamus qui
-            asperiores eius. Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Exercitationem, dolorum quo. Aperiam totam pariatur natus,
-            cumque error voluptatum velit sit! Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Quas, modi.
+            {`At Trailify, our passion for adventure and the great outdoors drives
+            everything we do. Founded by a team of outdoor enthusiasts, we set
+            out to create a platform that would inspire and empower fellow
+            adventurers worldwide. Whether you're seeking serene hikes amidst
+            nature's beauty or challenging treks to conquer majestic peaks,
+            Trailify is here to guide you.`}
           </p>
-          <button className="px-10 py-3 text-secondary-50 font-medium  bg-primary-400 border-b-2 border-primary-700 cursor-pointer mt-5">
-            Discover more
-          </button>
+          <Link href="/contact_us">
+            <button className="w-full py-3 bg-gradient-to-tr  px-16 from-primary-600 to-primary-400 text-sm font-medium text-secondary-100">
+              Get in touch
+            </button>
+          </Link>
         </div>
 
         {/* image  */}
@@ -42,13 +46,14 @@ function AboutUs({}: Props) {
         </h1>
         <div className="w-full flex justify-end">
           <p className="w-full md:w-[60%] text-secondary-400">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa
-            deleniti aperiam dolorem voluptate perferendis quibusdam laudantium
-            nisi voluptatem aut, nostrum, consectetur soluta est iusto saepe
-            ipsam, numquam dignissimos sint aliquam. Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Soluta quo itaque libero fuga amet
-            dicta officia earum excepturi. Quaerat voluptatem, quos error
-            dignissimos non possimus a animi laboriosam numquam dolor!
+            {`From the side of Trailify, let's embark on a journey of connection
+            and discovery together. We're passionate about understanding your
+            interests, sharing insights, and exploring ideas with you. Whether
+            it's discussing the latest outdoor adventures, delving into trail
+            experiences, or simply connecting over our love for nature, we're
+            eager to engage in conversations that enrich both our perspectives.
+            Let's build a community founded on mutual respect, curiosity, and a
+            shared passion for exploring the great outdoors.`}
           </p>
         </div>
       </div>
@@ -62,7 +67,7 @@ function AboutUs({}: Props) {
               height={1000}
               src="https://images.unsplash.com/photo-1517934274943-d1749ff2d7a8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="expedition-image"
-              className="absolute top-0 left-0 w-full h-[50vh] object-cover object-center"
+              className="absolute top-0 left-0 w-full h-full object-cover object-center"
             />
             <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.5]"></div>
             {/* text  */}
@@ -75,10 +80,11 @@ function AboutUs({}: Props) {
                 Our mission
               </span>
               <p className="text-secondary-50 text-sm">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo
-                nostrum eligendi, harum voluptatibus odit ipsam quia molestiae
-                id beatae, deleniti aliquam. Nesciunt aspernatur, quam sequi
-                iure
+                {`Our mission at Trailify is to inspire and empower outdoor
+                enthusiasts worldwide by providing comprehensive resources for
+                exploration and adventure. We aim to curate a platform where
+                individuals can discover, plan, and share their outdoor journeys
+                with ease.`}
               </p>
             </div>
           </div>
@@ -93,9 +99,9 @@ function AboutUs({}: Props) {
             <Image
               width={1000}
               height={1000}
-              src="https://images.unsplash.com/photo-1517934274943-d1749ff2d7a8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={OurVisionImg}
               alt="expedition-image"
-              className="absolute top-0 left-0 w-full h-[50vh] object-cover object-center"
+              className="absolute top-0 left-0 w-full h-full object-cover object-center"
             />
             <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.5]"></div>
             {/* text  */}
@@ -108,10 +114,9 @@ function AboutUs({}: Props) {
                 Our vision
               </span>
               <p className="text-secondary-50 text-sm">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo
-                nostrum eligendi, harum voluptatibus odit ipsam quia molestiae
-                id beatae, deleniti aliquam. Nesciunt aspernatur, quam sequi
-                iure
+                {` Our vision is to foster a global community united by a passion
+                for the great outdoors, where every trail leads to new
+                discoveries and meaningful experiences.`}
               </p>
             </div>
           </div>

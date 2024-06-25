@@ -7,7 +7,7 @@ type Props = {};
 function RelatedBlogs({}: Props) {
   return (
     <div className="flex gap-5 flex-col">
-      <h1 className="text-5xl w-full text-center relative tracking-wide mt-10 title font-bold text-secondary-500">
+      <h1 className="text-2xl md:text-5xl w-full text-center relative tracking-wide mt-10 title font-bold text-secondary-500">
         RELATED BLOGS
       </h1>
       <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">

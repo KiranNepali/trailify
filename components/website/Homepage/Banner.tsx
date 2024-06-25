@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 type Props = {};
@@ -19,17 +20,16 @@ function Banner({}: Props) {
       <div className="relative z-20 w-11/12 md:w-10/12 flex flex-col md:flex-row justify-between items-center gap-5 mx-auto">
         <div className="md:w-[50%] flex items-start justify-start flex-col gap-2">
           <span className="text-sm md:text-lg font-medium text-secondary-100">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus,
-            pariatur.
+            Contact trailify for the best adventure of your life.
           </span>
           <h1 className="text-3xl md:text-6xl tracking-wide title font-bold text-secondary-50">
-            You Get Now Memorable Wonderful Outdoor Experiences
+            Find Your Trail, Start Your Journey!
           </h1>
         </div>
 
-        <div className="cursor-pointer w-[8rem] text-primary-50 whitespace-nowrap h-[8rem] p-1 border  border-primary-100 rounded-full flex justify-center items-center text-wrap text-center   text-sm">
+        <Link href="contact_us" className="cursor-pointer w-[8rem] hover:w-[10rem] hover:h-[10rem] duration-300  hover:font-semibold text-primary-50 whitespace-nowrap h-[8rem] p-1 border  border-primary-100 rounded-full flex justify-center items-center text-wrap text-center   text-sm">
           <span>CONTACT US</span>
-        </div>
+        </Link>
       </div>
     </div>
   );

@@ -13,6 +13,8 @@ import "./swiper.css";
 import { FreeMode, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+// data
+import ExpData from "@/data/ExpeditionData";
 type Props = {};
 
 function PopularExpedition({}: Props) {
@@ -60,11 +62,11 @@ function PopularExpedition({}: Props) {
             },
 
             1256: {
-              slidesPerView: 4,
+              slidesPerView: 3,
               spaceBetween: 10,
             },
             1576: {
-              slidesPerView: 5,
+              slidesPerView: 4,
               spaceBetween: 10,
             },
           }}
@@ -78,7 +80,7 @@ function PopularExpedition({}: Props) {
           modules={[FreeMode]}
           className="mySwiper"
         >
-          {slides.map((slide, index) => (
+          {ExpData.map((item, index) => (
             <SwiperSlide key={index}>
               <div className="shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] flex flex-col gap-3 h-auto p-2">
                 <div className="relative">
@@ -90,7 +92,7 @@ function PopularExpedition({}: Props) {
                   <Image
                     width={1000}
                     height={1000}
-                    src="https://images.unsplash.com/photo-1517934274943-d1749ff2d7a8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    src={item.img}
                     alt="expedition-image"
                     className="w-full h-[30vh] object-cover object-center"
                   />
@@ -106,13 +108,10 @@ function PopularExpedition({}: Props) {
                       <span>259km</span>
                     </div>
                   </div>
-                  <span className="title text-xl pt-[2rem] text-secondary-500 tracking-wide">
-                    MustanG
+                  <span className="title text-xl pt-[1.5rem] text-secondary-500 tracking-wide">
+                    {item.name}
                   </span>
-                  <p className="text-sm text-secondary-400">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Optio, enim.
-                  </p>
+                  <p className="text-sm text-secondary-400">{item.desc}</p>
 
                   <div className="w-full flex pb-2 justify-between">
                     <span className="text-sm  py-2 ">View details</span>
@@ -149,12 +148,3 @@ function PopularExpedition({}: Props) {
 }
 
 export default PopularExpedition;
-
-const slides = [
-  "Slide 1",
-  "Slide 2",
-  "Slide 3",
-  "Slide 4",
-  "Slide 5",
-  "Slide 6",
-];

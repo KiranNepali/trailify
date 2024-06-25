@@ -2,13 +2,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Icon } from "@iconify/react";
 type Props = {};
 
 function Blogs({}: Props) {
   return (
     <div>
-      <section className="py-[5rem]">
+      <div className="py-[5rem]">
         <div className="w-10/12 mx-auto space-y-6 sm:space-y-12">
           <div className="flex gap-3">
             <Link
@@ -107,7 +106,7 @@ function Blogs({}: Props) {
             </button>
           </div> */}
         </div>
-      </section>
+      </div>
     </div>
   );
 }

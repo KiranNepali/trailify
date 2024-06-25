@@ -15,8 +15,8 @@ export default function OurTeamHero({}: Props) {
         className="absolute top-0 left-0 w-full h-[50vh] object-cover object-center"
       />
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.5]"></div>
-      <h1 className="text-6xl relative tracking-wide mt-10 title font-bold text-secondary-50">
-        Our Diverse and Experienced Team
+      <h1 className="text-3xl text-center md:text-6xl relative tracking-wide mt-10 title font-bold text-secondary-50">
+        Our Diverse & <br /> Experienced Team
       </h1>
     </div>
   );
