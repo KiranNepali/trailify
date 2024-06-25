@@ -14,13 +14,6 @@ function Hero({}: Props) {
       {/* mask black  */}
       <div className="w-full h-full absolute top-0 left-0 bg-black opacity-[0.5] z-10"></div>
       {/* hero bg image  */}
-      {/* <Image
-        width={1000}
-        height={1000}
-        src={HeroBg}
-        alt="hero-image"
-        className="absolute top-0 left-0 w-full h-full object-cover object-center"
-      ></Image> */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover object-center"
         autoPlay
@@ -41,7 +34,9 @@ function Hero({}: Props) {
       </div>
 
       <div className="cursor-pointer hover:w-[8rem] hover:h-[8rem] duration-200 scroll-down absolute  bottom-10 w-[6rem] whitespace-nowrap h-[6rem] p-1 border border-primary-100 rounded-full flex justify-center items-center text-wrap text-center  z-20 left-[50%] -translate-x-[50%] text-sm">
-        <span>SCROLL <br /> DOWN</span>
+        <span>
+          SCROLL <br /> DOWN
+        </span>
       </div>
     </div>
   );

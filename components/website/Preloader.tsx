@@ -25,11 +25,8 @@ function Preloader({}: Props) {
     tl.to(preloaderContainerRef.current, {
       opacity: 0,
       display: "none",
-      duration: 0.1,
+      duration: 1,
       ease: "power4.inOut",
-    //   onComplete: () => {
-    //     window.location.href = "/home";
-    //   },
     });
   });
 

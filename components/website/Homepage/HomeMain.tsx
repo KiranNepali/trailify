@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Hero from "./Hero";
 import HomeAbout from "./HomeAbout";
 import Services from "./Services";
