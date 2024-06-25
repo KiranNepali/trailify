@@ -18,7 +18,7 @@ body {
 }
 
 
-/* HTML: <div class="loader"></div> */
+/* HTML: <div className="loader"></div> */
 .loader {
   width: 108px;
   height: 60px;

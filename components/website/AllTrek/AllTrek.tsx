@@ -18,7 +18,7 @@ function AllTrek({ region }: any) {
     return <div>Data not found</div>;
   }
 
-  const { name,intro, package: packages, route } = data;
+  const { name, intro, package: packages, route } = data;
 
   return (
     <div className="w-full overflow-hidden py-[5rem]">

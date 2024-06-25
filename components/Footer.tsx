@@ -2,7 +2,7 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
-import Logo from "@/public/LogoWhite.svg";
+import Logo from "@/public/Trivision-whitetext.svg";
 import Image from "next/image";
 type Props = {};
 
