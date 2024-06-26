@@ -7,14 +7,6 @@ import gsap from "gsap";
 type Props = {};
 
 export default function Loading({}: Props) {
-  // useGSAP(() => {
-  //   const tl = gsap.timeline({ repeat: -1 });
-  //   tl.from(".logo-icon", {
-  //     height: 0,
-  //     ease: "back.inOut",
-  //     duration: 0.5,
-  //   });
-  // });
   return (
     <div className="w-full h-screen flex  justify-center items-center">
       <div className="">

@@ -118,7 +118,7 @@ function Reviews({}: Props) {
                     <span className="text-[14px] font-medium text-secondary-400">
                       Web Designer
                     </span>
-                    <span className="flex justify-center items-center  text-primary-500">
+                    <span className="flex justify-center items-center  text-primary-700">
                       <Icon icon="material-symbols:star" />
                       <Icon icon="material-symbols:star" />
                       <Icon icon="material-symbols:star" />

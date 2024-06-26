@@ -30,7 +30,7 @@ function AllTrek({ region }: any) {
             href={`/trek/${item.route}`}
             key={index}
             className={`${
-              item.route === region ? "bg-primary-500" : "bg-secondary-50"
+              item.route === region ? "bg-primary-700" : "bg-secondary-50"
             } px-10 py-2  shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] hover:scale-105 duration-300 cursor-pointer`}
           >
             <h1
@@ -88,13 +88,13 @@ function AllTrek({ region }: any) {
 
                 <div className="flex gap-1 text-sm font-medium">
                   <div className="flex gap-1 items-center">
-                    <Icon icon="mdi:language" className="text-primary-500" />
+                    <Icon icon="mdi:language" className="text-primary-700" />
                     <span>Expedition</span>
                   </div>
                   <div className="flex gap-1 items-center">
                     <Icon
                       icon="material-symbols-light:no-meals-rounded"
-                      className="text-primary-500"
+                      className="text-primary-700"
                     />
                     <span>{item.packageDay}</span>
                   </div>

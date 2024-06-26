@@ -46,7 +46,7 @@ function ContactUs({}: Props) {
 
               <button
                 type="submit"
-                className="flex text-sm font-medium justify-center items-center py-3.5 px-10  text-white bg-primary-500 shadow-md w-fit transition-all duration-500 mx-auto xl:mx-0 hover:bg-primary-400"
+                className="flex text-sm font-medium justify-center items-center py-3.5 px-10  text-white bg-primary-700 shadow-md w-fit transition-all duration-500 mx-auto xl:mx-0 hover:bg-primary-400"
               >
                 SUBMIT
               </button>

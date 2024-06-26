@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useRef } from "react";
 
 import Service1 from "@/public/ServiceImage/service1.png";
 import Service2 from "@/public/ServiceImage/service2.png";
@@ -14,28 +14,79 @@ import Guide from "@/public/ServiceImage/ImageMain/guide.avif";
 import Culture from "@/public/ServiceImage/ImageMain/culture.avif";
 import Trek from "@/public/ServiceImage/ImageMain/trek.avif";
 import Wildlife from "@/public/ServiceImage/ImageMain/wildlife.avif";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import SplitType from "split-type";
 
 type Props = {};
 
 function Services({}: Props) {
+  const serviceContainerRef = useRef(null);
+  const serviceCardContainerRef = useRef(null);
+  const serviceCardRef = useRef(null);
+  const serviceTitleRef = useRef<any>(null);
+
+  useGSAP(() => {
+    const splitServiceTitle = new SplitType(serviceTitleRef.current);
+    const tl1 = gsap.timeline({
+      scrollTrigger: {
+        // markers: true,
+        trigger: serviceTitleRef.current,
+        start: "top bottom",
+        end: "top 50%",
+        scrub: 3,
+      },
+    });
+    tl1.from(splitServiceTitle.chars, {
+      opacity: 0,
+      translateX: "-50px",
+      duration: 1,
+      stagger: 0.03,
+      ease: "power4.inOut",
+    });
+    const tl2 = gsap.timeline({
+      scrollTrigger: {
+        markers: true,
+        // trigger: serviceCardContainerRef.current,
+        trigger: ".serviceCardRef",
+        start: "top bottom",
+        end: "top top",
+        scrub: 3,
+      },
+    });
+    tl2.from(".serviceCardRef", {
+      opacity: 0,
+      // translateX: "-50px",
+      transformOrigin: "top",
+      duration: 1,
+      stagger: 0.03,
+      ease: "power4.inOut",
+    });
+  });
   return (
-    <div className="w-full py-[5rem]">
+    <div ref={serviceContainerRef} className="w-full py-[5rem]">
       {/* title  */}
-      <h1 className="title text-center mb-5 text-5xl text-secondary-500 font-semibold tracking-wide">
+      <h1
+        ref={serviceTitleRef}
+        className="title text-center mb-5 text-5xl text-secondary-500 font-semibold tracking-wide"
+      >
         What we are offering ?
       </h1>
-      <div className="w-full md:w-9/12 mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 h-full">
+      <div
+        ref={serviceCardContainerRef}
+        className="w-full md:w-9/12 mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 h-full"
+      >
         {/* map services  */}
-        {ServicesData.map((item, index) => (
+        {ServicesData.map((item) => (
           <div
             key={item.id}
-            className="w-full flex justify-start cursor-pointer items-start p-2 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] flex-col gap-3   text-start"
+            className="w-full serviceCardRef group flex justify-start cursor-pointer items-start p-2 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] flex-col gap-3   text-start"
           >
             {/* IMG */}
-            <div className="relative w-full h-[25vh]">
+            <div className="relative w-full h-[25vh] overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.2] z-10"></div>
               <Image
-                className="w-full h-full object-cover"
+                className="w-full h-full group-hover:scale-105 duration-300 object-cover"
                 src={item.img}
                 alt={item.name}
                 width={500}
@@ -55,7 +106,7 @@ function Services({}: Props) {
                 </div>
               </div>
               {/* NAME */}
-              <span className="title mt-[3rem] text-xl text-secondary-500 tracking-wide">
+              <span className="title group-hover:text-primary-700 duration-300 mt-[3rem] text-xl text-secondary-500 tracking-wide">
                 {item.name}
               </span>
               {/* DESC */}
