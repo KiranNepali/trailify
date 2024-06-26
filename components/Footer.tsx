@@ -12,7 +12,7 @@ function Footer({}: Props) {
       <footer className="w-full bg-secondary-50 border-t">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="py-14 grid grid-cols-12 gap-x-5 gap-y-8">
-            <div className="col-span-full xl:col-span-3 relative bg-gradient-to-tr from-primary-800 to-primary-300 2xl gap-12 p-6 xl:w-72 h-96 flex flex-col justify-center items-center">
+            <div className="col-span-full xl:col-span-3 relative bg-gradient-to-r from-primary-800 to-primary-300 2xl gap-12 p-6 xl:w-72 h-96 flex flex-col justify-center items-center">
               {/* LOGO  */}
               <div className="">
                 <Image
@@ -106,7 +106,7 @@ function Footer({}: Props) {
                 />
                 <button
                   type="submit"
-                  className="flex gap-2 justify-center items-center py-3.5 px-7  text-white bg-primary-700 shadow-md w-fit transition-all duration-500 mx-auto xl:mx-0 hover:bg-primary-400"
+                  className="flex gap-2 justify-center items-center py-3.5 px-7  text-white bg-primary-600 shadow-md w-fit transition-all duration-500 mx-auto xl:mx-0 hover:bg-primary-400"
                 >
                   Subscribe
                   <svg

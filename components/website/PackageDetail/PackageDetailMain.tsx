@@ -74,7 +74,7 @@ function PackageDetailMain({}: Props) {
             </div>
 
             <a
-              className={`cursor-pointer hidden  text-nowrap w-full text-secondary-100 bg-gradient-to-tr from-primary-600 to-primary-400   duration-200 md:flex justify-center items-center  px-5  h-[2.5rem] text-sm`}
+              className={`cursor-pointer hidden  text-nowrap w-full text-secondary-100 bg-gradient-to-r from-primary-600 to-primary-500   duration-200 md:flex justify-center items-center  px-5  h-[2.5rem] text-sm`}
             >
               Book now
             </a>

@@ -15,11 +15,22 @@ function HomeAbout({}: Props) {
   const aboutButtonRef = useRef<any>(null);
 
   useGSAP(() => {
+    gsap.from(".nav-container", {
+      translateY: "-6rem",
+      duration: 1.5,
+      ease: "power4.inOut",
+      scrollTrigger: {
+        start: "top top",
+        end: "top top",
+        scrub: 3,
+        trigger: aboutUsContainerRef.current,
+      },
+    });
     const splitAboutTitle = new SplitType(aboutTitleRef.current);
     const splitAboutDesc = new SplitType(aboutDescRef.current);
     const tl = gsap.timeline({
       scrollTrigger: {
-        // markers: true,
+        // ,
         start: "top 90%",
         end: "50% 50%",
         trigger: aboutUsContainerRef.current,
@@ -91,19 +102,19 @@ function HomeAbout({}: Props) {
           ref={aboutTitleRef}
           className="title text-secondary-500 font-semibold tracking-wide text-5xl"
         >
-          Explore the Great <br /> Outdoors with TRAILIFY
+          Explore the Great <br /> Outdoors with Trivision
         </h2>
         <p
           ref={aboutDescRef}
           className="text-secondary-400 inline-block about-desc"
         >
-          TRAILIFY is your ultimate expedition partner, specializing in
+          Trivision is your ultimate expedition partner, specializing in
           providing detailed information, expert advice, and a vibrant community
           for adventure enthusiasts.
         </p>
         <button
           ref={aboutButtonRef}
-          className="px-10 py-3 text-secondary-50 font-medium   bg-primary-700 border-b-2  cursor-pointer mt-5"
+          className="px-10 py-3 text-secondary-50 font-medium   bg-primary-600 border-b-2  cursor-pointer mt-5"
         >
           Discover more
         </button>

@@ -26,13 +26,19 @@ export default function RootLayout({
       opacity: 0,
       duration: 2,
       stagger: 0.05,
-      ease: "back.inOut",
+      ease: "power4.out",
     });
     tl.to(splitText.chars, {
       opacity: 0,
       duration: 0.5,
       stagger: 0.03,
       ease: "expo.inOut",
+    });
+    tl.to(preloaderContainerRef.current, {
+      translateX: "100%",
+      // opacity: 0,
+      duration: 1,
+      ease: "expo.in",
       onComplete: () => setIsLoading(false),
     });
   });
@@ -44,9 +50,9 @@ export default function RootLayout({
         {isLoading && (
           <div
             ref={preloaderContainerRef}
-            className="fixed top-0 left-0 w-full text-center h-screen bg-secondary-50 z-[90000] title text-5xl flex justify-center items-center"
+            className="fixed top-0 left-0 w-full text-center h-screen bg-secondary-500 text-secondary-50 z-[90000] title text-6xl flex justify-center items-center"
           >
-            <span className="w-full text-preloader tracking-wider font-semibold text-primary-700">
+            <span className="w-11/12 text-preloader tracking-wider font-bold">
               LOADING FOR YOUR NEXT ADVENTURE...
             </span>
           </div>

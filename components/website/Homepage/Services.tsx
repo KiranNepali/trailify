@@ -30,7 +30,7 @@ function Services({}: Props) {
     const splitServiceTitle = new SplitType(serviceTitleRef.current);
     const tl1 = gsap.timeline({
       scrollTrigger: {
-        // markers: true,
+        // ,
         trigger: serviceTitleRef.current,
         start: "top bottom",
         end: "top 50%",
@@ -46,7 +46,6 @@ function Services({}: Props) {
     });
     const tl2 = gsap.timeline({
       scrollTrigger: {
-        markers: true,
         // trigger: serviceCardContainerRef.current,
         trigger: ".serviceCardRef",
         start: "top bottom",
@@ -68,13 +67,13 @@ function Services({}: Props) {
       {/* title  */}
       <h1
         ref={serviceTitleRef}
-        className="title text-center mb-5 text-5xl text-secondary-500 font-semibold tracking-wide"
+        className="title text-center mb-20 text-5xl text-secondary-500 font-semibold tracking-wide"
       >
         What we are offering ?
       </h1>
       <div
         ref={serviceCardContainerRef}
-        className="w-full md:w-9/12 mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 h-full"
+        className="w-full md:w-9/12 mx-auto grid grid-cols-1 md:grid-cols-3 gap-x-5 gap-y-20  h-full"
       >
         {/* map services  */}
         {ServicesData.map((item) => (
@@ -83,7 +82,7 @@ function Services({}: Props) {
             className="w-full serviceCardRef group flex justify-start cursor-pointer items-start p-2 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] flex-col gap-3   text-start"
           >
             {/* IMG */}
-            <div className="relative w-full h-[25vh] overflow-hidden">
+            {/* <div className="relative w-full h-[25vh] overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.2] z-10"></div>
               <Image
                 className="w-full h-full group-hover:scale-105 duration-300 object-cover"
@@ -92,7 +91,7 @@ function Services({}: Props) {
                 width={500}
                 height={300}
               />
-            </div>
+            </div> */}
 
             <div className="w-full flex px-3 flex-col relative gap-1">
               {/* ICON  */}
@@ -106,7 +105,7 @@ function Services({}: Props) {
                 </div>
               </div>
               {/* NAME */}
-              <span className="title group-hover:text-primary-700 duration-300 mt-[3rem] text-xl text-secondary-500 tracking-wide">
+              <span className="title group-hover:text-primary-600 duration-300 mt-[3rem] text-xl text-secondary-500 tracking-wide">
                 {item.name}
               </span>
               {/* DESC */}

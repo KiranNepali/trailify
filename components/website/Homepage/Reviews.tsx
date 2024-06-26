@@ -82,9 +82,9 @@ function Reviews({}: Props) {
         >
           {ReviewsData.map((itemn, index) => (
             <SwiperSlide key={index}>
-              <div className="shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] flex flex-col gap-3 h-auto p-3">
+              <div className="shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] flex flex-col gap-3 h-[40vh] p-3">
                 <div className="flex justify-between">
-                  <span className="flex text-primary-700">
+                  <span className="flex text-primary-600">
                     <Icon
                       icon="mdi:comma"
                       className="w-[2rem] h-[2rem] object-cover object-center rotate-[180deg]"
@@ -118,7 +118,7 @@ function Reviews({}: Props) {
                     <span className="text-[14px] font-medium text-secondary-400">
                       Web Designer
                     </span>
-                    <span className="flex justify-center items-center  text-primary-700">
+                    <span className="flex justify-center items-center  text-primary-600">
                       <Icon icon="material-symbols:star" />
                       <Icon icon="material-symbols:star" />
                       <Icon icon="material-symbols:star" />
@@ -145,7 +145,7 @@ const ReviewsData = [
     role: "Avid Hiker",
     img: "/path/to/alice.jpg",
     review:
-      "Trailify has been my go-to platform for planning hiking trips. The detailed trail descriptions and user reviews helped me find the perfect trails for both solo hikes and group adventures.",
+      "Trivision has been my go-to platform for planning hiking trips. The detailed trail descriptions and user reviews helped me find the perfect trails for both solo hikes and group adventures.",
   },
   {
     id: 2,
@@ -153,7 +153,7 @@ const ReviewsData = [
     role: "Beginner Hiker",
     img: "/path/to/bob.jpg",
     review:
-      "As someone new to hiking, Trailify has been invaluable. The easy-to-use interface and comprehensive trail database allowed me to discover scenic routes near my area.",
+      "As someone new to hiking, Trivision has been invaluable. The easy-to-use interface and comprehensive trail database allowed me to discover scenic routes near my area.",
   },
   {
     id: 3,
@@ -161,7 +161,7 @@ const ReviewsData = [
     role: "Trek Leader",
     img: "/path/to/charlie.jpg",
     review:
-      "I recently used Trailify to plan a trekking expedition with friends to a remote location. The platform's extensive trail information and downloadable maps were essential for our journey.",
+      "I recently used Trivision to plan a trekking expedition with friends to a remote location. The platform's extensive trail information and downloadable maps were essential for our journey.",
   },
   {
     id: 4,
@@ -169,6 +169,6 @@ const ReviewsData = [
     role: "Outdoor Enthusiast",
     img: "/path/to/dana.jpg",
     review:
-      "Trailify made it easy to find family-friendly hiking trails for our weekend trips. The user reviews and ratings helped us choose the best trails for our kids.",
+      "Trivision made it easy to find family-friendly hiking trails for our weekend trips. The user reviews and ratings helped us choose the best trails for our kids.",
   },
 ];

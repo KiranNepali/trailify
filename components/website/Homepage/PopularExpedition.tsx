@@ -115,7 +115,7 @@ function PopularExpedition({}: Props) {
 
                   <div className="w-full flex pb-2 justify-between">
                     <span className="text-sm  py-2 ">View details</span>
-                    <span className="flex justify-center items-center  text-primary-700">
+                    <span className="flex justify-center items-center  text-primary-600">
                       <Icon icon="material-symbols:star" />
                       <Icon icon="material-symbols:star" />
                       <Icon icon="material-symbols:star" />

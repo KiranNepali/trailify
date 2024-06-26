@@ -69,7 +69,7 @@ function Navbar({}: Props) {
   return (
     <div
       ref={navContainerRef}
-      className="fixed z-[100] text-secondary-500 top-0 left-0 w-full h-[5rem] bg-secondary-50"
+      className="fixed z-[100] nav-container text-secondary-500 top-0 left-0 w-full h-[5rem] bg-secondary-50"
     >
       {/* mobile nav  */}
       <div
@@ -132,8 +132,8 @@ function Navbar({}: Props) {
               href={link.href}
               className={
                 link.href === currentRoute
-                  ? "text-primary-700     duration-[0.5]"
-                  : "text-secondary-500 hover:text-primary-700"
+                  ? "text-primary-600     duration-[0.5]"
+                  : "text-secondary-500 hover:text-primary-600"
               }
             >
               {link.name}
@@ -154,9 +154,9 @@ function Navbar({}: Props) {
         <div className="flex gap-5  text-[14px] font-semibold">
           <div className="group relative">
             <div
-              className={` flex gap-1 justify-center items-center cursor-pointer hover:text-primary-700 ${
+              className={` flex gap-1 justify-center items-center cursor-pointer hover:text-primary-600 ${
                 currentRoute.includes("/trek")
-                  ? "text-primary-700 font-semibold  duration-[0.5]"
+                  ? "text-primary-600 font-semibold  duration-[0.5]"
                   : ""
               }`}
             >
@@ -170,7 +170,7 @@ function Navbar({}: Props) {
               {treksLink.map((trek) => (
                 <li key={trek.href} className="py-1">
                   <Link href={trek.href}>
-                    <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-semibold hover:text-primary-700 cursor-pointer">
+                    <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-semibold hover:text-primary-600 cursor-pointer">
                       {trek.name}
                     </div>
                   </Link>
@@ -182,9 +182,9 @@ function Navbar({}: Props) {
           {/* expedition  */}
           <div className="group relative">
             <div
-              className={` flex gap-1 justify-center items-center cursor-pointer hover:text-primary-700 ${
+              className={` flex gap-1 justify-center items-center cursor-pointer hover:text-primary-600 ${
                 currentRoute.includes("/expedition")
-                  ? "text-primary-700 font-semibold  duration-[0.5]"
+                  ? "text-primary-600 font-semibold  duration-[0.5]"
                   : ""
               }`}
             >
@@ -198,7 +198,7 @@ function Navbar({}: Props) {
               {expeditionsLink.map((expedition) => (
                 <li key={expedition.href} className="py-1">
                   <Link href={expedition.href}>
-                    <div className="border-b border-primary-100 text-secondary-500 hover:text-primary-700 text-[13px] font-semibold  cursor-pointer">
+                    <div className="border-b border-primary-100 text-secondary-500 hover:text-primary-600 text-[13px] font-semibold  cursor-pointer">
                       {expedition.name}
                     </div>
                   </Link>
@@ -209,9 +209,9 @@ function Navbar({}: Props) {
           {/* other activities  */}
           <div className="group relative">
             <div
-              className={` flex gap-1 justify-center items-center cursor-pointer hover:text-primary-700 ${
+              className={` flex gap-1 justify-center items-center cursor-pointer hover:text-primary-600 ${
                 currentRoute.includes("/other_activities")
-                  ? "text-primary-700   duration-[0.5]"
+                  ? "text-primary-600   duration-[0.5]"
                   : ""
               }`}
             >
@@ -225,7 +225,7 @@ function Navbar({}: Props) {
               {activitiesLink.map((activity) => (
                 <li key={activity.href} className="py-1">
                   <Link href={activity.href}>
-                    <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-semibold uppercase hover:text-primary-700 cursor-pointer">
+                    <div className="border-b border-primary-100 text-secondary-500 text-[13px] font-semibold uppercase hover:text-primary-600 cursor-pointer">
                       {activity.name}
                     </div>
                   </Link>
@@ -237,9 +237,9 @@ function Navbar({}: Props) {
           {/* CONTACT US  */}
           <Link href="/contact_us" className="group relative">
             <span
-              className={` hover:text-primary-700 ${
+              className={` hover:text-primary-600 ${
                 currentRoute.includes("/contact_us")
-                  ? "text-primary-700 font-semibold scale-110 duration-[0.5]"
+                  ? "text-primary-600 font-semibold scale-110 duration-[0.5]"
                   : ""
               }`}
             >

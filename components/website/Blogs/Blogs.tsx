@@ -15,7 +15,7 @@ function Blogs({}: Props) {
               href="blog_detail"
               className="block max-w-sm gap-3 mx-auto group sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] dark:bg-gray-50"
             >
-              <div className="w-full object-cover  h-64  sm:h-96 lg:col-span-7  group-hover:p-1 group-hover:bg-gradient-to-tr from-[#B26432] to-[#DAA079]  duration-200 ">
+              <div className="w-full object-cover  h-64  sm:h-96 lg:col-span-7  group-hover:p-1 group-hover:bg-gradient-to-r from-[#B26432] to-[#DAA079]  duration-200 ">
                 <Image
                   width={1000}
                   height={1000}
@@ -42,7 +42,7 @@ function Blogs({}: Props) {
               href="blog_detail"
               className="block max-w-sm gap-3 mx-auto gr sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] dark:bg-gray-50"
             >
-              <div className="w-full object-cover  h-64  sm:h-96 lg:col-span-7  group-hover:p-1 group-hover:bg-gradient-to-tr from-[#B26432] to-[#DAA079]  duration-200 ">
+              <div className="w-full object-cover  h-64  sm:h-96 lg:col-span-7  group-hover:p-1 group-hover:bg-gradient-to-r from-[#B26432] to-[#DAA079]  duration-200 ">
                 <Image
                   width={1000}
                   height={1000}
@@ -75,7 +75,7 @@ function Blogs({}: Props) {
                   index > 1 ? "hidden sm:block" : ""
                 }`}
               >
-                <div className="w-full h-44 group-hover:p-1 group-hover:bg-gradient-to-tr from-[#B26432] to-[#DAA079]  duration-200 ">
+                <div className="w-full h-44 group-hover:p-1 group-hover:bg-gradient-to-r from-[#B26432] to-[#DAA079]  duration-200 ">
                   <Image
                     alt=""
                     width={1000}
@@ -102,7 +102,7 @@ function Blogs({}: Props) {
           {/* <div className="flex justify-center">
             <button
               type="button"
-              className="px-5 flex justify-center items-center bg-gradient-to-tr from-primary-600 to-primary-400  py-3 text-sm  border  darks:bg-gray-50 text-secondary-50 font-medium"
+              className="px-5 flex justify-center items-center bg-gradient-to-r from-primary-600 to-primary-500  py-3 text-sm  border  darks:bg-gray-50 text-secondary-50 font-medium"
             >
               Load more
               <Icon

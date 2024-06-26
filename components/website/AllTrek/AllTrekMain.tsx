@@ -1,13 +1,23 @@
+"use client"
 import React from "react";
 import AllTrekHero from "./AllTrekHero";
 import AllTrek from "./AllTrek";
 import Leaf from "./leaf";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 type Props = {};
 
-function AllTrekMain({region}: any) {
+function AllTrekMain({ region }: any) {
+  useGSAP(() => {
+    gsap.from(".all-trek-main-container", {
+      opacity: 0,
+      duration: 1,
+      ease: "linear",
+    });
+  });
   return (
-    <div>
+    <div className="all-trek-main-container">
       <Leaf />
       <div className="relative">
         <AllTrekHero region={region} />
