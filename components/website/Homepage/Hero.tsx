@@ -22,6 +22,7 @@ function Hero({}: Props) {
       ease: "power4.inOut",
     });
     gsap.from(".hero-scroll", {
+      delay: 1,
       opacity: 0,
       duration: 1,
       ease: "power4.inOut",

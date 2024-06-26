@@ -15,17 +15,23 @@ function HomeAbout({}: Props) {
   const aboutButtonRef = useRef<any>(null);
 
   useGSAP(() => {
-    gsap.from(".nav-container", {
-      translateY: "-6rem",
-      duration: 1.5,
-      ease: "power4.inOut",
-      scrollTrigger: {
-        start: "top top",
-        end: "top top",
-        scrub: 3,
-        trigger: aboutUsContainerRef.current,
+    gsap.fromTo(
+      ".nav-container",
+      {
+        translateY: "-6rem",
       },
-    });
+      {
+        translateY: "0rem",
+        duration: 1.5,
+        ease: "power4.inOut",
+        scrollTrigger: {
+          start: "top top",
+          end: "top top",
+          scrub: 3,
+          trigger: aboutUsContainerRef.current,
+        },
+      }
+    );
     const splitAboutTitle = new SplitType(aboutTitleRef.current);
     const splitAboutDesc = new SplitType(aboutDescRef.current);
     const tl = gsap.timeline({
