@@ -8,7 +8,7 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const BookForm = () => {
   const notify = () => toast.success("Successfully submitted!");
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState<any>(new Date());
   return (
     <>
       <div className="w-full py-[6rem]">

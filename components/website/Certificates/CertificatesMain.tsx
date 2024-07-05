@@ -5,6 +5,7 @@ import CertificatesHero from "./CertificatesHero";
 type Props = {};
 
 export default function CertificatesMain({}: Props) {
+
   return (
     <>
       <div className="w-full">
