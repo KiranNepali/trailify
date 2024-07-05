@@ -44,7 +44,7 @@ function PackageDetailMain({}: Props) {
   return (
     <>
       <div className="w-full h-full  text-secondary-500 relative">
-        <div className="w-full h-[50vh] bg-zinc-200 relative  flex justify-center items-center">
+        <div className="w-full h-[50vh] s relative  flex justify-center items-center">
           <Image
             width={1000}
             height={1000}
@@ -73,11 +73,12 @@ function PackageDetailMain({}: Props) {
               ))}
             </div>
 
-            <a
+            <Link
+              href="/booking"
               className={`cursor-pointer hidden  text-nowrap w-full text-secondary-100 bg-gradient-to-r from-primary-600 to-primary-500   duration-200 md:flex justify-center items-center  px-5  h-[2.5rem] text-sm`}
             >
               Book now
-            </a>
+            </Link>
           </div>
           {/* detail  */}
 

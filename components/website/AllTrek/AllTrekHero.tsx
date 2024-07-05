@@ -1,9 +1,10 @@
 import Image from "next/image";
 import React from "react";
 import TrekData from "@/data/TrekData";
+import Leaf from "./leaf";
 type Props = {};
 
-export default function AllTrekHero({region}: any) {
+export default function AllTrekHero({ region }: any) {
   if (!region) {
     // Handle case where activity data is not found
     return <div>Activity not found</div>;
@@ -13,7 +14,8 @@ export default function AllTrekHero({region}: any) {
   const { name } = data;
   return (
     <>
-      <div className="w-full h-[50vh] bg-zinc-200 relative  flex justify-center items-center">
+      <div className="w-full h-[50vh] bg-zinc-200 relative overflow-hidden relative  flex justify-center items-center">
+        <Leaf />
         <Image
           width={1000}
           height={1000}

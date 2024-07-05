@@ -18,7 +18,7 @@ function AllTrekMain({ region }: any) {
   });
   return (
     <div className="all-trek-main-container">
-      <Leaf />
+     
       <div className="relative">
         <AllTrekHero region={region} />
       </div>

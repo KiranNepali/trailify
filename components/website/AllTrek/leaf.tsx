@@ -12,64 +12,72 @@ export default function Leaf({}: Props) {
     <section>
       <div className="set">
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf1.src}
             alt="Leaf 1"
           />
         </div>
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf2.src}
             alt="Leaf 2"
           />
         </div>
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf3.src}
             alt="Leaf 3"
           />
         </div>
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf4.src}
             alt="Leaf 4"
           />
         </div>
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf1.src}
             alt="Leaf 1"
           />
         </div>
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf2.src}
             alt="Leaf 2"
           />
         </div>
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf3.src}
             alt="Leaf 3"
           />
         </div>
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf4.src}
             alt="Leaf 4"
@@ -78,64 +86,72 @@ export default function Leaf({}: Props) {
       </div>
       <div className="set set2">
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf1.src}
             alt="Leaf 1"
           />
         </div>
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf2.src}
             alt="Leaf 2"
           />
         </div>
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf3.src}
             alt="Leaf 3"
           />
         </div>
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf4.src}
             alt="Leaf 4"
           />
         </div>
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf1.src}
             alt="Leaf 1"
           />
         </div>
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf2.src}
             alt="Leaf 2"
           />
         </div>
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf3.src}
             alt="Leaf 3"
           />
         </div>
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf4.src}
             alt="Leaf 4"
@@ -144,64 +160,72 @@ export default function Leaf({}: Props) {
       </div>
       <div className="set set3">
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf1.src}
             alt="Leaf 1"
           />
         </div>
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf2.src}
             alt="Leaf 2"
           />
         </div>
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf3.src}
             alt="Leaf 3"
           />
         </div>
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf4.src}
             alt="Leaf 4"
           />
         </div>
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf1.src}
             alt="Leaf 1"
           />
         </div>
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf2.src}
             alt="Leaf 2"
           />
         </div>
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf3.src}
             alt="Leaf 3"
           />
         </div>
         <div>
-          <Image width={500}
-          height={500}
+          <Image
+            width={500}
+            height={500}
             className="w-[2rem] h-[2rem] object-cover object-center"
             src={Leaf4.src}
             alt="Leaf 4"

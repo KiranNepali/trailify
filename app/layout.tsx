@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import SplitType from "split-type";
 import { useGSAP } from "@gsap/react";
+import toast, { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,21 +25,21 @@ export default function RootLayout({
 
     tl.from(splitText.chars, {
       opacity: 0,
-      duration: 2,
-      stagger: 0.05,
-      ease: "power4.out",
+      duration: 0.5,
+      stagger: 0.03,
+      ease: "sine.out",
     });
     tl.to(splitText.chars, {
       opacity: 0,
       duration: 0.5,
-      stagger: 0.03,
+      stagger: 0.02,
       ease: "expo.inOut",
     });
     tl.to(preloaderContainerRef.current, {
-      translateX: "100%",
-      // opacity: 0,
-      duration: 1,
-      ease: "expo.in",
+      scaleX: "0",
+      transformOrigin: "right",
+      duration: 0.8,
+      ease: "sine.out",
       onComplete: () => setIsLoading(false),
     });
   });
@@ -66,6 +67,7 @@ export default function RootLayout({
                 {children}
               </div>
               <Footer />
+              <Toaster />
             </div>
           </>
         )}
