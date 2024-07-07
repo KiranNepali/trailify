@@ -50,7 +50,7 @@ export default function RootLayout({
 
   return (
     <html lang="en" className={inter.className}>
-      <body className="overflow-hidden">
+      <body className="">
         {/* Preloader */}
         {isLoading && (
           <div
@@ -65,19 +65,19 @@ export default function RootLayout({
         {/* Main Content */}
         {!isLoading && (
           <>
-            <motion.div
+            {/* <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ ease: "easeIn", duration: 0.2 }}
               className=""
-            >
-              <Navbar />
-              <div className="w-full h-full  bg-secondary-50 text-secondary-500">
-                {children}
-              </div>
-              <Footer />
-              <Toaster />
-            </motion.div>
+            > */}
+            <Navbar />
+            <div className="w-full h-full  bg-secondary-50 text-secondary-500">
+              {children}
+            </div>
+            <Footer />
+            <Toaster />
+            {/* </motion.div> */}
           </>
         )}
       </body>
