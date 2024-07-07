@@ -60,8 +60,8 @@ function PackageDetailMain({}: Props) {
 
         <div className="py-[5rem] w-11/12 md:w-10/12 flex flex-col md:flex-row justify-center relative items-start gap-3 mx-auto">
           {/* tab  link  */}
-          <div className="mx-auto w-full md:w-[15%] flex-col gap-8 backdrop-blur-sm sticky top-[5rem] overflow-x-scroll md:top-[6rem] left-0  flex  font-medium items-center">
-            <div className="w-full overflow-x-scroll md:overflow-visible flex md:flex-col gap-5 font-medium items-center">
+          <div className="mx-auto w-full md:w-[15%] flex-col gap-8 backdrop-blur-sm sticky top-[5rem] overflow-x-scroll md:overflow-x-visible md:top-[6rem] left-0  flex  font-medium items-center">
+            <div className="w-full overflow-x-scroll md:overflow-x-visible flex md:flex-col gap-5 font-medium items-center">
               {buttonLabels.map((item) => (
                 <a
                   href={`#${item.label.replace(/\s+/g, "-").toLowerCase()}`}
@@ -75,7 +75,7 @@ function PackageDetailMain({}: Props) {
 
             <Link
               href="/booking"
-              className={`cursor-pointer hidden  text-nowrap w-full text-secondary-100 bg-gradient-to-r from-primary-600 to-primary-500   duration-200 md:flex justify-center items-center  px-5  h-[2.5rem] text-sm`}
+              className={`cursor-pointer hidden   text-nowrap w-full text-secondary-100 bg-gradient-to-r from-primary-600 to-primary-500   duration-200 md:flex justify-center items-center  px-5  h-[2.5rem] text-sm`}
             >
               Book now
             </Link>
@@ -85,7 +85,7 @@ function PackageDetailMain({}: Props) {
           <div className="w-full md:w-[85%] flex flex-col gap-2">
             <div
               id="overview"
-              className="w-full mx-auto p-3 md:p-10   bg-primary-50 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+              className="w-full mx-auto p-3 md:p-10   bg-secondary-100 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
             >
               <div className="text-2xl relative tracking-wide title font-semibold italic text-secondary-500">
                 Overview
@@ -115,7 +115,7 @@ function PackageDetailMain({}: Props) {
             {/* iternary  */}
             <div
               id="itinerary"
-              className="w-full mx-auto p-3 md:p-10   bg-primary-50 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+              className="w-full mx-auto p-3 md:p-10   bg-secondary-100 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
             >
               {/* tile  */}
               <div className="text-2xl relative tracking-wide title font-semibold italic text-secondary-500">
@@ -163,7 +163,7 @@ function PackageDetailMain({}: Props) {
             </div>
             <div
               id="route-map"
-              className="w-full h-[70vh] mx-auto p-3 md:p-10   bg-primary-50 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+              className="w-full h-[70vh] mx-auto p-3 md:p-10   bg-secondary-100 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
             >
               <div className="text-2xl relative tracking-wide title font-semibold italic text-secondary-500">
                 Route Map
@@ -178,7 +178,7 @@ function PackageDetailMain({}: Props) {
             </div>
             <div
               id="inclusions"
-              className="w-full mx-auto p-3 md:p-10   bg-primary-50 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+              className="w-full mx-auto p-3 md:p-10   bg-secondary-100 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
             >
               <div className="text-2xl relative tracking-wide title font-semibold italic text-secondary-500">
                 Inclusion
@@ -211,7 +211,7 @@ function PackageDetailMain({}: Props) {
             </div>
             <div
               id="exclusions"
-              className="w-full mx-auto p-3 md:p-10   bg-primary-50 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+              className="w-full mx-auto p-3 md:p-10   bg-secondary-100 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
             >
               <div className="text-2xl relative tracking-wide title font-semibold italic text-secondary-500">
                 Exclusions
@@ -244,7 +244,7 @@ function PackageDetailMain({}: Props) {
             </div>
             <div
               id="fixed-dates"
-              className="w-full mx-auto p-3 md:p-10   bg-primary-50 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+              className="w-full mx-auto p-3 md:p-10   bg-secondary-100 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
             >
               <div className="text-2xl relative tracking-wide title font-semibold italic text-secondary-500">
                 Fixed Dates

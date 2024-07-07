@@ -84,20 +84,47 @@ function PopularTrekking({}: Props) {
         >
           {TrekData.map((item, index) => (
             <SwiperSlide key={index}>
-              <div className="h-[80vh] shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] flex flex-col gap-3  p-2">
-                <div className="relative h-full">
-                  <div className="px-4 text-secondary-50  z-10 text-sm py-1 text- bg-primary-600 absolute top-[3%] left-[3%]">
+              <div className="shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] flex flex-col gap-3 h-auto p-2">
+                <div className="relative">
+                  <div className="px-4 text-secondary-50 z-10 text-sm py-1 text- bg-primary-600 absolute top-[3%] left-[3%]">
                     $120
                   </div>
                   {/* MASK  */}
-                  <div className="bg-black h-full absolute top-0 left-0 w-full  opacity-[0.2]"></div>
+                  <div className="bg-black absolute top-0 left-0 w-full h-full opacity-[0.2]"></div>
                   <Image
                     width={1000}
                     height={1000}
                     src={item.img}
                     alt="expedition-image"
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-[30vh] object-cover object-center"
                   />
+                </div>
+                <div className="w-full flex relative flex-col gap-2">
+                  {/* distanc days  */}
+                  <div className="w-full absolute top-[-10%]  left-0 translate-y-[-50%] flex justify-center items-center">
+                    <div className="w-[70%] h-[2rem] text-sm font-medium  px-[10%] text-secondary-400  bg-secondary-100 flex justify-between items-center">
+                      <span className="flex  items-center gap-1">
+                        <Icon icon="carbon:time" /> <span>5 days</span>
+                      </span>
+                      <span>|</span>
+                      <span>259km</span>
+                    </div>
+                  </div>
+                  <span className="title text-xl pt-[1.5rem] text-secondary-500 tracking-wide">
+                    {item.name}
+                  </span>
+                  <p className="text-sm text-secondary-400">{item.desc}</p>
+
+                  <div className="w-full flex pb-2 justify-between">
+                    <span className="text-sm  py-2 ">View details</span>
+                    <span className="flex justify-center items-center  text-primary-600">
+                      <Icon icon="material-symbols:star" />
+                      <Icon icon="material-symbols:star" />
+                      <Icon icon="material-symbols:star" />
+                      <Icon icon="material-symbols:star" />
+                      <Icon icon="material-symbols:star" />
+                    </span>
+                  </div>
                 </div>
               </div>
             </SwiperSlide>

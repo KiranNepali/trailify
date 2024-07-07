@@ -1,10 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 
 type Props = {};
 
 function RelatedBlogs({}: Props) {
+  useEffect(() => {
+    scrollTo(0, 0);
+  },[]);
   return (
     <div className="flex gap-5 flex-col">
       <h1 className="text-2xl md:text-5xl w-full text-center relative tracking-wide mt-10 title font-bold text-secondary-500">

@@ -33,7 +33,7 @@ function Services({}: Props) {
         // ,
         trigger: serviceTitleRef.current,
         start: "top bottom",
-        end: "top 50%",
+        end: "50% 50%",
         scrub: 3,
       },
     });
@@ -46,19 +46,20 @@ function Services({}: Props) {
     });
     const tl2 = gsap.timeline({
       scrollTrigger: {
+        // markers: true,
         // trigger: serviceCardContainerRef.current,
         trigger: ".serviceCardRef",
         start: "top bottom",
-        end: "top top",
+        end: "50% 50%",
         scrub: 3,
       },
     });
-    tl2.from(".serviceCardRef", {
+    tl2.from(".serviceCardRef", { 
       opacity: 0,
       // translateX: "-50px",
       transformOrigin: "top",
       duration: 1,
-      stagger: 0.03,
+      stagger: 0.05,
       ease: "power4.inOut",
     });
   });

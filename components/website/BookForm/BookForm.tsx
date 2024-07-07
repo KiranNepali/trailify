@@ -1,16 +1,51 @@
 "use client";
 import FormBg from "@/Hero.jpg";
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import DatePicker from "react-datepicker";
 import toast, { Toaster } from "react-hot-toast";
 import "react-datepicker/dist/react-datepicker.css";
+import Payment from "./Payment";
+import gsap from "gsap";
 
 const BookForm = () => {
-  const notify = () => toast.success("Successfully submitted!");
+  const paymentContainerRef = useRef(null);
+  const [openPayment, setOpenPayment] = useState(false);
+
+  const notify = () => {
+    if (!openPayment) {
+      gsap.to(paymentContainerRef.current, {
+        opacity: 1,
+        duration: 0.3, // Adjust duration as needed
+      });
+      setOpenPayment(true);
+    }
+  };
+
+  const handleClose = () => {
+    if (openPayment) {
+      gsap.to(paymentContainerRef.current, {
+        opacity: 0,
+        duration: 0.3, // Adjust duration as needed
+        onComplete: () => {
+          setOpenPayment(false);
+        },
+      });
+    }
+  };
+
   const [startDate, setStartDate] = useState<any>(new Date());
   return (
     <>
+      <div
+        ref={paymentContainerRef}
+        className={`w-full h-screen fixed z-40 top-0 left-0 backdrop-blur-sm ${
+          openPayment ? "" : "hidden"
+        }`}
+        style={{ opacity: 0 }}
+      >
+        <Payment handleClose={handleClose} />
+      </div>
       <div className="w-full py-[6rem]">
         <h1 className="text-3xl md:text-6xl mb-5 mt-5 text-center relative tracking-wide  title font-bold text-secondary-500 z-10">
           Make your booking
@@ -98,7 +133,7 @@ const BookForm = () => {
                             id="email"
                             className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
                             value=""
-                            placeholder="email@domain.com"
+                            placeholder="Everest base camp trek"
                           />
                         </div>
                         <div className="w-full">

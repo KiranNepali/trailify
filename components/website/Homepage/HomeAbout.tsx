@@ -14,90 +14,104 @@ function HomeAbout({}: Props) {
   const aboutDescRef = useRef<any>(null);
   const aboutButtonRef = useRef<any>(null);
 
-  useGSAP(() => {
-    // gsap.fromTo(
-    //   ".nav-container",
-    //   {
-    //     translateY: "-6rem",
-    //   },
-    //   {
-    //     translateY: "0rem",
-    //     duration: 1.5,
-    //     ease: "power4.inOut",
-    //     scrollTrigger: {
-    //       start: "top top",
-    //       end: "top top",
-    //       scrub: 3,
-    //       trigger: aboutUsContainerRef.current,
-    //     },
-    //   }
-    // );
-    const splitAboutTitle = new SplitType(aboutTitleRef.current);
-    const splitAboutDesc = new SplitType(aboutDescRef.current);
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        // ,
-        start: "top 90%",
-        end: "50% 50%",
-        trigger: aboutUsContainerRef.current,
-        scrub: 3,
-      },
-    });
-    tl.from(
-      aboutUsContainerRef.current,
-      {
-        opacity: 0,
-        duration: 1,
-      },
-      "about"
-    );
-    tl.from(
-      splitAboutTitle.lines,
-      {
-        // color: "grey",
-        opacity: 0,
-        stagger: 0.2,
-        translateX: "50px",
-        duration: 1,
-        ease: "power4.inOut",
-      },
-      "about"
-    );
-    tl.from(
-      splitAboutDesc.lines,
-      {
-        duration: 1,
-        opacity: 0,
-        ease: "power4.inOut",
-        stagger: 0.3,
-      },
-      "about"
-    );
-    tl.from(
-      aboutButtonRef.current,
-      {
-        delay: 0.1,
-        translateY: "50px",
-        opacity: 0,
-        duration: 1,
-        ease: "power4.inOut",
-      },
-      "about"
-    );
-  });
+  useGSAP(
+    () => {
+      // gsap.fromTo(
+      //   ".nav-container",
+      //   {
+      //     translateY: "-6rem",
+      //   },
+      //   {
+      //     translateY: "0rem",
+      //     duration: 1.5,
+      //     ease: "power4.inOut",
+      //     scrollTrigger: {
+      //       start: "top top",
+      //       end: "top top",
+      //       scrub: 3,
+      //       trigger: aboutUsContainerRef.current,
+      //     },
+      //   }
+      // );
+      const splitAboutTitle = new SplitType(aboutTitleRef.current);
+      const splitAboutDesc = new SplitType(aboutDescRef.current);
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          markers: true,
+          start: "top 90%",
+          end: "40% 50%",
+          trigger: aboutUsContainerRef.current,
+          scrub: 1,
+        },
+      });
+      tl.from(
+        ".image-about",
+        {
+          height: "10vh",
+          duration: 2,
+          ease: "linear",
+        },
+        "about"
+      );
+      tl.from(
+        aboutUsContainerRef.current,
+        {
+          opacity: 0,
+          duration: 1,
+        },
+        "about"
+      );
+      tl.from(
+        splitAboutTitle.lines,
+        {
+          // color: "grey",
+          opacity: 0,
+          stagger: 0.2,
+          translateX: "50px",
+          duration: 1,
+          ease: "power4.inOut",
+        },
+        "about"
+      );
+      tl.from(
+        splitAboutDesc.lines,
+        {
+          duration: 1,
+          opacity: 0,
+          ease: "power4.inOut",
+          stagger: 0.3,
+        },
+        "about"
+      );
+      tl.from(
+        aboutButtonRef.current,
+        {
+          delay: 0.1,
+          translateY: "50px",
+          opacity: 0,
+          duration: 1,
+          ease: "power4.inOut",
+        },
+        "about"
+      );
+    },
+    { scope: aboutUsContainerRef }
+  );
   return (
     <div
       ref={aboutUsContainerRef}
       className="w-full py-[2rem] md:py-0 flex md:h-screen  md:flex-row flex-col justify-center items-center gap-10"
     >
       {/* image  */}
-      <Image
-        className="w-full md:w-[40%] object-cover object-center h-[70vh] md:h-[70%]"
-        width={1000}
-        height={1000}
-        alt="about-us-img"
-        src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-      ></Image>
+      <div className="w-full md:w-[30%]  -rotate-3   object-cover object-center overflow-hidden h-[70vh] md:h-[70%]">
+        <Image
+          className="w-full h-full image-about   object-cover object-center"
+          width={1000}
+          height={1000}
+          alt="about-us-img"
+          src="https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        ></Image>
+      </div>
 
       {/* about us  */}
       <div className="w-full md:w-[40%] flex flex-col gap-2 items-start justify-center h-[70%]">

@@ -55,7 +55,6 @@ function Navbar({}: Props) {
   };
 
   // open animation
-
   const navContainerRef = useRef(null);
   // useGSAP(() => {
   //   gsap.from(navContainerRef.current, {
@@ -69,7 +68,7 @@ function Navbar({}: Props) {
   return (
     <div
       ref={navContainerRef}
-      className="fixed z-[100] nav-container  text-secondary-500 top-0 bg-secondary-50 left-0 w-full h-[4.5rem] "
+      className={`fixed z-[100] nav-container  text-secondary-500 top-0 bg-secondary-50 left-0 w-full h-[4.5rem] `}
     >
       {/* mobile nav  */}
       <div

@@ -6,7 +6,6 @@ import "./globals.css";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import SplitType from "split-type";
-import { useGSAP } from "@gsap/react";
 import toast, { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -19,10 +18,9 @@ export default function RootLayout({
   const preloaderContainerRef = useRef<HTMLDivElement>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  useGSAP(() => {
+  useEffect(() => {
     const splitText = new SplitType(".text-preloader");
     const tl = gsap.timeline();
-
     tl.from(splitText.chars, {
       opacity: 0,
       duration: 0.5,
@@ -40,13 +38,15 @@ export default function RootLayout({
       transformOrigin: "right",
       duration: 0.8,
       ease: "sine.out",
-      onComplete: () => setIsLoading(false),
+      onComplete: () => {
+        setIsLoading(false);
+      },
     });
-  });
+  }, []);
 
   return (
     <html lang="en" className={inter.className}>
-      <body>
+      <body className="overflow-hidden">
         {/* Preloader */}
         {isLoading && (
           <div
@@ -59,18 +59,16 @@ export default function RootLayout({
           </div>
         )}
         {/* Main Content */}
-        {!isLoading && (
-          <>
-            <div className="">
-              <Navbar />
-              <div className="w-full h-full bg-secondary-50 text-secondary-500">
-                {children}
-              </div>
-              <Footer />
-              <Toaster />
+        <>
+          <div className="">
+            <Navbar />
+            <div className="w-full h-full bg-secondary-50 text-secondary-500">
+              {children}
             </div>
-          </>
-        )}
+            <Footer />
+            <Toaster />
+          </div>
+        </>
       </body>
     </html>
   );

@@ -12,6 +12,7 @@ import Try from "./Try";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Footer from "@/components/Footer";
 type Props = {};
 
 gsap.registerPlugin(ScrollTrigger);
@@ -39,23 +40,26 @@ function HomeMain({}: any) {
   useGSAP(() => {
     const tl1 = gsap.timeline({
       scrollTrigger: {
-        markers: true,
+        // markers: true,
         start: "top top",
         end: "top top",
         trigger: ".hero-container",
-        scrub: 0.5,
+        scrub: 1,
       },
     });
     tl1.from(".content-main", {
       translateY: "100vh",
       duration: 2,
-      ease: "sine.in",
+      ease: "linear",
     });
-    tl1.to(".nav-container", {
-      top: "0",
-      duration: 1.5,
-      ease: "power4.inOut",
-    });
+    tl1.to(
+      ".nav-container",
+      {
+        opacity: 1,
+        duration: 1,
+        ease: "power4.inOut",
+      }
+    );
   });
   return (
     <>
@@ -66,9 +70,9 @@ function HomeMain({}: any) {
         {/* <div className="md:w-10/12 w-11/12 mx-auto">
           <HomeAbout />
         </div> */}
-        <div className="w-full content-main h-full bg-zinc-50 relative z-20">
+        <div className="w-full  content-main h-full bg-zinc-50 relative z-20">
           <div className="md:w-10/12 w-11/12 mx-auto">
-            <Try />
+            <HomeAbout />
           </div>
           <div className="md:w-10/12 w-11/12 mx-auto">
             <Services />
@@ -85,6 +89,8 @@ function HomeMain({}: any) {
           <div className="md:w-10/12 w-11/12 mx-auto">
             <Reviews />
           </div>
+
+          <Footer />
         </div>
       </div>
     </>
