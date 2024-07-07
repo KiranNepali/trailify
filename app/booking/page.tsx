@@ -7,7 +7,7 @@ type Props = {};
 export default function page({}: Props) {
   useEffect(() => {
     scrollTo(0, 0);
-  });
+  },[]);
   return (
     <div>
       <BookForm />

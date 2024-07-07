@@ -8,7 +8,7 @@ function page({ params }: any) {
   const { region } = params;
   useEffect(() => {
     scrollTo(0, 0);
-  });
+  },[]);
   return (
     <div>
       <AllTrekMain region={region} />

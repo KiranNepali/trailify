@@ -7,7 +7,7 @@ type Props = {};
 function page({}: Props) {
   useEffect(() => {
     scrollTo(0, 0);
-  });
+  },[]);
   return (
     <div>
       <ContactUs />

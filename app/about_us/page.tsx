@@ -5,7 +5,7 @@ import { useEffect } from "react";
 export default function Home() {
   useEffect(() => {
     scrollTo(0, 0);
-  });
+  },[]);
   return (
     <>
       <main>

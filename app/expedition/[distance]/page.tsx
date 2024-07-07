@@ -8,7 +8,7 @@ function page({ params }: any) {
   const { distance } = params;
   useEffect(() => {
     scrollTo(0, 0);
-  });
+  },[]);
   return (
     <div>
       <AllExpMain distance={distance} />
