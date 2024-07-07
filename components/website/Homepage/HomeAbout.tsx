@@ -2,6 +2,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useRef } from "react";
 import SplitType from "split-type";
 
@@ -33,11 +34,12 @@ function HomeAbout({}: Props) {
       //     },
       //   }
       // );
+
       const splitAboutTitle = new SplitType(aboutTitleRef.current);
       const splitAboutDesc = new SplitType(aboutDescRef.current);
       const tl = gsap.timeline({
         scrollTrigger: {
-          markers: true,
+          // markers: true,
           start: "top 90%",
           end: "40% 50%",
           trigger: aboutUsContainerRef.current,
@@ -97,6 +99,24 @@ function HomeAbout({}: Props) {
     },
     { scope: aboutUsContainerRef }
   );
+
+  useGSAP(() => {
+    const t2 = gsap.timeline({
+      scrollTrigger: {
+        // markers: true,
+        start: "top top",
+        end: "top top",
+        trigger: aboutUsContainerRef.current,
+        scrub: 1,
+      },
+    });
+    t2.to(".nav-container-home", {
+      translateY: "0",
+      opacity: "1",
+      duration: "1",
+      ease: "sine.in",
+    });
+  });
   return (
     <div
       ref={aboutUsContainerRef}
@@ -132,12 +152,14 @@ function HomeAbout({}: Props) {
           providing detailed information, expert advice, and a vibrant community
           for adventure enthusiasts.
         </p>
-        <button
-          ref={aboutButtonRef}
-          className="px-10 py-3 text-secondary-50 font-medium   bg-primary-600 border-b-2  cursor-pointer mt-5"
-        >
-          Discover more
-        </button>
+        <Link href="/about_us">
+          <button
+            ref={aboutButtonRef}
+            className="px-10 py-3 text-secondary-50 font-medium   bg-primary-600 border-b-2  cursor-pointer mt-5"
+          >
+            Discover more
+          </button>
+        </Link>
       </div>
     </div>
   );

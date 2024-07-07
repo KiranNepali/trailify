@@ -1,5 +1,5 @@
 "use client";
-import FormBg from "@/Hero.jpg";
+import FormBg from "@/public/Hero.jpg";
 import Image from "next/image";
 import { useRef, useState } from "react";
 import DatePicker from "react-datepicker";
@@ -189,7 +189,7 @@ const BookForm = () => {
                             onClick={notify}
                             className="w-full cursor-pointer py-3 px-10 bg-gradient-to-r from-primary-600 to-primary-500 text-sm font-medium text-secondary-50"
                           >
-                            Submit
+                            Proceed
                           </button>
                         </div>
                       </div>

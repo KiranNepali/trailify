@@ -53,9 +53,9 @@ function Footer({}: Props) {
                 Get In Touch
               </h4>
               <ul className="text-gray-900 transition-all duration-500 grid gap-6">
-                <li>support@pagedone.com</li>
-                <li>+91 945 658 3256</li>
-                <li>61-A, Elm street, Gujarat, India.</li>
+                <li>support@trivision.com</li>
+                <li>+977 98********</li>
+                <li>Kapan-3, Kathmandu, Nepal</li>
               </ul>
             </div>
             <div className="block xl:py-16 col-span-full min-[500px]:col-span-6 md:col-span-4 xl:col-span-3">

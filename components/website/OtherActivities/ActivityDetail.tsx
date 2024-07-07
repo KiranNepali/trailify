@@ -12,7 +12,7 @@ function AcitvityDetail({ activity }: any) {
   const data: any = OtherActivitiesData.find((obj) => obj.route == activity);
   const { gallery, desc, name, route } = data;
   return (
-    <div className="w-11/12 md:w-10/12 mx-auto py-[5rem] text-zinc-50">
+    <div className="w-11/12 md:w-10/12 mx-auto py-[5rem] text-zinc-50 overflow-hidden">
       {/* tab  */}
       <div className="w-full mb-9 flex justify-start  items-center gap-10">
         {/* exp tab  */}
@@ -72,6 +72,14 @@ function AcitvityDetail({ activity }: any) {
           ))}
         </div>
       </div>
+
+      <Link href="/booking" className="flex justify-end items-center w-full">
+        <div
+          className={`cursor-pointer  text-nowrap md:w-[20%] w-full mx-auto text-secondary-50 bg-gradient-to-r from-primary-600 to-primary-500   duration-200 flex justify-center items-center  px-5  h-[3rem] text-sm`}
+        >
+          Book now
+        </div>
+      </Link>
     </div>
   );
 }

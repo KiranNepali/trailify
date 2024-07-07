@@ -241,3 +241,7 @@ section .set div:nth-child(8) {
     padding-right: 0.75rem;
   }
 }
+
+/* body {
+  overflow-y: hidden;
+} */

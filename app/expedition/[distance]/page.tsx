@@ -1,11 +1,14 @@
+"use client";
 import AllExpMain from "@/components/website/AllExpedition/AllExpMain";
-import React from "react";
+import React, { useEffect } from "react";
 
 type Props = {};
 
 function page({ params }: any) {
   const { distance } = params;
-
+  useEffect(() => {
+    scrollTo(0, 0);
+  });
   return (
     <div>
       <AllExpMain distance={distance} />

@@ -10,7 +10,14 @@ function Hero({}: Props) {
   useGSAP(() => {
     const splitHeroTitle = new SplitType(".hero-title");
     gsap.from(splitHeroTitle.chars, {
-      // delay: 1,
+      // delay: 2,
+      opacity: 0,
+      duration: 1.5,
+      stagger: 0.05,
+      ease: "power4.inOut",
+    });
+    gsap.from(".hero-scroll", {
+      // delay: 2,
       opacity: 0,
       duration: 1.5,
       stagger: 0.05,
@@ -72,8 +79,10 @@ function Hero({}: Props) {
         </h1>
       </div>
 
-      <div className="cursor-pointer  hover:w-[12rem] hover:h-[12rem]  hero-scroll  duration-200 scroll-down absolute     md:w-[10rem] border-dotted whitespace-nowrap    md:h-[10rem]  border border-secondary-50 rounded-full flex justify-center items-start pt-[2%]  text-wrap text-center  z-20 left-[50%] bottom-[-10%] -translate-x-[50%] text-[14px] md:text-sm"></div>
-      <span className="absolute bottom-2 text-secondary-100  text-sm left-1/2 font-medium text-center   -translate-x-1/2">
+      <div className="hero-scroll ">
+        <div className="cursor-pointer  hover:w-[12rem] hover:h-[12rem]   duration-200 scroll-down absolute  md:w-[10rem] border-dotted whitespace-nowrap    md:h-[10rem]  border border-secondary-50 rounded-full flex justify-center items-start pt-[2%]  text-wrap text-center  z-20 left-[50%] bottom-[-10%] -translate-x-[50%] text-[14px] md:text-sm"></div>
+      </div>
+      <span className="absolute bottom-2 hero-scroll text-secondary-100  text-sm left-1/2 font-medium text-center   -translate-x-1/2">
         SCROLL <br /> DOWN
       </span>
     </div>

@@ -4,44 +4,45 @@ import Card1 from "@/public/780370.png";
 import Card2 from "@/public/PayPalCard.png";
 import Image from "next/image";
 
+import { Icon } from "@iconify/react";
 type Props = {};
 
 export default function Payment({ handleClose }: any) {
-  const notifyPayment = () => toast.success("Payment Successful!");
+  // const notifyPayment = () => ;
 
   const handleSubmit = (e: any) => {
+    toast.success("Payment Successful!")
     e.preventDefault();
     // Handle form submission logic here
     console.log("Form submitted!");
   };
   return (
     <>
-      <div className="min-w-screen min-h-[70vh] pt-[8rem]  backdrop-blur-sm flex items-center justify-center px-5 pb-10 relative">
-        <div className="w-[30%] mx-auto rounded-lg bg-white shadow-lg p-5 relative text-gray-700">
+      <div className="min-w-screen min-h-[70vh] pt-[8rem]  backdrop-blur-sm flex items-center justify-center  pb-10 relative">
+        <div className="md:w-[30%] w-11/12 mx-auto rounded-lg bg-white shadow-lg p-5 relative text-gray-700">
           <div
             onClick={handleClose}
             className="absolute  top-10 right-10 cursor-pointer"
           >
             CLose
           </div>
-          <div className="w-full pt-1 pb-5">
+          {/* <div className="w-full pt-1 pb-5">
             <div className="bg-indigo-500 text-white overflow-hidden rounded-full w-20 h-20 -mt-16 mx-auto shadow-lg flex justify-center items-center">
               <i className="mdi mdi-credit-card-outline text-3xl"></i>
             </div>
-          </div>
+          </div> */}
           <div className="mb-10">
-            <h1 className="text-center font-bold text-xl uppercase">
-              Secure payment info
-            </h1>
+            <Icon icon="logos:stripe" className="w-10" />
           </div>
           <form onSubmit={handleSubmit}>
             <div className="mb-3 w-full flex ">
-              <div className="px-2 w-[70%]">
+              <div className="px-2 w-[50%]">
                 <label
                   htmlFor="type1"
                   className="flex items-center cursor-pointer"
                 >
                   <input
+                    required
                     type="radio"
                     className="form-radio h-5 w-5 text-indigo-500"
                     name="type"
@@ -51,14 +52,15 @@ export default function Payment({ handleClose }: any) {
                   <Image src={Card1} className="h-8 ml-3" alt="Card 1" />
                 </label>
               </div>
-              <div className="px-2 w-[30%]">
+              <div className="px-2 w-[30%] ml-10">
                 <label
                   htmlFor="type2"
                   className="flex items-center cursor-pointer"
                 >
                   <input
+                    required
                     type="radio"
-                    className="form-radio h-5  text-indigo-500"
+                    className="form-radio h-5 w-5  text-indigo-500"
                     name="type"
                     id="type2"
                   />
@@ -72,7 +74,8 @@ export default function Payment({ handleClose }: any) {
               </label>
               <div>
                 <input
-                  className="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-primary-300 transition-colors"
+                  required
+                  className="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-[#9966FF] transition-colors"
                   placeholder="John Smith"
                   type="text"
                 />
@@ -82,7 +85,8 @@ export default function Payment({ handleClose }: any) {
               <label className="font-bold text-sm mb-2 ml-1">Card number</label>
               <div>
                 <input
-                  className="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-primary-300 transition-colors"
+                  required
+                  className="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-[#9966FF] transition-colors"
                   placeholder="0000 0000 0000 0000"
                   type="text"
                 />
@@ -94,7 +98,7 @@ export default function Payment({ handleClose }: any) {
                   Expiration date
                 </label>
                 <div>
-                  <select className="form-select w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-primary-300 transition-colors cursor-pointer">
+                  <select className="form-select w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-[#9966FF] transition-colors cursor-pointer">
                     <option value="01">01 - January</option>
                     <option value="02">02 - February</option>
                     <option value="03">03 - March</option>
@@ -111,7 +115,10 @@ export default function Payment({ handleClose }: any) {
                 </div>
               </div>
               <div className="px-2 w-1/2">
-                <select className="form-select w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-primary-300 transition-colors cursor-pointer">
+                <select
+                  required
+                  className="form-select w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-[#9966FF] transition-colors cursor-pointer"
+                >
                   <option value="2020">2020</option>
                   <option value="2021">2021</option>
                   <option value="2022">2022</option>
@@ -131,17 +138,17 @@ export default function Payment({ handleClose }: any) {
               </label>
               <div>
                 <input
-                  className="w-32 px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-primary-300 transition-colors"
+                  className="w-32 px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none focus:border-[#9966FF] transition-colors"
                   placeholder="000"
                   type="text"
                 />
               </div>
             </div>
-            <div>
+            <div className="w-full flex justify-center items-center">
               <button
                 type="submit"
-                onClick={notifyPayment}
-                className="w-full cursor-pointer py-3 px-10 bg-gradient-to-r from-primary-600 to-primary-500 text-sm font-medium text-secondary-50"
+                // onClick={notifyPayment}
+                className="mx-auto whitespace-nowrap text-center cursor-pointer py-3 rounded-lg px-10 bg-gradient-to-r bg-[#9966FF] text-sm font-medium text-secondary-50"
               >
                 Pay now
               </button>

@@ -4,6 +4,7 @@ import React, { useRef, useState } from "react";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import Image from "next/image";
+import { useGSAP } from "@gsap/react";
 type Props = {};
 
 function PackageDetailMain({}: Props) {
@@ -44,7 +45,7 @@ function PackageDetailMain({}: Props) {
   return (
     <>
       <div className="w-full h-full  text-secondary-500 relative">
-        <div className="w-full h-[50vh] s relative  flex justify-center items-center">
+        <div className="w-full h-[50vh] relative  flex justify-center items-center">
           <Image
             width={1000}
             height={1000}
@@ -62,7 +63,7 @@ function PackageDetailMain({}: Props) {
           {/* tab  link  */}
           <div className="mx-auto w-full md:w-[15%] flex-col gap-8 backdrop-blur-sm sticky top-[5rem] overflow-x-scroll md:overflow-x-visible md:top-[6rem] left-0  flex  font-medium items-center">
             <div className="w-full overflow-x-scroll md:overflow-x-visible flex md:flex-col gap-5 font-medium items-center">
-              {buttonLabels.map((item) => (
+              {buttonLabels.map((item, index) => (
                 <a
                   href={`#${item.label.replace(/\s+/g, "-").toLowerCase()}`}
                   key={item.id}
@@ -85,9 +86,9 @@ function PackageDetailMain({}: Props) {
           <div className="w-full md:w-[85%] flex flex-col gap-2">
             <div
               id="overview"
-              className="w-full mx-auto p-3 md:p-10   bg-secondary-100 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+              className="w-full mx-auto p-3 md:p-10   bg-primary-50/20 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
             >
-              <div className="text-2xl relative tracking-wide title font-semibold italic text-secondary-500">
+              <div className="text-2xl overview relative tracking-wide title font-semibold italic text-secondary-500">
                 Overview
               </div>
               <div className="w-full  text-secondary-400">
@@ -115,10 +116,10 @@ function PackageDetailMain({}: Props) {
             {/* iternary  */}
             <div
               id="itinerary"
-              className="w-full mx-auto p-3 md:p-10   bg-secondary-100 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+              className="w-full mx-auto p-3 md:p-10   bg-primary-50/20 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
             >
               {/* tile  */}
-              <div className="text-2xl relative tracking-wide title font-semibold italic text-secondary-500">
+              <div className="text-2xl itinerary it relative tracking-wide title font-semibold italic text-secondary-500">
                 Itinerary
               </div>
               <div className="w-full h-full flex flex-col gap-2">
@@ -163,9 +164,9 @@ function PackageDetailMain({}: Props) {
             </div>
             <div
               id="route-map"
-              className="w-full h-[70vh] mx-auto p-3 md:p-10   bg-secondary-100 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+              className="w-full h-[70vh] mx-auto p-3 md:p-10   bg-primary-50/20 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
             >
-              <div className="text-2xl relative tracking-wide title font-semibold italic text-secondary-500">
+              <div className="text-2xl route-map relative tracking-wide title font-semibold italic text-secondary-500">
                 Route Map
               </div>
               <Image
@@ -178,9 +179,9 @@ function PackageDetailMain({}: Props) {
             </div>
             <div
               id="inclusions"
-              className="w-full mx-auto p-3 md:p-10   bg-secondary-100 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+              className="w-full mx-auto p-3 md:p-10   bg-primary-50/20 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
             >
-              <div className="text-2xl relative tracking-wide title font-semibold italic text-secondary-500">
+              <div className="text-2xl relative inclusion tracking-wide title font-semibold italic text-secondary-500">
                 Inclusion
               </div>
               <div className="w-full h-full flex flex-col gap-2">
@@ -211,9 +212,9 @@ function PackageDetailMain({}: Props) {
             </div>
             <div
               id="exclusions"
-              className="w-full mx-auto p-3 md:p-10   bg-secondary-100 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+              className="w-full mx-auto p-3 md:p-10   bg-primary-50/20 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
             >
-              <div className="text-2xl relative tracking-wide title font-semibold italic text-secondary-500">
+              <div className="text-2xl exclusion relative tracking-wide title font-semibold italic text-secondary-500">
                 Exclusions
               </div>
               <div className="w-full h-full flex flex-col gap-2">
@@ -244,9 +245,9 @@ function PackageDetailMain({}: Props) {
             </div>
             <div
               id="fixed-dates"
-              className="w-full mx-auto p-3 md:p-10   bg-secondary-100 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
+              className="w-full mx-auto p-3 md:p-10   bg-primary-50/20 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] "
             >
-              <div className="text-2xl relative tracking-wide title font-semibold italic text-secondary-500">
+              <div className="text-2xl relative fixed-date tracking-wide title font-semibold italic text-secondary-500">
                 Fixed Dates
               </div>
               <div className="w-full h-full flex flex-col gap-2">

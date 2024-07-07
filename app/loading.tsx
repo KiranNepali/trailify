@@ -1,9 +1,7 @@
-"use client";
 import React from "react";
 import LogoIcon from "@/public/fav icon.svg";
 import Image from "next/image";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
+
 type Props = {};
 
 export default function Loading({}: Props) {

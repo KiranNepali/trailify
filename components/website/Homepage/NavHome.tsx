@@ -23,7 +23,7 @@ const sideNavLinks = [
   { title: "Contact us", href: "" },
 ];
 
-function Navbar({}: Props) {
+function NavHome({ navContainerRef }: any) {
   const currentRoute = usePathname();
   const sideNavRef = useRef(null);
   const [sideNav, setSideNav] = useState(false);
@@ -55,22 +55,11 @@ function Navbar({}: Props) {
   };
 
   // open animation
-  const navContainerRef = useRef(null);
-  // useGSAP(() => {
-  //   gsap.from(navContainerRef.current, {
-  //     height: 0,
-  //     transformOrigin: "top",
-  //     duration: 0.5,
-  //     ease: "power4.out",
-  //   });
-  // });
 
   return (
     <div
       ref={navContainerRef}
-      className={`fixed z-[100] nav-container  ${
-        currentRoute === "/" ? "hidden" : "block"
-      }  text-secondary-500 top-0 bg-secondary-50 left-0 w-full h-[4.5rem] `}
+      className={`fixed z-[100] opacity-0 translate-y-[-5rem] nav-container-home  text-secondary-500 top-0 bg-secondary-50 left-0 w-full h-[4.5rem] `}
     >
       {/* mobile nav  */}
       <div
@@ -253,7 +242,7 @@ function Navbar({}: Props) {
   );
 }
 
-export default Navbar;
+export default NavHome;
 
 const companyLinks = [
   { name: "Home", href: "/" },

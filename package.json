@@ -12,6 +12,7 @@
     "@gsap/react": "^2.1.1",
     "@iconify/react": "^5.0.1",
     "@studio-freight/lenis": "^1.0.42",
+    "framer-motion": "^11.2.13",
     "gsap": "^3.12.5",
     "i": "^0.3.7",
     "lenis": "^1.1.4",

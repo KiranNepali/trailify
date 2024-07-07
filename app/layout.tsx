@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import SplitType from "split-type";
 import toast, { Toaster } from "react-hot-toast";
+import { motion } from "framer-motion";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,11 +35,14 @@ export default function RootLayout({
       ease: "expo.inOut",
     });
     tl.to(preloaderContainerRef.current, {
-      scaleX: "0",
-      transformOrigin: "right",
-      duration: 0.8,
+      scaleY: "0",
+      transformOrigin: "top",
+      duration: 0.5,
       ease: "sine.out",
       onComplete: () => {
+        gsap.to(".disable-scroll", {
+          height: "auto",
+        });
         setIsLoading(false);
       },
     });
@@ -59,16 +63,23 @@ export default function RootLayout({
           </div>
         )}
         {/* Main Content */}
-        <>
-          <div className="">
-            <Navbar />
-            <div className="w-full h-full bg-secondary-50 text-secondary-500">
-              {children}
-            </div>
-            <Footer />
-            <Toaster />
-          </div>
-        </>
+        {!isLoading && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ ease: "easeIn", duration: 0.2 }}
+              className=""
+            >
+              <Navbar />
+              <div className="w-full h-full  bg-secondary-50 text-secondary-500">
+                {children}
+              </div>
+              <Footer />
+              <Toaster />
+            </motion.div>
+          </>
+        )}
       </body>
     </html>
   );
