@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 
 type Props = {};
 
-function page({ params }: any) {
+function Page({ params }: any) {
   const { distance } = params;
   useEffect(() => {
     scrollTo(0, 0);
@@ -16,4 +16,4 @@ function page({ params }: any) {
   );
 }
 
-export default page;
+export default Page;

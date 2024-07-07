@@ -4,10 +4,10 @@ import React, { useEffect } from "react";
 
 type Props = {};
 
-function page({}: Props) {
+function Page({}: Props) {
   useEffect(() => {
     scrollTo(0, 0);
-  },[]);
+  }, []);
   return (
     <div>
       <CertificatesMain />
@@ -15,4 +15,4 @@ function page({}: Props) {
   );
 }
 
-export default page;
+export default Page;
