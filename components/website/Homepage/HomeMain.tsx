@@ -64,7 +64,6 @@ function HomeMain({}: any) {
         <div className="hero-container">
           <Hero />
         </div>
-
         <div className="w-full  content-main h-full bg-zinc-50 relative z-20">
           <div className="md:w-10/12 w-11/12 mx-auto">
             <HomeAbout />

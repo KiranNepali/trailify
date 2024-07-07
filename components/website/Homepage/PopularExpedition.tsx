@@ -56,6 +56,7 @@ function PopularExpedition({}: Props) {
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
+          autoplay={{ delay: 2000 }}
           breakpoints={{
             924: {
               slidesPerView: 2,

@@ -13,6 +13,7 @@ const BookForm = () => {
   const [openPayment, setOpenPayment] = useState(false);
 
   const notify = () => {
+    document.body.classList.add("overflow-hidden");
     if (!openPayment) {
       gsap.to(paymentContainerRef.current, {
         opacity: 1,
@@ -23,6 +24,7 @@ const BookForm = () => {
   };
 
   const handleClose = () => {
+    document.body.classList.remove("overflow-hidden");
     if (openPayment) {
       gsap.to(paymentContainerRef.current, {
         opacity: 0,
