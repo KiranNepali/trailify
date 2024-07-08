@@ -28,7 +28,7 @@ function Blogs({}: Props) {
                 <h3 className="text-xl font-medium tracking-wide sm:text-4xl group-hover:underline group-focus:underline title">
                   Noster tincidunt reprimique ad pro
                 </h3>
-                <span className="text-xs text-secondary-50 font-medium">
+                <span className="text-xs text-secondary-500 font-medium">
                   February 19, 2021
                 </span>
                 <p className="text-sm font-medium text-secondary-400">
@@ -55,7 +55,7 @@ function Blogs({}: Props) {
                 <h3 className="text-xl font-medium tracking-wide sm:text-4xl group-hover:underline group-focus:underline title">
                   Noster tincidunt reprimique ad pro
                 </h3>
-                <span className="text-xs text-secondary-50 font-medium">
+                <span className="text-xs text-secondary-500 font-medium">
                   February 19, 2021
                 </span>
                 <p className="text-sm font-medium text-secondary-400">
@@ -89,7 +89,7 @@ function Blogs({}: Props) {
                   <h3 className="text-xl font-medium tracking-wide group-hover:underline group-focus:underline title">
                     {item.title}
                   </h3>
-                  <span className="text-xs text-secondary-50 font-medium">
+                  <span className="text-xs text-secondary-500 font-medium">
                     {item.date}
                   </span>
                   <p className="text-sm font-medium text-secondary-400">

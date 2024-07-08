@@ -9,8 +9,8 @@ function RelatedBlogs({}: Props) {
     scrollTo(0, 0);
   },[]);
   return (
-    <div className="flex gap-5 flex-col">
-      <h1 className="text-2xl md:text-5xl w-full text-center relative tracking-wide mt-10 title font-bold text-secondary-50">
+    <div className="flex gap-5 flex-col pb-[5rem]">
+      <h1 className="text-2xl md:text-5xl w-full text-center relative tracking-wide mt-10 title font-bold text-secondary-500">
         RELATED BLOGS
       </h1>
       <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -35,7 +35,7 @@ function RelatedBlogs({}: Props) {
               <h3 className="text-xl font-medium tracking-wide group-hover:underline group-focus:underline title">
                 {item.title}
               </h3>
-              <span className="text-xs text-secondary-50 font-medium">
+              <span className="text-xs text-secondary-500 font-medium">
                 {item.date}
               </span>
               <p className="text-sm font-medium text-secondary-400">
