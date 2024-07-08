@@ -34,7 +34,7 @@ function ContactUs({}: Props) {
               />
               <input
                 type="text"
-                placeholder="name"
+                placeholder="email"
                 className="w-full px-3 py-2 h-[3rem] text-sm font-semibold outline-none"
               />
               <textarea
