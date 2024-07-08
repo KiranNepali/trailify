@@ -86,14 +86,17 @@ function AllTrek({ region }: any) {
                   {item.packageDesc.slice(0, 50)}...
                 </p>
 
-                <div className="flex gap-1 text-sm font-medium">
+                <div className="flex gap-3 text-sm font-medium">
                   <div className="flex gap-1 items-center">
-                    <Icon icon="mdi:language" className="text-primary-600" />
-                    <span>Expedition</span>
+                    <Icon
+                      icon="iconoir:trekking"
+                      className="text-primary-600"
+                    />
+                    <span>Trek</span>
                   </div>
                   <div className="flex gap-1 items-center">
                     <Icon
-                      icon="material-symbols-light:no-meals-rounded"
+                      icon="simple-line-icons:calender"
                       className="text-primary-600"
                     />
                     <span>{item.packageDay}</span>

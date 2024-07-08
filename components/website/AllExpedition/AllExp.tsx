@@ -83,14 +83,14 @@ function AllExp({ distance }: any) {
                   {item.packageDesc.slice(0, 50)}...
                 </p>
 
-                <div className="flex gap-1 text-sm font-medium">
+                <div className="flex gap-3 text-sm font-medium">
                   <div className="flex gap-1 items-center">
-                    <Icon icon="mdi:language" className="text-primary-600" />
+                    <Icon icon="la:mountain" className="text-primary-600" />
                     <span>Expedition</span>
                   </div>
                   <div className="flex gap-1 items-center">
                     <Icon
-                      icon="material-symbols-light:no-meals-rounded"
+                      icon="simple-line-icons:calender"
                       className="text-primary-600"
                     />
                     <span>{item.packageDay}</span>
