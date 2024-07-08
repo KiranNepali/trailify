@@ -13,7 +13,9 @@ function Footer({}: Props) {
     <>
       <footer className="bg-white shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] lg:grid lg:grid-cols-5">
         <div className="relative block h-32 lg:col-span-2 lg:h-full">
-          <img
+          <Image
+            width={1000}
+            height={1000}
             src="https://images.unsplash.com/photo-1715097150812-94d3618225c0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt=""
             className="absolute inset-0 h-full w-full object-cover"
