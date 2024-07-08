@@ -6,7 +6,7 @@ type Props = {};
 function ContactUs({}: Props) {
   return (
     <>
-      <div className="w-full py-[10rem] relative mx-auto">
+      <div className="w-full py-[5rem] relative mx-auto">
         {/* <Image
           width={1000}
           height={1000}
@@ -15,7 +15,7 @@ function ContactUs({}: Props) {
           className="w-full h-full brightness-50 absolute top-0 left-0  object-cover object-center"
         /> */}
 
-        <div className="w-[80%] relative bg-secondary-50 mx-auto grid shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] grid-cols-2">
+        <div className="w-[70%] relative bg-secondary-50 mx-auto grid shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] grid-cols-2">
           <form action="" className="w-full h-full flex flex-col  gap-5 p-10">
             <div className="">
               <span className="text-sm font-semibold text-secondary-400">
@@ -103,7 +103,7 @@ function ContactUs({}: Props) {
         width="600"
         height="450"
         loading="lazy"
-        className="w-10/12 mx-auto"
+        className="w-10/12 mx-auto mb-[5rem]"
         // referrerpolicy="no-referrer-when-downgrade"
       ></iframe>
     </>
