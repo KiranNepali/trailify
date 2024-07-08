@@ -1,11 +1,44 @@
 import Image from "next/image";
 import React from "react";
 import CertificatesHero from "./CertificatesHero";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 type Props = {};
-
+gsap.registerPlugin(ScrollTrigger);
 export default function CertificatesMain({}: Props) {
+  useGSAP(() => {
+    CertificatesData.forEach((item, index) => {
+      gsap.from(`.desc-${index}`, {
+        rotate: index % 2 === 0 ? "-20deg" : "20deg",
+        opacity: 0,
+        duration: 1.5,
+        x: index % 2 === 0 ? "-30%" : "30%",
+        scrollTrigger: {
+          trigger: `.desc-${index}`,
+          markers: true,
+          start: "top 90%",
+          end: "50% 50%",
+          scrub: 1,
+        },
+      });
 
+      gsap.from(`.image-${index}`, {
+        rotate: index % 2 === 0 ? "20deg" : "-20deg",
+        opacity: 0,
+        duration: 1.5,
+        x: index % 2 === 0 ? "30%" : "-30%",
+        scrollTrigger: {
+          trigger: `.image-${index}`,
+          markers: true,
+          start: "top 90%",
+          end: "50% 50%",
+          scrub: 1,
+        },
+      });
+    });
+  });
   return (
     <>
       <div className="w-full">
@@ -20,14 +53,14 @@ export default function CertificatesMain({}: Props) {
           return (
             <div
               key={index}
-              className={`w-full gap-5 flex md:flex-row flex-col justify-center items-center ${
+              className={`w-full  gap-5 flex md:flex-row flex-col justify-center items-center ${
                 isOddIndex ? "md:flex-row-reverse" : ""
               }`}
             >
               <div
                 className={`${
                   isOddIndex ? "text-left" : "text-right"
-                } md:w-[50%]  flex gap-2 flex-col`}
+                } md:w-[50%] desc-${index}  flex gap-2 flex-col`}
               >
                 <span className="font-bold text-zinc-400 text-lg">
                   {item.num}
@@ -47,7 +80,9 @@ export default function CertificatesMain({}: Props) {
                   {item.desc}
                 </p>
               </div>
-              <div className="w-[50%] flex justify-center items-center ">
+              <div
+                className={`w-[50%] image-${index} flex justify-center items-center`}
+              >
                 <Image
                   width={1000}
                   height={1000}
