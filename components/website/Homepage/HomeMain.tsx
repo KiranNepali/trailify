@@ -78,7 +78,7 @@ function HomeMain({}: any) {
         <div className="hero-container relative  h-screen  top-0 left-0 w-full">
           <Hero />
         </div>
-        <div className="w-full relative  content-main  bg-zinc-50  z-20">
+        <div className="w-full relative  content-main  bg-secondary-50  z-20">
           <div className="md:w-10/12 w-11/12 mx-auto">
             <HomeAbout />
           </div>

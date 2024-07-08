@@ -49,9 +49,17 @@ function Hero({}: Props) {
   });
   return (
     <div className="w-full top-0 left-0 fixed  overflow-hidden  h-screen   flex text-secondary-50   justify-center items-center">
-      {/* mask black  */}
-      {/* <div className="w-full h-full absolute top-0 left-0 bg-black opacity-[0.5] z-10"></div> */}
       {/* hero bg image  */}
+
+      <video
+        className="video-zoom absolute rotate-12 w-[30vw] scale-y-95 h-[20vh]  brightness-[0.3] z-10 object-cover object-center"
+        autoPlay
+        loop
+        muted
+      >
+        <source src="/HeroBg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
       {/* <div className="absolute bottom-10 opacity-0  side-circle  right-20 z-20 gap-10 flex  justify-center items-end flex-col">
         <div className="w-[3rem] h-[3rem] overflow-hidden rounded-full border-dotted p-1 border hover:w-[4rem] hover:h-[4rem] duration-200 cursor-pointer">
@@ -100,16 +108,6 @@ function Hero({}: Props) {
           ></Image>
         </div>
       </div> */}
-
-      <video
-        className="video-zoom absolute rotate-12 w-[30vw] scale-y-95 h-[20vh]  brightness-[0.3] z-10 object-cover object-center"
-        autoPlay
-        loop
-        muted
-      >
-        <source src="/HeroBg.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
       {/* text HEADINg  */}
       <div className="text-center  z-20  relative  w-11/12 md:w-10/12   mx-auto flex justify-center items-center flex-col gap-2">
         <h1
