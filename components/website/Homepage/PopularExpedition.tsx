@@ -16,23 +16,45 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // data
 import ExpData from "@/data/ExpeditionData";
 import Link from "next/link";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 type Props = {};
 
 function PopularExpedition({}: Props) {
+  const imgContainerRef = useRef(null);
+  // useGSAP(() => {
+  //   const tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       markers: true,
+  //       start: "top 80%",
+  //       end: "50% 50%",
+  //       trigger: imgContainerRef.current,
+  //       scrub: 1,
+  //     },
+  //   });
+  //   tl.from(".exp-img", {
+  //     translateY: "-50px",
+  //     duration: 1,
+  //     // ease: "power4.inOut",
+  //   });
+  // });
   const swiperRef = useRef<any>();
   return (
     <div className="w-full h-[110vh] flex justify-center items-center relative">
       {/* image  */}
-      <div className="w-full h-[50vh] bg-zinc-200 absolute top-0 left-0 flex justify-center items-center">
-        <Image
+      <div
+        ref={imgContainerRef}
+        className="w-full h-[50vh] bg-parallex1 bg-fixed bg-cover  bg-zinc-200 overflow-hidden absolute top-0 left-0 flex justify-center items-center"
+      >
+        {/* <Image
           width={1000}
           height={1000}
           src="https://images.unsplash.com/photo-1517934274943-d1749ff2d7a8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           alt="expedition-image"
-          className="absolute top-0 left-0 w-full h-[50vh] object-cover object-top"
-        />
+          className="bg-parallex   exp-img h-[50vh] object-cover object-top"
+        /> */}
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.5]"></div>
-        <h1 className="text-3xl md:text-6xl relative tracking-wide title font-bold text-secondary-50">
+        <h1 className="text-3xl md:text-6xl relative tracking-wide title font-bold  text-secondary-50">
           TRENDING EXPEDITION
         </h1>
       </div>

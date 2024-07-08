@@ -18,20 +18,6 @@ const config: Config = {
         "3xl": "1920px",
       },
       colors: {
-        // WHITE
-        // brown
-        // primary: {
-        //   50: "#F9F7F4",
-        //   100: "#F3EEEA",
-        //   200: "#E2D5CA",
-        //   300: "#D1BCAA",
-        //   400: "#AE896A",
-        //   500: "#8B572A",
-        //   600: "#7D4E26",
-        //   700: "#533419",
-        //   800: "#3F2713",
-        //   900: "#2A1A0D",
-        // },
         primary: {
           50: "#fbf5ef",
           100: "#f2e5d3",
@@ -60,6 +46,10 @@ const config: Config = {
         },
       },
       backgroundImage: {
+        parallex1:
+          'url("https://images.unsplash.com/photo-1517934274943-d1749ff2d7a8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
+        parallex2:
+          'url("https://images.unsplash.com/reserve/91JuTaUSKaMh2yjB1C4A_IMG_9284.jpg?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")',
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",

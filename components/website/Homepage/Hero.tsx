@@ -114,7 +114,7 @@ function Hero({}: Props) {
       <div className="text-center  z-20  relative  w-11/12 md:w-10/12   mx-auto flex justify-center items-center flex-col gap-2">
         <h1
           // ref={heroTitle}
-          className="text-5xl 3xl:text-6xl hero-title  tracking-wide title font-bold text-secondary-50"
+          className="text-5xl 3xl:text-8xl hero-title  tracking-wide title font-bold text-secondary-50"
         >
           Unseen Adventures <br /> Await
         </h1>
