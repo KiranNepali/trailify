@@ -13,7 +13,7 @@ export default function OurTeam({}: Props) {
   return (
     <div className="pb-[5rem] w-full">
       <div className="w-full md:w-[70%] pb-[5rem] mx-auto flex flex-col gap-5">
-        <h1 className="text-3xl md:text-6xl text-center relative tracking-wide mt-10 title font-bold text-secondary-500">
+        <h1 className="text-3xl md:text-6xl text-center relative tracking-wide mt-10 title font-bold text-secondary-50">
           MADE FOR CLIMBERS
         </h1>
         <div className="flex md:flex-row flex-col w-full gap-5">
@@ -65,7 +65,7 @@ export default function OurTeam({}: Props) {
           >
             <div className="w-full justify-between flex px-2">
               <span className="font-sm uppercase tracking-wide title">{teamMember.name}</span>
-              <span className="text-[14px] italic   text-secondary-500">{teamMember.role}</span>
+              <span className="text-[14px] italic   text-secondary-50">{teamMember.role}</span>
             </div>
             <div className="relative group h-[50vh] cursor-pointer">
               <div className="absolute md:group-hover:opacity-[0.5] duration-300  top-0  opacity-0 left-0 w-full h-[50vh] bg-black"></div>

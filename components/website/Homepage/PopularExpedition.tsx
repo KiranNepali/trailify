@@ -85,7 +85,7 @@ function PopularExpedition({}: Props) {
           {ExpData.map((item, index) => (
             <SwiperSlide key={index}>
               <Link href="/package_detail">
-                <div className="shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] flex flex-col gap-3 h-auto p-2">
+                <div className="shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] flex flex-col gap-3 h-auto max-h-[60vh] p-2">
                   <div className="relative">
                     <div className="px-4 text-secondary-50 z-10 text-sm py-1 text- bg-primary-600 absolute top-[3%] left-[3%]">
                       $120

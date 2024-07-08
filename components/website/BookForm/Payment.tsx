@@ -11,7 +11,7 @@ export default function Payment({ handleClose }: any) {
   // const notifyPayment = () => ;
 
   const handleSubmit = (e: any) => {
-    toast.success("Payment Successful!")
+    toast.success("Payment Successful!");
     e.preventDefault();
     // Handle form submission logic here
     console.log("Form submitted!");
@@ -20,12 +20,12 @@ export default function Payment({ handleClose }: any) {
     <>
       <div className="min-w-screen min-h-[70vh] pt-[8rem]  backdrop-blur-sm flex items-center justify-center  pb-10 relative">
         <div className="md:w-[30%] w-11/12 mx-auto rounded-lg bg-white shadow-lg p-5 relative text-gray-700">
-          <div
-            onClick={handleClose}
+          {/* <div
+           
             className="absolute  top-10 right-10 cursor-pointer"
           >
             CLose
-          </div>
+          </div> */}
           {/* <div className="w-full pt-1 pb-5">
             <div className="bg-indigo-500 text-white overflow-hidden rounded-full w-20 h-20 -mt-16 mx-auto shadow-lg flex justify-center items-center">
               <i className="mdi mdi-credit-card-outline text-3xl"></i>
@@ -147,6 +147,7 @@ export default function Payment({ handleClose }: any) {
             <div className="w-full flex justify-center items-center">
               <button
                 type="submit"
+                onClick={handleClose}
                 // onClick={notifyPayment}
                 className="mx-auto whitespace-nowrap text-center cursor-pointer py-3 rounded-lg px-10 bg-gradient-to-r bg-[#9966FF] text-sm font-medium text-secondary-50"
               >

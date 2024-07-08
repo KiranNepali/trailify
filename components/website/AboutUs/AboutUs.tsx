@@ -51,7 +51,7 @@ function AboutUs({}: Props) {
       <div className="w-full py-[5rem]   flex flex-col md:flex-row justify-center items-center gap-10">
         {/* about us  */}
         <div className="w-full md:w-[40%] about-desc1  flex flex-col gap-2 items-start justify-center h-[70%]">
-          <span className="text-secondary-500 text-lg font-medium">
+          <span className="text-secondary-50 text-lg font-medium">
             Our Story
           </span>
           <p className="text-secondary-400">
@@ -80,7 +80,7 @@ function AboutUs({}: Props) {
 
       {/* middle  */}
       <div className="w-full flex flex-col gap-2 pb-[5rem]">
-        <h1 className="text-4xl md:text-8xl w-full md:w-[50%] about-subtitle tracking-wide title font-bold text-secondary-500">
+        <h1 className="text-4xl md:text-8xl w-full md:w-[50%] about-subtitle tracking-wide title font-bold text-secondary-50">
           LET&apos;S GET TO <br /> KNOW EACH OTHER
         </h1>
         <div className="w-full flex justify-end">
@@ -128,7 +128,7 @@ function AboutUs({}: Props) {
             </div>
           </div>
         </div>
-        <h1 className="w-full h-full flex justify-center items-center title italic title font-bold text-secondary-500 text-5xl">
+        <h1 className="w-full h-full flex justify-center items-center title italic title font-bold text-secondary-50 text-5xl">
           WHAT WE DO?
         </h1>
         {/* image  */}

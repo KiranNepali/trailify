@@ -3,12 +3,24 @@ import Image from "next/image";
 import React from "react";
 import { Icon } from "@iconify/react";
 import RelatedBlogs from "./RelatedBlogs";
+import Link from "next/link";
 type Props = {};
 
 export default function BlogDetailMain({}: Props) {
   return (
     <>
-      <div className="w-11/12 md:w-10/12 mx-auto py-[5rem]">
+      <div className="w-11/12 relative md:w-10/12 mx-auto py-[5rem]">
+      <Link href="/blogs" className="w-full flex justify-start">
+            <div className="text-zinc-700 z-40 hover:scale-105 duration-300 hover:text-zinc-800 flex  justify-center items-center">
+              <div className="overflow-hidden title flex justify-center items-center">
+                <Icon
+                  icon="ic:outline-arrow-left"
+                  className="w-[1.5rem] h-[1.5rem]"
+                />
+              </div>
+              <div className="font-medium">Back</div>
+            </div>
+          </Link>
         <div className="w-full flex flex-col gap-5 justify-start items-start">
           {/* title  */}
           <div className="w-full">
