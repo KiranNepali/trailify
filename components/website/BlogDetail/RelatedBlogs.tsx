@@ -7,30 +7,34 @@ type Props = {};
 function RelatedBlogs({}: Props) {
   useEffect(() => {
     scrollTo(0, 0);
-  },[]);
+  }, []);
   return (
-    <div className="flex gap-5 flex-col pb-[5rem]">
+    <div className="w-full md:w-10/12 mx-auto flex gap-5 flex-col pb-[5rem]">
       <h1 className="text-2xl md:text-5xl w-full text-center relative tracking-wide mt-10 title font-bold text-secondary-500">
         RELATED BLOGS
       </h1>
-      <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid w-full justify-center grid-cols-1 place-content-center items-center place-items-center gap-2 sm:grid-cols-2 lg:grid-cols-3">
         {BlogData.map((item, index) => (
           <Link
             key={item.id}
             rel="noopener noreferrer"
             href="blog_detail"
-            className={`max-w-sm mx-auto group hover:no-underline shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] focus:no-underline dark:bg-gray-50 ${
+            className={`w-full mx-auto group ${
+              index === 0 ? "h-full" : ""
+            } relative hover:scale-95 duration-200 w-full hover:no-underline shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] focus:no-underline dark:bg-gray-50 ${
               index > 1 ? "hidden sm:block" : ""
             }`}
           >
-            <Image
-              alt=""
-              width={1000}
-              height={1000}
-              role="presentation"
-              className="object-cover w-full  h-44 dark:bg-gray-500"
-              src={item.imageSrc}
-            />
+            <div className="w-full h-44   overflow-hidden">
+              <Image
+                alt=""
+                width={1000}
+                height={1000}
+                role="presentation"
+                className="object-cover w-full  h-full group-hover:scale-105  duration-200   "
+                src={item.imageSrc}
+              />
+            </div>
             <div className="p-6 space-y-2">
               <h3 className="text-xl font-medium tracking-wide group-hover:underline group-focus:underline title">
                 {item.title}

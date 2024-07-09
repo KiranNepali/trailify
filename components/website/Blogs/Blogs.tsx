@@ -8,12 +8,12 @@ function Blogs({}: Props) {
   return (
     <div>
       <div className="py-[5rem]">
-        <div className="w-10/12 mx-auto space-y-6 sm:space-y-12">
-          <div className="flex gap-3">
+        <div className="w-11/12 md:w-8/12 mx-auto space-y-6 sm:space-y-12">
+          <div className="md:flex gap-3">
             <Link
               rel="noopener noreferrer"
               href="blog_detail"
-              className="block max-w-sm gap-3 mx-auto group sm:max-w-full hover:scale-95 duration-200  hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] dark:bg-gray-50"
+              className="block gap-3 mx-auto group hover:scale-95 duration-200  hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] dark:bg-gray-50"
             >
               <div className="w-full object-cover  h-64  sm:h-96 lg:col-span-7    overflow-hidden  duration-200 ">
                 <Image
@@ -65,13 +65,15 @@ function Blogs({}: Props) {
               </div>
             </Link>
           </div>
-          <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid justify-center grid-cols-1 place-content-center items-center place-items-center gap-2 sm:grid-cols-2 lg:grid-cols-3">
             {BlogData.map((item, index) => (
               <Link
                 key={item.id}
                 rel="noopener noreferrer"
                 href="blog_detail"
-                className={`max-w-sm mx-auto group relative hover:scale-105 duration-200 hover:no-underline shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] focus:no-underline dark:bg-gray-50 ${
+                className={`w-full mx-auto group ${
+                  index === 0 ? "col-span-2 h-full" : ""
+                } relative hover:scale-95 duration-200 w-full hover:no-underline shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] focus:no-underline dark:bg-gray-50 ${
                   index > 1 ? "hidden sm:block" : ""
                 }`}
               >
@@ -144,6 +146,15 @@ const BlogData = [
       "https://images.unsplash.com/photo-1471115853179-bb1d604434e0?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     title: "In usu laoreet repudiare legendos",
     date: "January 23, 2021",
+    description:
+      "Mei ex aliquid eleifend forensibus, quo ad dicta apeirian neglegentur, ex has tantas percipit perfecto. At per tempor albucius perfecto, ei probatus consulatu patrioque mea, ei vocent delicata indoctum pri.",
+  },
+  {
+    id: 4,
+    imageSrc:
+      "https://images.unsplash.com/photo-1642933196504-62107dac9258?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D?4",
+    title: "In usu laoreet repudiare legendos",
+    date: "January 24, 2021",
     description:
       "Mei ex aliquid eleifend forensibus, quo ad dicta apeirian neglegentur, ex has tantas percipit perfecto. At per tempor albucius perfecto, ei probatus consulatu patrioque mea, ei vocent delicata indoctum pri.",
   },
