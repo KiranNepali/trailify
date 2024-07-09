@@ -9,6 +9,7 @@ import SplitType from "split-type";
 import toast, { Toaster } from "react-hot-toast";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
+import Lenis from "lenis";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const preloaderContainerRef = useRef<HTMLDivElement>(null);
+  const [dimension, setDimension] = useState({ width: 0, height: 0 });
+  useEffect(() => {
+    const lenis = new Lenis();
+    const raf = (time: any) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    };
+    const resize = () => {
+      setDimension({ width: window.innerWidth, height: window.innerHeight });
+    };
+
+    window.addEventListener("resize", resize);
+    requestAnimationFrame(raf);
+    resize();
+
+    return () => {
+      window.removeEventListener("resize", resize);
+    };
+  }, []);
+
   const [isLoading, setIsLoading] = useState(true);
 
   const currentRoute = usePathname();

@@ -7,38 +7,17 @@ import Banner from "./Banner";
 import PopularExpedition from "./PopularExpedition";
 import PopularTrekking from "./PopularTrekking";
 import Reviews from "./Reviews";
-import Lenis from "lenis";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
 import NavHome from "./NavHome";
 import Try from "./try";
 type Props = {};
 
 gsap.registerPlugin(ScrollTrigger);
 function HomeMain({}: any) {
-  const [dimension, setDimension] = useState({ width: 0, height: 0 });
-  useEffect(() => {
-    const lenis = new Lenis();
-    const raf = (time: any) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-    const resize = () => {
-      setDimension({ width: window.innerWidth, height: window.innerHeight });
-    };
-
-    window.addEventListener("resize", resize);
-    requestAnimationFrame(raf);
-    resize();
-
-    return () => {
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
-
+  
   useGSAP(() => {
     const tl1 = gsap.timeline({
       scrollTrigger: {
