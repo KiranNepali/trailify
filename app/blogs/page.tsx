@@ -5,8 +5,8 @@ type Props = {};
 
 export default function page({}: Props) {
   return (
-    <div>
+    <main className="bg-secondary-50 z-[20] relative">
       <BlogMain />
-    </div>
+    </main>
   );
 }
