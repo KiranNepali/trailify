@@ -16,51 +16,59 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // data
 import TrekData from "@/data/TrekkingData";
 import Link from "next/link";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 type Props = {};
 
 function PopularTrekking({}: Props) {
   const swiperRef = useRef<any>();
+
+  useGSAP(() => {
+    gsap.from(".title-trek", {
+      y: "100px",
+      opacity: 0.5,
+      ease: "sine.out",
+      scrollTrigger: {
+        start: "top 90%",
+        end: "50% 50%",
+        // markers: true,
+        scrub: 1,
+        trigger: ".title-trek",
+      },
+    });
+
+    gsap.from(".card-trek", {
+      y: "100px",
+      opacity: 0.5,
+      ease: "sine.out",
+      scrollTrigger: {
+        start: "top 90%",
+        end: "50% 50%",
+        // markers: true,
+        scrub: 1,
+        trigger: ".card-trek",
+      },
+    });
+  });
   return (
     <div className="w-full h-[110vh] flex justify-center items-center relative">
       {/* image  */}
-      <div className="w-full bg-fixed bg-parallex2  bg-cover h-[50vh] bg-zinc-200 absolute top-0 left-0 flex justify-center items-center">
-        {/* <Image
-          width={1000}
-          height={1000}
-          src="https://images.unsplash.com/reserve/91JuTaUSKaMh2yjB1C4A_IMG_9284.jpg?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="expedition-image"
-          className="absolute top-0 left-0 w-full h-[50vh] object-cover object-center"
-        /> */}
+      <div className="w-full h-[90vh] bg-parallex2 bg-fixed bg-cover  bg-zinc-200 overflow-hidden absolute top-0 left-0 flex justify-center items-center">
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.5]"></div>
-
-        <h1 className="text-3xl md:text-6xl relative tracking-wide title font-bold text-secondary-50">
-          TRENDING TREKKING
-        </h1>
       </div>
 
       {/* CARDS  */}
-      <div className="w-11/12 md:w-9/12 mx-auto h-[60vh] mt-[10%] flex gap-2 justify-center relative items-center">
-        <div
-          onClick={() => {
-            if (swiperRef.current) {
-              swiperRef.current.slidePrev();
-            }
-          }}
-          className="w-[2rem]  md:w-[2.5rem] h-[2rem] md:h-[2.5rem] hover:scale-105 duration-300 cursor-pointer overflow-hidden  text-secondary-700 hover:text-secondary-400"
-        >
-          <Icon
-            icon="mynaui:fat-arrow-left"
-            className="w-full h-full object-cover object-center"
-          />
-        </div>
+      <div className="w-11/12 md:w-9/12 mx-auto h-[60vh] mt-[-5%] flex flex-col  justify-center relative items-center">
+        <h1 className="text-3xl title-trek mt-[-10%] md:text-6xl mb-6 relative tracking-wide title font-bold  text-secondary-50">
+          TRENDING TREKKING
+        </h1>
+
         <Swiper
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
-          autoplay={true}
-          loop={true}
-          speed={500}
+          autoplay={{ delay: 2000 }}
           breakpoints={{
             924: {
               slidesPerView: 2,
@@ -76,18 +84,20 @@ function PopularTrekking({}: Props) {
               spaceBetween: 10,
             },
           }}
+          speed={500}
+          loop={true}
           spaceBetween={30}
           freeMode={true}
           pagination={{
             clickable: true,
           }}
           modules={[FreeMode]}
-          className="mySwiper"
+          className="mySwiper card-trek"
         >
           {TrekData.map((item, index) => (
             <SwiperSlide key={index}>
               <Link href="/package_detail">
-                <div className="shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] flex flex-col gap-3 h-auto max-h-[60vh] p-2">
+                <div className="bg-secondary-50 shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] flex flex-col gap-3 h-auto max-h-[60vh] p-2">
                   <div className="relative">
                     <div className="px-4 text-secondary-50 z-10 text-sm py-1 text- bg-primary-600 absolute top-[3%] left-[3%]">
                       $120
@@ -135,18 +145,33 @@ function PopularTrekking({}: Props) {
           ))}
         </Swiper>
 
-        <div
-          onClick={() => {
-            if (swiperRef.current) {
-              swiperRef.current.slideNext();
-            }
-          }}
-          className="w-[2rem]  md:w-[2.5rem] h-[2rem] md:h-[2.5rem] hover:scale-105 duration-300 cursor-pointer overflow-hidden  text-secondary-700 hover:text-secondary-400"
-        >
-          <Icon
-            icon="mynaui:fat-arrow-right"
-            className="w-full h-full object-cover object-center"
-          />
+        <div className="flex gap-5 items-center">
+          <div
+            onClick={() => {
+              if (swiperRef.current) {
+                swiperRef.current.slidePrev();
+              }
+            }}
+            className="w-[2rem]  md:w-[2.5rem] h-[2rem] md:h-[2.5rem] hover:scale-105 duration-300 cursor-pointer overflow-hidden  text-secondary-50 hover:text-secondary-100"
+          >
+            <Icon
+              icon="mynaui:fat-arrow-left"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+          <div
+            onClick={() => {
+              if (swiperRef.current) {
+                swiperRef.current.slideNext();
+              }
+            }}
+            className="w-[2rem]  md:w-[2.5rem] h-[2rem] md:h-[2.5rem] hover:scale-105 duration-300 cursor-pointer overflow-hidden  text-secondary-50 hover:text-secondary-100"
+          >
+            <Icon
+              icon="mynaui:fat-arrow-right"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
         </div>
       </div>
     </div>

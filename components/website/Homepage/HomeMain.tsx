@@ -8,13 +8,13 @@ import PopularExpedition from "./PopularExpedition";
 import PopularTrekking from "./PopularTrekking";
 import Reviews from "./Reviews";
 import Lenis from "lenis";
-import Try from "./Try";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import NavHome from "./NavHome";
+import Try from "./try";
 type Props = {};
 
 gsap.registerPlugin(ScrollTrigger);
@@ -79,6 +79,7 @@ function HomeMain({}: any) {
           <Hero />
         </div>
         <div className="w-full relative  content-main  bg-secondary-50  z-20">
+          {/* <Try /> */}
           <div className="md:w-10/12 w-11/12 mx-auto">
             <HomeAbout />
           </div>
