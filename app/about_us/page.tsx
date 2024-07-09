@@ -8,7 +8,7 @@ export default function Home() {
   },[]);
   return (
     <>
-      <main>
+      <main className="bg-secondary-50 z-[20] relative">
         <AboutUsMain />
       </main>
     </>

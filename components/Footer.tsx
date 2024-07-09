@@ -11,7 +11,11 @@ function Footer({}: Props) {
   const currentRoute = usePathname();
   return (
     <>
-      <footer className="bg-secondary-50 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] lg:grid lg:grid-cols-5">
+      <footer
+        className={`bg-secondary-50 h-[60vh] z-[1] ${
+          currentRoute === "/" ? "relative" : "fixed"
+        }  bottom-0 left-0 w-full mt-[30vh]   shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] lg:grid lg:grid-cols-5`}
+      >
         <div className="relative block h-32 lg:col-span-2 lg:h-full">
           <Image
             width={1000}
@@ -169,33 +173,33 @@ function Footer({}: Props) {
 
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      href="/blogs"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       {" "}
                       Blogs
-                    </a>
+                    </Link>
                   </li>
 
                   <li>
-                    <a
+                    <Link
                       href="#"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       {" "}
                       Trekking
-                    </a>
+                    </Link>
                   </li>
 
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      href=""
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       {" "}
                       Expedition
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -205,42 +209,42 @@ function Footer({}: Props) {
 
                 <ul className="mt-6 space-y-4 text-sm">
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      href="/about_us"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       {" "}
                       About{" "}
-                    </a>
+                    </Link>
                   </li>
 
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      href="/our_team"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       {" "}
                       Meet the Team{" "}
-                    </a>
+                    </Link>
                   </li>
 
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      href="/certificates"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       {" "}
                       Certificates
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a
-                      href="#"
+                    <Link
+                      href="/contact_us"
                       className="text-gray-700 transition hover:opacity-75"
                     >
                       {" "}
                       Contact us
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>

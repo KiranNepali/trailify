@@ -7,14 +7,6 @@ function ContactUs({}: Props) {
   return (
     <>
       <div className="w-full py-[5rem] relative mx-auto">
-        {/* <Image
-          width={1000}
-          height={1000}
-          src="https://images.unsplash.com/photo-1571401835393-8c5f35328320?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="expedition-image"
-          className="w-full h-full brightness-50 absolute top-0 left-0  object-cover object-center"
-        /> */}
-
         <div className="w-[70%] relative bg-secondary-50 mx-auto grid shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] grid-cols-2">
           <form action="" className="w-full h-full flex flex-col  gap-5 p-10">
             <div className="">
@@ -57,7 +49,9 @@ function ContactUs({}: Props) {
           <div className="w-full relative flex justify-center items-center">
             <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.3]"></div>
             <div className="absolute w-[50%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white  mx-auto p-5 flex flex-col gap-3 items-start justify-center">
-              <span className="w-full text-center title font-semibold tracking-wide">Trivision</span>
+              <span className="w-full text-center title font-semibold tracking-wide">
+                Trivision
+              </span>
               <div className="w-full flex justify-center items-center flex-col gap-2">
                 <div className="flex justify-center items-center gap-3">
                   <Icon
@@ -111,4 +105,3 @@ function ContactUs({}: Props) {
 }
 
 export default ContactUs;
-

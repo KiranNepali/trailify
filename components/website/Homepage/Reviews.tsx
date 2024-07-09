@@ -18,7 +18,7 @@ type Props = {};
 function Reviews({}: Props) {
   const swiperRef = useRef<any>();
   return (
-    <div className="w-full py-[1rem] flex flex-col gap-20 justify-center items-center relative">
+    <div className="w-full py-[3rem] flex flex-col gap-20 justify-center items-center relative">
       <div className="w-10/12 mx-auto justify-between items-center flex">
         <div
           onClick={() => {

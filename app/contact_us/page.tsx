@@ -9,9 +9,9 @@ function Page({}: Props) {
     scrollTo(0, 0);
   },[]);
   return (
-    <div>
+    <main className="bg-secondary-50 z-[20] relative">
       <ContactUs />
-    </div>
+    </main>
   );
 }
 

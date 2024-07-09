@@ -89,7 +89,11 @@ export default function RootLayout({
         ) : (
           <>
             <Navbar />
-            <div className="w-full h-full  bg-secondary-50 text-secondary-500">
+            <div
+              className={`w-full h-full  ${
+                currentRoute === "/" ? "" : "md:mb-[60vh]"
+              } bg-secondary-50 text-secondary-500`}
+            >
               {children}
             </div>
             <div className={`${currentRoute === "/" ? "hidden" : "block"}`}>
