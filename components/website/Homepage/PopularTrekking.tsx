@@ -52,15 +52,15 @@ function PopularTrekking({}: Props) {
     });
   });
   return (
-    <div className="w-full h-[110vh] flex justify-center items-center relative">
+    <div className="w-full h-screen flex justify-center items-center relative">
       {/* image  */}
-      <div className="w-full h-[90vh] bg-parallex2 bg-fixed bg-cover  bg-zinc-200 overflow-hidden absolute top-0 left-0 flex justify-center items-center">
+      <div className="w-full h-screen bg-parallex2 bg-fixed bg-cover   overflow-hidden absolute top-0 left-0 flex justify-center items-center">
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.5]"></div>
       </div>
 
       {/* CARDS  */}
-      <div className="w-11/12 md:w-9/12 mx-auto h-[60vh] mt-[-5%] flex flex-col  justify-center relative items-center">
-        <h1 className="text-3xl title-trek mt-[-10%] md:text-6xl mb-6 relative tracking-wide title font-bold  text-secondary-50">
+      <div className="w-11/12 md:w-9/12 mx-auto   flex flex-col gap-5  justify-center relative items-center">
+        <h1 className="text-3xl title-trek  md:text-6xl mb-6 relative tracking-wide title font-bold  text-secondary-50">
           TRENDING TREKKING
         </h1>
 
@@ -179,12 +179,3 @@ function PopularTrekking({}: Props) {
 }
 
 export default PopularTrekking;
-
-const slides = [
-  "Slide 1",
-  "Slide 2",
-  "Slide 3",
-  "Slide 4",
-  "Slide 5",
-  "Slide 6",
-];

@@ -101,10 +101,6 @@ export default function RootLayout({
             </div>
           </>
         )}
-        {/* Main Content */}
-        {/* {!isLoading && (
-         
-        )} */}
       </body>
     </html>
   );

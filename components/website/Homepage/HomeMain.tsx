@@ -17,7 +17,6 @@ type Props = {};
 
 gsap.registerPlugin(ScrollTrigger);
 function HomeMain({}: any) {
-  
   useGSAP(() => {
     const tl1 = gsap.timeline({
       scrollTrigger: {
@@ -71,11 +70,11 @@ function HomeMain({}: any) {
           <div className="w-full mx-auto">
             <PopularTrekking />
           </div>
-          <div className="w-full mx-auto">
-            <Banner />
-          </div>
           <div className="md:w-10/12 w-11/12 mx-auto">
             <Reviews />
+          </div>
+          <div className="w-full mx-auto">
+            <Banner />
           </div>
           <Footer />
         </div>

@@ -14,7 +14,7 @@ function Footer({}: Props) {
       <footer
         className={`bg-secondary-50 h-[60vh] z-[1] ${
           currentRoute === "/" ? "relative" : "fixed"
-        }  bottom-0 left-0 w-full mt-[30vh]   shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] lg:grid lg:grid-cols-5`}
+        }  bottom-0 left-0 w-full    shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] lg:grid lg:grid-cols-5`}
       >
         <div className="relative block h-32 lg:col-span-2 lg:h-full">
           <Image

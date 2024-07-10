@@ -7,10 +7,10 @@ type Props = {};
 export default function Page({}: Props) {
   useEffect(() => {
     scrollTo(0, 0);
-  },[]);
+  }, []);
   return (
-    <div>
+    <main className="bg-secondary-50 z-[20] relative">
       <BookForm />
-    </div>
+    </main>
   );
 }
