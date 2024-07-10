@@ -60,7 +60,7 @@ function Banner({}: Props) {
   return (
     <div
       ref={bannerContainerRef}
-      className="w-full my-[5rem] relative h-[60vh] flex overflow-hidden  justify-center items-center"
+      className="w-full mb-[5rem] relative h-[60vh] flex overflow-hidden  justify-center items-center"
     >
       <Image
         width={1000}

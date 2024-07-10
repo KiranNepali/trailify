@@ -13,6 +13,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Footer from "@/components/Footer";
 import NavHome from "./NavHome";
 import Try from "./try";
+import Faq from "./Faq";
 type Props = {};
 
 gsap.registerPlugin(ScrollTrigger);
@@ -71,11 +72,15 @@ function HomeMain({}: any) {
             <PopularTrekking />
           </div>
           <div className="md:w-10/12 w-11/12 mx-auto">
-            <Reviews />
+            <Faq />
           </div>
           <div className="w-full mx-auto">
             <Banner />
           </div>
+          <div className="md:w-10/12 w-11/12 mx-auto">
+            <Reviews />
+          </div>
+
           <Footer />
         </div>
       </div>
