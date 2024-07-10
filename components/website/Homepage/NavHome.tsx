@@ -13,16 +13,6 @@ import { usePathname } from "next/navigation";
 
 type Props = {};
 
-const sideNavLinks = [
-  { title: "Home", href: "" },
-  { title: "Trekking", href: "" },
-  { title: "Expedition", href: "" },
-  { title: "Other activities", href: "" },
-  { title: "Expeditions", href: "" },
-  { title: "Blogs", href: "" },
-  { title: "Contact us", href: "" },
-];
-
 function NavHome({ navContainerRef }: any) {
   const currentRoute = usePathname();
   const sideNavRef = useRef(null);
@@ -44,12 +34,12 @@ function NavHome({ navContainerRef }: any) {
   });
 
   const handleLink = (index: number) => {
+    const elementClass = `.openlinks-${index}`;
     if (!sideLinks) {
-      gsap.to(`openlinks-${index}`, { height: "20vh" });
+      gsap.to(elementClass, { height: "auto", opacity: 1 });
       setSideLinks(true);
-    }
-    if (sideLinks) {
-      gsap.to(`openlinks-${index}`, { height: "0vh" });
+    } else {
+      gsap.to(elementClass, { height: "0vh", opacity: 0 });
       setSideLinks(false);
     }
   };
@@ -64,24 +54,49 @@ function NavHome({ navContainerRef }: any) {
       {/* mobile nav  */}
       <div
         ref={sideNavRef}
-        className="absolute  md:hidden w-[100vw] flex justify-center items-center top-0 right-[-100%]  h-[100vh] mx-auto bg-secondary-50 text-secondary-500 py-2"
+        className="absolute  md:hidden w-[100vw] pt-[5rem] flex justify-start items-start top-0 right-[-100%]  h-[100vh] mx-auto bg-secondary-50 text-secondary-500 py-2"
       >
-        <div className="w-11/12 mx-auto  grid grid-cols-1  gap-5 place-content-center pt-[5rem] text-start h-full place-items-start  flex-col justify-center items-center">
+        <div className="w-11/12 mx-auto overflow-y-scroll  grid grid-cols-1  gap-5 place-content-start  text-start h-full place-items-start  flex-col justify-center items-start">
           {sideNavLinks.map((link, index) => (
             <>
-              <Link
+              <div
                 onClick={() => handleLink(index)}
                 key={index}
-                className="w-full"
-                href={link.href}
+                className="w-full cursor-pointer"
+                // href={link.href}
               >
-                <div className="title  links text-lg border-b mb-1 opacity-0 font-medium tracking-wide w-full flex justify-between items-center">
+                <div className="title  links text-lg border-b mb-1  opacity-0 font-medium tracking-wide w-full flex justify-between items-center">
                   {link.title} <span></span> <span></span>
                 </div>
-                <div
-                  className={`w-full  openlinks-${index} bg-green-200 h-0`}
-                ></div>
-              </Link>
+                {link.title === "Expedition" && (
+                  <div
+                    className={`w-full openlinks-${index} bg-secondary-100 p-2 opacity-0 h-0 flex flex-col gap-2`}
+                  >
+                    {expeditionsLink.map((item, index) => (
+                      <div key={index}>{item.name}</div>
+                    ))}
+                  </div>
+                )}
+
+                {link.title === "Trekking" && (
+                  <div
+                    className={`w-full openlinks-${index} bg-secondary-100 p-2 opacity-0 h-0 flex flex-col gap-2`}
+                  >
+                    {treksLink.map((item, index) => (
+                      <div key={index}>{item.name}</div>
+                    ))}
+                  </div>
+                )}
+                {link.title === "Other activities" && (
+                  <div
+                    className={`w-full openlinks-${index} bg-secondary-100 p-2 opacity-0 h-0 flex flex-col gap-2`}
+                  >
+                    {activitiesLink.map((item, index) => (
+                      <div key={index}>{item.name}</div>
+                    ))}
+                  </div>
+                )}
+              </div>
             </>
           ))}
         </div>
@@ -252,6 +267,14 @@ const companyLinks = [
   { name: "Certificates", href: "/certificates" },
 ];
 
+const sideNavLinks = [
+  { title: "Home", href: "" },
+  { title: "Trekking", href: "" },
+  { title: "Expedition", href: "" },
+  { title: "Other activities", href: "" },
+  { title: "Blogs", href: "" },
+  { title: "Contact us", href: "" },
+];
 const activitiesLink = [
   { name: "Rafting", href: "/other_activities/rafting" },
   { name: "Heli Tour", href: "/other_activities/heli_tour" },

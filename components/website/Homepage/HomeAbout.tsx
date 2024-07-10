@@ -123,7 +123,7 @@ function HomeAbout({}: Props) {
       className="w-full py-[2rem] md:py-0 flex md:h-screen  md:flex-row flex-col justify-center items-center gap-10"
     >
       {/* image  */}
-      <div className="w-full md:w-[30%]  -rotate-3   object-cover object-center overflow-hidden h-[70vh] md:h-[70%]">
+      <div className="w-full md:w-[30%]  md:-rotate-3   object-cover object-center overflow-hidden h-[60vh] md:h-[70%]">
         <Image
           className="w-full h-full image-about   object-cover object-center"
           width={1000}

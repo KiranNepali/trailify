@@ -34,10 +34,10 @@ export default function Faq({}: Props) {
         <h1 className="text-3xl md:text-6xl relative tracking-wide title font-bold text-secondary-500">
           FREQUENTLY ASKED QUESTIONS
         </h1>
-        <p className="w-[50%]">
-          "Got a question? We're here to help! If you don't see your question
-          below, drop us a line on our{" "}
-          <span className="underline font-semibold italic cursor-pointer">
+        <p className="w-full md:w-[50%] text-secondary-400">
+          {`Got a question? We're here to help! If you don't see your question
+          below, drop us a line on our`}{" "}
+          <span className="underline font-semibold text-secondary-500 italic cursor-pointer">
             <Link href="contact_us">Contact Page</Link>
           </span>
           .
@@ -61,7 +61,7 @@ export default function Faq({}: Props) {
               <span className="cursor-pointer overflow-hidden w-[1.5rem] h-[1.5rem]">
                 <Icon
                   icon="mdi:arrow-down-drop"
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover text-primary-500 object-center"
                 />
               </span>
             </div>

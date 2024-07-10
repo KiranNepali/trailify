@@ -52,9 +52,9 @@ function HomeMain({}: any) {
   const navContainerRef = useRef<any>(null);
   return (
     <>
-      <div className=" w-full h-full">
+      <div className=" w-full overflow-hidden">
         <NavHome navContainerRef={navContainerRef} />
-        <div className="hero-container relative  h-screen  top-0 left-0 w-full">
+        <div className="hero-container relative   h-screen  top-0 left-0 w-full">
           <Hero />
         </div>
         <div className="w-full relative  content-main  bg-secondary-50  z-20">

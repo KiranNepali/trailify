@@ -12,11 +12,11 @@ function Footer({}: Props) {
   return (
     <>
       <footer
-        className={`bg-secondary-50 h-[60vh] z-[1] ${
+        className={`bg-secondary-50 md:h-[60vh] z-[1] ${
           currentRoute === "/" ? "relative" : "fixed"
         }  bottom-0 left-0 w-full    shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] lg:grid lg:grid-cols-5`}
       >
-        <div className="relative block h-32 lg:col-span-2 lg:h-full">
+        <div className="relative block h-40 lg:col-span-2 lg:h-full">
           <Image
             width={1000}
             height={1000}
@@ -26,7 +26,7 @@ function Footer({}: Props) {
           />
         </div>
 
-        <div className="px-4 py-16 sm:px-6 lg:col-span-3 lg:px-8">
+        <div className="px-4 py-5 md:py-16 sm:px-6 lg:col-span-3 lg:px-8">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
             <div>
               <p>
