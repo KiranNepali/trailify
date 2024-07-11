@@ -14,7 +14,7 @@ export default function AllTrekHero({ region }: any) {
   const { name } = data;
   return (
     <>
-      <div className="w-full h-[50vh] bg-zinc-200 relative overflow-hidden relative  flex justify-center items-center">
+      <div className="w-full h-[50vh] bg-zinc-200  overflow-hidden relative  flex justify-center items-center">
         <Leaf />
         <Image
           width={1000}

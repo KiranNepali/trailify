@@ -45,13 +45,13 @@ function PackageDetailMain({}: Props) {
   return (
     <>
       <div className="w-full h-full  text-secondary-500 relative">
-        <div className="w-full h-[50vh] relative  flex justify-center items-center">
+        <div className="w-full h-[80vh] relative  flex justify-center items-center">
           <Image
             width={1000}
             height={1000}
             src="https://images.unsplash.com/photo-1486525546686-3cd5484691f4?q=80&w=2031&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="expedition-image"
-            className="absolute top-0 left-0 w-full h-[50vh] object-cover object-top"
+            className="absolute top-0 left-0 w-full h-full object-cover object-top"
           />
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-[0.5]"></div>
           <h1 className="text-3xl md:text-6xl relative tracking-wide mt-10 title font-bold text-secondary-50">
@@ -61,8 +61,8 @@ function PackageDetailMain({}: Props) {
 
         <div className="py-[5rem] w-11/12 md:w-10/12 flex flex-col md:flex-row justify-center relative items-start gap-3 mx-auto">
           {/* tab  link  */}
-          <div className="mx-auto w-full md:w-[15%] flex-col gap-8 backdrop-blur-sm sticky top-[5rem] overflow-x-scroll md:overflow-x-visible md:top-[6rem] left-0  flex  font-medium items-center">
-            <div className="w-full overflow-x-scroll md:overflow-x-visible flex md:flex-col gap-5 font-medium items-center">
+          <div className="mx-auto  w-full md:w-[15%] flex-col gap-8 backdrop-blur-sm sticky top-[4rem] overflow-x-scroll md:overflow-x-visible md:top-[6rem] left-0  flex  font-medium items-center">
+            <div className="w-full py-1 overflow-x-scroll md:overflow-x-visible flex md:flex-col gap-5 font-medium items-center">
               {buttonLabels.map((item, index) => (
                 <a
                   href={`#${item.label.replace(/\s+/g, "-").toLowerCase()}`}
@@ -254,20 +254,24 @@ function PackageDetailMain({}: Props) {
                 <div className="w-full  py-5  overflow-hidden   items-center flex flex-col justify-between px-3 md:px-10">
                   {/* table  */}
                   <table className="w-full">
-                    <tr className="border-b border-zinc-400 h-[3rem] text-left">
+                    <tr className="border-b border-primary-400 h-[3rem] text-sm whitespace-nowrap md:text-base text-left">
                       <th>Date</th>
                       <th>Days</th>
                       <th>Status</th>
                       <th>Group Size</th>
                     </tr>
-                    <tr className="border-b h-[10rem] md:h-20 border-zinc-800 text-secondary-400 text-sm">
+                    <tr className="border-b h-[10rem] md:h-20 border-primary-400 text-secondary-400 text-sm">
                       <td>
                         <div>
-                          <span className="font-semibold">Start: </span>
+                          <span className="font-semibold text-secondary-500">
+                            Start:{" "}
+                          </span>
                           2024-09-01
                         </div>
                         <div>
-                          <span className="font-semibold">End: </span>
+                          <span className="font-semibold text-secondary-500">
+                            End:{" "}
+                          </span>
                           2024-09-07
                         </div>
                       </td>

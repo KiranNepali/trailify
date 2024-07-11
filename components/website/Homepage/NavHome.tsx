@@ -49,12 +49,12 @@ function NavHome({ navContainerRef }: any) {
   return (
     <div
       ref={navContainerRef}
-      className={`fixed z-[100] opacity-0 translate-y-[-5rem] nav-container-home  text-secondary-500 top-0 bg-secondary-50 left-0 w-full h-[4.5rem] `}
+      className={`fixed z-[100] opacity-0  translate-y-[-5rem] nav-container-home  text-secondary-500 top-0 bg-secondary-50 left-0 w-full h-[4.5rem] `}
     >
       {/* mobile nav  */}
       <div
         ref={sideNavRef}
-        className="absolute  md:hidden w-[100vw] pt-[5rem] flex justify-start items-start top-0 right-[-100%]  h-[100vh] mx-auto bg-secondary-50 text-secondary-500 py-2"
+        className="absolute  overflow-hidden  md:hidden w-[100vw] pt-[5rem] flex justify-start items-start top-0 right-[-100%]  h-[100vh] mx-auto bg-secondary-50 text-secondary-500 py-2"
       >
         <div className="w-11/12 mx-auto overflow-y-scroll  grid grid-cols-1  gap-5 place-content-start  text-start h-full place-items-start  flex-col justify-center items-start">
           {sideNavLinks.map((link, index) => (
@@ -66,33 +66,45 @@ function NavHome({ navContainerRef }: any) {
                 // href={link.href}
               >
                 <div className="title  links text-lg border-b mb-1  opacity-0 font-medium tracking-wide w-full flex justify-between items-center">
-                  {link.title} <span></span> <span></span>
+                  {link.title}
+                  <span className="cursor-pointer overflow-hidden w-[1.5rem] h-[1.5rem]">
+                    <Icon
+                      icon="mdi:arrow-down-drop"
+                      className="w-full h-full object-cover text-primary-500 object-center"
+                    />
+                  </span>
                 </div>
                 {link.title === "Expedition" && (
                   <div
-                    className={`w-full openlinks-${index} bg-secondary-100 p-2 opacity-0 h-0 flex flex-col gap-2`}
+                    className={`w-full openlinks-${index} bg-secondary-100  opacity-0 h-0 flex flex-col gap-2`}
                   >
                     {expeditionsLink.map((item, index) => (
-                      <div key={index}>{item.name}</div>
+                      <Link href={item.href} key={index}>
+                        {item.name}
+                      </Link>
                     ))}
                   </div>
                 )}
 
                 {link.title === "Trekking" && (
                   <div
-                    className={`w-full openlinks-${index} bg-secondary-100 p-2 opacity-0 h-0 flex flex-col gap-2`}
+                    className={`w-full openlinks-${index} bg-secondary-100  opacity-0 h-0 flex flex-col gap-2`}
                   >
                     {treksLink.map((item, index) => (
-                      <div key={index}>{item.name}</div>
+                      <Link href={item.href} key={index}>
+                        {item.name}
+                      </Link>
                     ))}
                   </div>
                 )}
                 {link.title === "Other activities" && (
                   <div
-                    className={`w-full openlinks-${index} bg-secondary-100 p-2 opacity-0 h-0 flex flex-col gap-2`}
+                    className={`w-full openlinks-${index} bg-secondary-100  opacity-0 h-0 flex flex-col gap-2`}
                   >
                     {activitiesLink.map((item, index) => (
-                      <div key={index}>{item.name}</div>
+                      <Link href={item.href} key={index}>
+                        {item.name}
+                      </Link>
                     ))}
                   </div>
                 )}

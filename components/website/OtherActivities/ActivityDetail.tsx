@@ -14,7 +14,7 @@ function AcitvityDetail({ activity }: any) {
   return (
     <div className="w-11/12 md:w-10/12 mx-auto py-[5rem] text-zinc-50 overflow-hidden">
       {/* tab  */}
-      <div className="w-full mb-9 flex justify-start  items-center gap-10">
+      <div className="w-full py-1 overflow-x-scroll md:overflow-x-visible mb-9 flex justify-start  items-center gap-10">
         {/* exp tab  */}
         {OtherActivitiesData.map((item, index) => (
           <Link
@@ -22,7 +22,7 @@ function AcitvityDetail({ activity }: any) {
             key={index}
             className={`${
               item.route === route ? "bg-primary-600" : "bg-secondary-50"
-            } px-10 py-2  shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] hover:scale-105 duration-300 cursor-pointer`}
+            } px-10 py-2  whitespace-nowrap shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] hover:scale-105 duration-300 cursor-pointer`}
           >
             <h1
               className={`text-lg relative tracking-wide title font-medium    ${
